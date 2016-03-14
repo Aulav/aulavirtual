@@ -1,0 +1,413 @@
+
+/****************************************
+Estilos para el preloader de la pagina***
+****************************************/
+#preloader{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #000;
+	z-index: 100;
+}
+/* corregir luego
+.loader{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+
+
+}*/
+
+/***************************************
+Estilos de los iconos del menu dropdown
+****************************************/
+
+.dropdown-content li>a>i{
+    float: left;
+    font-size: 24px;
+  }
+  .pad-top{
+    
+    margin-bottom: 10px;
+  }
+/******************************************************************
+****estilos para cambiar el nav predeterminado por materialize
+*******************************************************************/
+  .nav{
+  	color: #fff;
+    background-color: #37474f;
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+  }
+.nav-login{
+  width: 100%;
+  height: 200px;
+  background:#00897b !important; 
+}
+
+.nav-logo{
+  width: 10%;
+  margin-top: 20px;
+}
+  .nav-sibebar-izquierda{
+  	text-align: center;
+  	margin: 0;
+  	padding: 10px;
+  	background:#37474f;
+  	
+  }
+  .nav-sibebar-izquierda{
+  	width: 250px;
+  	position: absolute;
+  	height: 100%;
+  	background:  #37474f;
+  	color: #fff;
+  	outline: 1px solid #2a2a2a;
+  }
+  .nav-sibebar-izquierda ul{
+  	list-style: none;
+  	padding: 0;
+  	margin: 0;
+
+
+  }
+  .nav-sibebar-izquierda li{
+  	outline: 1px solid #2a2a2a;
+  	transition: border 0.3s;
+
+  }
+  .nav-sibebar-izquierda li:hover{
+  	background: #444;
+  	border-left: 5px solid #eee;
+  }
+  .nav-sibebar-izquierda a{
+  	display: block;
+  	color: #fff;
+  	text-decoration: none;
+  	padding: 10px;
+
+  }
+  /********************************************************
+  ****estilos para el logo*********************************
+  *********************************************************/
+  .logo{
+  	text-align: center;
+    margin-top: 32px;
+  }
+  .no-grande{
+  	width: 40%;
+  }
+   .user-name{
+  	margin-top: 10px;
+  	text-align: center;
+  }
+  #logo-container {
+    height: 57px;
+    margin-bottom: 32px;
+}
+.profile-chico{
+  width: 15%;
+}
+.profile-ins{
+  width: 60%;
+}
+.top-user{
+  margin-top: 10px;
+}
+  ul.side-nav.fixed li.logo{
+  	    text-align: center;
+    margin-top: 32px;
+  }
+
+  p{
+  	color: #000;
+  }
+ 
+h1{
+	text-align: center;
+}
+  /****************************************
+  ****estilos para header periodos*********
+  ******************************************/
+  .btn-left{
+    margin-left: 100px;
+  }
+  .periodo{
+    background: #26a69a;
+    color: #fff;
+  }
+  /***************************************
+  ****cambio de estilos nav izquieda*****
+  ******************************************/
+  .collection .collection-item{
+    background: #455a64;
+  }
+  .collection .collection-item.active{
+    background: #455a64;
+  }
+/*****************************************
+*****estilos para el contenido de la pagina**
+***********************************************/
+  .contenido{
+  	width: 100%;
+  	height: 100%;
+  	position: absolute;
+  	background: #eee;
+  	padding: 30px;
+  	transform: translateX(250px);
+  	box-sizing: border-box;
+  }
+  .menu-bar{
+  	cursor: pointer;
+  }
+ .contenido a{
+  	text-decoration: none;
+
+  }
+  .abrir{
+  	transform: translatex(250px);
+  }
+  .collapsible-header{
+  	color:#000;
+  }
+  .collapsible-header a{
+  	color: #000;
+  }
+  .chica{
+  	width: 10%;
+  }
+  ul li a{
+    color: #212121;
+  }
+
+  /**************************************
+  ******estilos efectos datos generales***
+  *****************************************/
+.des-gra{
+  width: 60%;
+}
+.panel-primary{
+    color: #fff;
+    background-color:#424242;
+    border-color: #337ab7;
+    margin-top: 25px;
+}
+.panel-primario{
+    color: #fff;
+    background-color:#424242;
+    border-color: #337ab7;
+    margin-top: 70px;
+}
+ .panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    text-align: center;
+}
+.light-blue.accent-3{
+  top: 10px;
+}
+/********************************
+****animation logo user**********
+***********************************/
+
+/*animation*/
+.contenedor-img {
+width: 300px;
+height: 200px;
+float: left;
+overflow: hidden;
+position: relative;
+text-align: center;
+cursor: default;
+background: #fff;
+}
+.contenedor-img .mascara,.contenedor-img .contenido {
+width: 300px;
+height: 200px;
+position: absolute;
+overflow: hidden;
+top: 0;
+left: 0
+}
+.contenedor-img img {
+display: block;
+position: relative;
+
+}
+.contenedor-img h2 {
+text-transform: uppercase;
+color: #fff;
+text-align: center;
+position: relative;
+font-size: 17px;
+padding: 10px;
+background: rgba(0, 0, 0, 0.9);
+margin: 20px 0 0 0
+}
+.contenedor-img p {
+font-size: 12px;
+position: relative;
+color: #fff;
+padding: 10px 20px 10px;
+text-align: center
+}
+.contenedor-img input[type=file]:focus {
+    display: inline-block;
+text-decoration: none;
+padding: 7px 14px;
+background: #222;
+color: #fff;
+text-transform: uppercase;
+box-shadow: 0 0 1px #000
+   }
+
+.contenedor-img a.link {
+display: inline-block;
+text-decoration: none;
+padding: 7px 14px;
+background: #222;
+color: #fff;
+text-transform: uppercase;
+box-shadow: 0 0 1px #000
+}
+.contenedor-img a.link:hover {
+box-shadow: 0 0 5px #000
+}
+/*animacion del perfil*/
+.animation-profile img {
+transform: scaleY(1);
+transition: all 0.7s ease-in-out;
+
+}
+.animation-profile .mascara {
+background-color: rgba(38, 166, 154,0.9);
+transition: all 0.5s linear;
+opacity: 0;
+}
+.animation-profile h2{
+border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+background: transparent;
+margin: 20px 40px 0px 40px;
+transform: scale(0);
+color: #fff;
+transition: all 0.5s linear;
+opacity: 0;
+}
+.animation-profile p {
+color: #fff;
+opacity: 0;
+transform: scale(0);
+transition: all 0.5s linear;
+}
+.animation-profile a.link {
+opacity: 0;
+transform: scale(0);
+transition: all 0.5s linear;
+background-color: rgba(119, 80, 21, 0.9);
+}
+
+.animation-profile:hover img {
+transform: scale(10);
+opacity: 0;
+}
+.animation-profile:hover .mascara {
+opacity: 1;
+}
+.animation-profile:hover h2,
+.animation-profile:hover p,
+.animation-profile:hover a.link{
+transform: scale(1);
+opacity: 1;
+}
+
+/*  Estilos para la interfaz del alumno  */
+
+#opciones li a i{
+    margin-right: 2px;
+}
+
+.btn-custom{
+    width: 100% !important;
+    font-size: 16px;
+    text-transform: none !important;
+}
+/*****************************************
+******buttons docentes********************
+**************************************/
+.darken-4{
+  top: 10px;
+  margin-bottom: 15px;
+}
+/****************************************
+*****estilos para las tardejatas 3D******
+*****************************************/
+.title-tarjeta{
+  text-align: center;
+
+}
+.tarjeta3D{ width:240px; height:200px; margin:10px; float:left; }
+.tarjeta3D >.front{
+  position: absolute;
+  -webkit-transform: perspective(600px) rotateY(0deg);
+  transform: perspective(600px) rotateY(0deg);
+  background: #546e7a;
+  width: 240px;
+  height: 200px;
+  border-radius: 7px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: -webkit-transform .5s linear 0s;
+  transition: transform .5s linear 0s;
+
+}
+.tarjeta3D >.back{
+  position: absolute;
+  -webkit-transform: perspective(600px) rotateY(0deg);
+  transform: perspective(600px) rotateY(0deg);
+  background: #26a69a;
+  width: 240px;
+  height: 200px;
+  border-radius: 7px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition:-webkit-transform .5s linear 0s;
+  transition:transform .5s linear 0s;
+
+}
+.tarjeta3D:hover >.front{
+  -webkit-transform: perspective(600px) rotateY(-180deg);
+  transform: perspective(600px) rotateY(-180deg);
+}
+.tarjeta3D:hover >.back{
+  -webkit-transform: perspective(600px) rotateY(0deg);
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.p-text{
+  font-size: 10px;
+}
+/*********************************************
+********media querys graficas responsivas imagnes**
+**************************************************/
+@media screen and (max-width: 1204px) {
+    .img-responsiva {
+        width: 99%
+    }
+}
+@media screen and (max-width: 720px) {
+    .img-responsiva {
+        width: 99%
+    }
+}
+@media screen and (max-width: 480px) {
+    .img-responsiva {
+        width: 80%
+    }
+}
