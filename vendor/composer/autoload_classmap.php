@@ -6,7 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+<<<<<<< HEAD
     'AddDeletedToDocentesTable' => $baseDir . '/database/migrations/2016_03_15_002619_add_deleted_to_docentes-table.php',
+=======
+    'AddDeletedToAlumnosTable' => $baseDir . '/database/migrations/2016_03_15_013227_add_deleted_to_alumnos_table.php',
+>>>>>>> 10c47875efdfe4b35f14fda7237af64e516ccb8d
     'CreateAdministradoresTable' => $baseDir . '/database/migrations/2016_03_13_044559_create_administradores_table.php',
     'CreateAlumnosTable' => $baseDir . '/database/migrations/2016_03_13_043937_create_alumnos_table.php',
     'CreateDocentesTable' => $baseDir . '/database/migrations/2016_03_13_044358_create_docentes_table.php',

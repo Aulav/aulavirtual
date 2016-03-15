@@ -5,8 +5,13 @@
     </div>
         <p class="user-name"> {{ Session::get('name') }} </p>
         <a href="{{ asset('/admin/panel') }}" class="collection-item active"><i class="material-icons">home</i>Inicio</a>
+<<<<<<< HEAD
         <a href="alumno.html" class="collection-item "><i class="material-icons">people</i>Alumnos</a>
         <a href="{{ asset('/docente/panel')}}" class="collection-item"><i class="material-icons">person</i>Docentes</a>
+=======
+        <a href="{{ asset('/alumno/panel')}}" class="collection-item "><i class="material-icons">people</i>Alumnos</a>
+        <a href="docente.html" class="collection-item"><i class="material-icons">person</i>Docentes</a>
+>>>>>>> 10c47875efdfe4b35f14fda7237af64e516ccb8d
         <a href="admins.html" class="collection-item"><i class="material-icons">person</i>Administradores</a>
         <a href="{{ asset('/grupo/panel') }}" class="collection-item"><i class="material-icons">group</i>Grupos</a>
         <a href="asignaturas.html" class="collection-item"><i class="material-icons">import_contacts</i>Materias</a>
