@@ -127,4 +127,18 @@ Route::group(['middleware' => ['web']], function () {
 	    
 	});
 
+	/**
+	 * Grupo de rutas para los docentes
+	 */
+
+	Route::group(['prefix' => 'docente'], function () {
+	    Route::resource('panel', 'DocentesController');
+
+	    Route::get('Docentes/{id}/destroy', [
+	    	'uses'	=> 'DocentesController@destroy',
+	    	'as'	=> 'Docentes.panel.destroy',
+	    ]);
+	    
+	});
+
 });
