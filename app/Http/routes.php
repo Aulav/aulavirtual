@@ -82,7 +82,11 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::group(['prefix' => 'alumno'], function () {
 	    Route::resource('panel', 'AlumnosController');
-	    
+	    Route::get('alumno/{id}/destroy', [
+	    	'uses'	=> 'AlumnosController@destroy',
+	    	'as'	=> 'alumno.panel.destroy',
+	    ]);
+	  
 	    Route::get('login', [
 	    	'uses'		=>	'AlumnosController@getLogin',
 	    	'as'		=> 	'alumno.login'
