@@ -27,7 +27,7 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    
+   
 	/**
 	 * Grupo de rutas para el administrador
 	 */
@@ -82,11 +82,11 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::group(['prefix' => 'alumno'], function () {
 	    Route::resource('panel', 'AlumnosController');
-	    Route::get('alumno/{id}/destroy', [
+	    Route::get('alumnos/{id}/destroy', [
 	    	'uses'	=> 'AlumnosController@destroy',
-	    	'as'	=> 'alumno.panel.destroy',
+	    	'as'	=> 'alumnos.panel.destroy',
 	    ]);
-	  
+	  	
 	    Route::get('login', [
 	    	'uses'		=>	'AlumnosController@getLogin',
 	    	'as'		=> 	'alumno.login'
@@ -101,6 +101,13 @@ Route::group(['middleware' => ['web']], function () {
 	    	'uses'		=>	'AlumnosController@getAcceso',
 	    	'as'		=> 	'alumno.acceso'
 	    ]);
+	      Route::resource('import', 'ImportController');
+	    Route::get('import', [
+	    	'uses'      => 'ImportController@import',
+	    	'as'        => 'alumnos.createExcel'
+	    	]); 
+	    
+	 
 	});
 
 	/**

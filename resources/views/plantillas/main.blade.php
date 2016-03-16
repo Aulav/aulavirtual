@@ -13,6 +13,14 @@
   	<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
   	<!--import ajax for preloader-->
   	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  	<!--alerts desvanece en 3 segundos-->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      setTimeout(function() {
+          $(".content").fadeOut(1500);
+      },3000);
+    });
+  </script>
 </head>
 <body>
 	<!--preoloader para la pagina principal-->
@@ -26,7 +34,7 @@
 	<div class="row">
         <div class="col s12">
             @if (Session::has('message'))
-                <p class="flow-text center">{{ Session::get('message') }}</p>
+                <p class="content card-panel cyan z-depth-5 center flow-text center ">{{ Session::get('message') }}</p>
             @endif
         </div>
     </div>
@@ -39,19 +47,11 @@
 	          2-Menu Profesor que este caso seria practicamente lo mismo
 	          3-Menu alumnos-->
 	        @include('plantillas.partes.menu')
- 			@include('plantillas.partes.errors')
+ 			
  		
     	</div><!--End Contenido de toda la pagina-->
     	<div class="col s12 m9">
-    		<div class="row">
-	            <div class="col s12">
-	                @if ($errors->has())
-	                    @foreach ($errors->all() as $error)
-	                        <div class="flow-text center">{{ $error }}</div>
-	                    @endforeach
-	                @endif
-	            </div>
-        	</div>
+    		@include('plantillas.partes.errors')
        	 	@yield('contenido')
     	</div>
   	</div><!--end Todo el contenido-->  

@@ -3,7 +3,7 @@
 @section('title', 'Grupos') 
 
 @section('contenido')
-  	<div class="col s12 m12 l4">
+  	<div class="col s6 m6 l4">
         <p class="flow-text">
         <select id="periodo" class="">
             <option value="" disabled selected>Elija un periodo</option>
@@ -12,12 +12,23 @@
         </select>
         </p>
     </div>
-	<div class="row center">
-			<a class="btn-large waves-effect waves-light btn light-blue accent-3  z-depth-5 left" 
+	<div class="col s6 m6 l4">
+	<p class="flow-text center-align">
+			<a class="waves-effect waves-light btn btn-custom blue-grey darken-4" 
 	        	href="{{ route('alumno.panel.create')}}">
-	        		Crear Nuevo Alumno
-	        </a>   
+	        	 <i class="material-icons right">add</i>Crear Alumno
+	        </a> 
+	  </p>       
 	</div>
+	<div class="col s6 m6 l4">
+	<p class="flow-text center-align">
+        <a href="{{ route('alumnos.createExcel')}}" class="waves-effect waves-light btn btn-custom blue-grey darken-4">
+        <i class="material-icons right">add</i>Subir Archivo CSV 
+       </a>
+     </p>  
+		
+	</div>
+	
 	 <div class="row">
     	<div class="col s12">
     		<h4>Listado de Alumnos</h4>

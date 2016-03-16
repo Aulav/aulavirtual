@@ -160,6 +160,9 @@ return [
          * Providers personales
          */
         Collective\Html\HtmlServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+        Prologue\Alerts\AlertsServiceProvider::class,
+        Cartalyst\Alerts\Laravel\AlertsServiceProvider::class,
 
     ],
 
@@ -208,7 +211,9 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Form'      => Collective\Html\FormFacade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
-
+        'Excel'     => Maatwebsite\Excel\Facades\Excel::class,
+        'Alert'     => Prologue\Alerts\Facades\Alert::class,
+        'Alert'     => Cartalyst\Alerts\Laravel\Facades\Alert::class,
     ],
 
 ];

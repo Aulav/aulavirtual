@@ -14,6 +14,14 @@
   <link type="text/css" rel="stylesheet" href="{{ asset('css/materialize.min.css') }}"  media="screen,projection"/>
   <!--import ajax for preloader-->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <!--alerts desvanece en 3 segundos-->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      setTimeout(function() {
+          $(".content").fadeOut(1500);
+      },3000);
+    });
+  </script>
 <style type="text/css">
   body {
     display: flex;
@@ -47,15 +55,18 @@
         <div class="row">
             <div class="col s12">
                 @if (Session::has('message'))
-                    <p class="flow-text center">{{ Session::get('message') }}</p>
+                    <p class="content card-panel  red darken-4 z-depth-5 center">
+                    {{ Session::get('message') }}</p>
                 @endif
             </div>
         </div>
         <div class="row">
+
             <div class="col s12">
                 @if ($errors->has())
                     @foreach ($errors->all() as $error)
-                        <p class="flow-text center">{{ $error }}</p>
+                  
+                        <p class="content card-panel  red lighten-1 z-depth-5 center">{{ $error }}</p>
                     @endforeach
                 @endif
             </div>

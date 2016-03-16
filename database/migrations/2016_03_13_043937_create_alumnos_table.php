@@ -27,9 +27,9 @@ class CreateAlumnosTable extends Migration
             $table->string('sexo');
             $table->integer('edad');
             $table->integer('tutor_id')->unsigned()->nullable();
-            $table->integer('institucion_id')->unsigned();
+            $table->integer('institucion_id')->unsigned()->nullable();
             $table->integer('rol_id')->unsigned();
-            $table->integer('reticula_id')->unsigned();
+            $table->integer('reticula_id')->unsigned()->nullable();
             $table->integer('grupo_id')->unsigned()->nullable();
             $table->timestamps();
 

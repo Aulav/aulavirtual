@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Alumno extends Model
 {
     use SoftDeletes;
+
     protected $table = 'alumnos';
     protected $dates = ['deleted_at'];
    
