@@ -51,7 +51,7 @@
                         </td>
                         <td>
                             {!!Form::open(['route'=>['docente.panel.destroy', $docente->id], 'method'=>'DELETE'])!!}
-                            {!!Form::submit('Eliminar',['class'=>'btn btn-danger'])!!}
+                            {!!Form::submit('Eliminar',['class'=>'btn red'])!!}
                             {!!Form::close()!!}
                            <!-- <a href="{{ route('docente.panel.destroy', $docente->id) }}" onclick="return confirm('Seguro desea eliminar este docente?')" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Eliminar Docente">
                                 <i class="material-icons">delete</i>

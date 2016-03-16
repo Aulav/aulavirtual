@@ -3,10 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Administrador extends Model
 {
+	use SoftDeletes;
     protected $table = 'administradores';
+    protected $dates = ['deleted_at'];
 
     protected $fillable = ['id', 'name', 'user', 'password', 'ap_paterno', 'ap_materno', 'direccion', 'tel', 'email', 'avatar', 'sexo', 'institucion_id', 'rol_id'];
 

@@ -2,18 +2,18 @@
 @section('title', 'Editar el Alumno ' . $alumno->name)
 
 @section('contenido')
-    <div class="row">
-        <div class="col s12">
-            <nav>
-                <div class="nav-wrapper teal darken-1">
-                  <div class="col s12">
-                    <a href="{{ asset('/alumno/panel') }}" class="breadcrumb">Atrás</a>
-                    <span class="breadcrumb">Editar Alumnos</span>
-                  </div>
-                </div>
-            </nav>
-        </div>
-    </div>
+	    <div class="row">
+	        <div class="col s12">
+	            <nav>
+	                <div class="nav-wrapper teal darken-1">
+	                  <div class="col s12">
+	                    <a href="{{ asset('/alumno/panel') }}" class="breadcrumb">Atrás</a>
+	                    <span class="breadcrumb">Editar Alumnos</span>
+	                  </div>
+	                </div>
+	            </nav>
+	        </div>
+	    </div>
 	<div class="row">
 	<h1 class="center flow-text">Editar Alumno {{ $alumno->name }}</h1>
     {!! Form::open(['route' => ['alumno.panel.update', $alumno], 'method' => 'PUT', 'files' => true]) !!}

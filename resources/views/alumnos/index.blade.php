@@ -1,6 +1,6 @@
 @extends('plantillas.main')
 
-@section('title', 'Grupos') 
+@section('title', 'Alumnos') 
 
 @section('contenido')
   	<div class="col s12 m12 l4">
@@ -48,12 +48,12 @@
 		          			</a>
 		          		</td>
 		          		<td>
-		          		{!! Form::open(['route'=>['alumno.panel.destroy', $alumno->id], 'method' => 'DELETE'])!!}
-		          		{!! Form::submit('ELiminar', ['class'=>'btn'])!!}
+		          		{!! Form::open(['route'=>['alumno.panel.destroy', $alumno->id], 'method'=>'DELETE'])!!}
+		          		{!! Form::submit('Eliminar',['class'=>'btn red' ])!!}
 		          		{!! Form::close() !!}
-		          			<a href="{{ route('alumno.panel.destroy', $alumno->id) }}"  class="tooltipped" data-position="top" data-delay="50" data-tooltip="Eliminar alumno">
+		          			<!--<a href="{{ route('alumno.panel.destroy', $alumno->id) }}"  class="tooltipped" data-position="top" data-delay="50" data-tooltip="Eliminar alumno">
 		          				<i class="material-icons">delete</i>
-		          			</a>
+		          			</a>-->
 		          		</td>
 		        	</tr>
     			@endforeach

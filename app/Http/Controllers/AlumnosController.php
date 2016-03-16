@@ -123,9 +123,8 @@ class AlumnosController extends Controller
     public function destroy($id)
     {
         $alumno = Alumno::find($id);
-       
         $alumno->delete();
-        Session::flash('message', 'El Alumno' .$alumno->name . ' se ah Eliminado Correctamente');
+        Session::flash('message', 'El Alumno' .$alumno->name . ' se ha Eliminado Correctamente');
        return redirect('/alumno/panel');
 
     }   

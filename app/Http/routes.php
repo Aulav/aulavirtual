@@ -34,6 +34,11 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::group(['prefix' => 'admin'], function () {
 	    Route::resource('panel', 'AdminsController');
+
+	    Route::get('admins/{id}/destroy', [
+	    	'uses'	=> 'AdminsController@destroy',
+	    	'as'	=> 'admins.panel.destroy',
+	    ]);
 	    
 	    Route::get('login', [
 	    	'uses'		=>	'AdminsController@getLogin',
@@ -82,9 +87,9 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::group(['prefix' => 'alumno'], function () {
 	    Route::resource('panel', 'AlumnosController');
-	    Route::get('alumno/{id}/destroy', [
+	    Route::get('alumnos/{id}/destroy', [
 	    	'uses'	=> 'AlumnosController@destroy',
-	    	'as'	=> 'alumno.panel.destroy',
+	    	'as'	=> 'alumnos.panel.destroy',
 	    ]);
 	  
 	    Route::get('login', [
@@ -141,6 +146,20 @@ Route::group(['middleware' => ['web']], function () {
 	    Route::get('Docentes/{id}/destroy', [
 	    	'uses'	=> 'DocentesController@destroy',
 	    	'as'	=> 'Docentes.panel.destroy',
+	    ]);
+	    
+	});
+
+	/**
+	 * Grupo de rutas para los docentes
+	 */
+
+	Route::group(['prefix' => 'admin'], function () {
+	    Route::resource('paneladmin', 'AdminsController');
+
+	    Route::get('Admins/{id}/destroy', [
+	    	'uses'	=> 'AdminsController@destroy',
+	    	'as'	=> 'Admins.panel.destroy',
 	    ]);
 	    
 	});

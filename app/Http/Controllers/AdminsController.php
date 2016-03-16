@@ -9,14 +9,15 @@ use Session;
 use App\Administrador;
 use App\Institucion;
 use App\Rol;
+use App\Docente;
 
 class AdminsController extends Controller
 {
     public function index()
     {
         if( Session::has('id') ){
-            $instituciones = Institucion::orderBy('name')->paginate(3);
-            return view('admins.index', ['instituciones' => $instituciones]);
+            $admins = Administrador::orderBy('name')->paginate(3);
+            return view('admins.administradores.index', ['admins' => $admins]);
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
             return redirect('/admin/login');
@@ -64,7 +65,7 @@ class AdminsController extends Controller
     public function create()
     {
         if(Session::has('id')){            
-            return view('admins.create');
+            return view('admins.administradores.create');
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
             return redirect('/admin/login');
@@ -73,27 +74,76 @@ class AdminsController extends Controller
     
     public function store(Request $request)
     {
-        
+        $this->validate(
+            $request, [
+                'name'        => 'required',
+                'ap_paterno'  => 'required',
+                'ap_materno'  => 'required',
+                'user'        => 'required',
+                'password'    => 'required',
+                'tel'         => 'required',
+                'email'       => 'required',
+                'sexo'        => 'required',  
+                
+            ]
+        );
+
+        $admin = new administrador($request->all());
+        $admin->institucion_id = 1;
+        $admin->rol_id = 1;
+        $admin->save();
+
+        Session::flash('message', $admin->name . ' ha sido creado correctamente');
+        return redirect('/admin/panel');
     }
 
     public function show()
     {
-
+        
     }
 
     public function edit( $id )
     {
-
+        if(Session::has('id')){
+            $admin = administrador::find($id);
+            return view('admins.administradores.edit', ['admin' => $admin]);
+        }else{
+            Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
+            return redirect('/admin/login');
+        }
     }
 
-    public function update()
+    public function update(Request $request, $id)
     {
+        $this->validate(
+            $request, [
+                'name'        => 'required',
+                'ap_paterno'  => 'required',
+                'ap_materno'  => 'required',
+                'user'        => 'required',
+                'password'    => 'required',
+                'tel'         => 'required',
+                'email'       => 'required',
+                'sexo'        => 'required',
+            ]
+        );
 
+        $admin = administrador::find($id);
+        $admin->fill($request->all());
+        $admin->institucion_id = 1;
+        $admin->rol_id = 1;
+        $admin->save();
+
+        Session::flash('message', 'El Administrador ' . $admin->name . ' ha sido editado correctamente');
+        return redirect('/admin/paneladmin');
     }
     
-    public function destroy()
+    public function destroy($id)
     {
-
+        $admin = administrador::find($id);
+        $admin->delete();
+        Session::flash('message', 'El administrador ' . $admin->name . ' ha sido eliminado correctamente');
+        return redirect('/admin/paneladmin');
     }
     
 }
