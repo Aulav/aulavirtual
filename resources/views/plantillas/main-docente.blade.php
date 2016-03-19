@@ -26,7 +26,7 @@
 	<div class="row">
         <div class="col s12">
             @if (Session::has('message'))
-                <p class="flow-text center">{{ Session::get('message') }}</p>
+                <p class="content card-panel  red lighten-1 z-depth-5 center flow-text center">{{ Session::get('message') }}</p>
             @endif
         </div>
     </div>
@@ -43,15 +43,7 @@
  		
     	</div><!--End Contenido de toda la pagina-->
     	<div class="col s12 m9">
-    		<div class="row">
-	            <div class="col s12">
-	                @if ($errors->has())
-	                    @foreach ($errors->all() as $error)
-	                        <div class="flow-text center">{{ $error }}</div>
-	                    @endforeach
-	                @endif
-	            </div>
-        	</div>
+    		@include('plantillas.partes.errors')
        	 	@yield('contenido')
     	</div>
   	</div><!--end Todo el contenido-->  

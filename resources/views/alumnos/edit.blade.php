@@ -30,55 +30,46 @@
 				{!! Form::text('name', $alumno->name, ['class' => 'validate', 'placeholder' => 'Escribe aqui el nombre', 'id' => 'icon-prefix'])!!}
 			</div>
 		</div>
+		
 		<div class="row">
-				<div class="input-field col s6">
-					<i class="material-icons">account_circle</i>
-					{!! Form::label('user', 'Nombre de Usuario', ['for' => 'icon-prefix'])!!}
-					{!! Form::text('user',$alumno->user,['class' => 'validate', 'placeholder' => 'Nombre de Usuario','id' => 'icon-prefix'])!!}
-				</div>
-				
+			<div class="input-field col s6">
+				<i class="material-icons">account_circle</i>
+				{!! Form::label('ap_paterno', 'Apellido Paterno', ['for' => 'icon-prefix'])!!}
+				{!! Form::text('ap_paterno',$alumno->ap_paterno,['class' => 'validate', 'placeholder' => 'Apellido Paterno','id' => 'icon-prefix'])!!}
 			</div>
-			<div class="row">
-				<div class="input-field col s6">
-					<i class="material-icons">account_circle</i>
-					{!! Form::label('ap_paterno', 'Apellido Paterno', ['for' => 'icon-prefix'])!!}
-					{!! Form::text('ap_paterno',$alumno->ap_paterno,['class' => 'validate', 'placeholder' => 'Apellido Paterno','id' => 'icon-prefix'])!!}
-				</div>
-				<div class="input-field col s6">
-					<i class="material-icons">account_circle</i>
-					{!! Form::label('ap_materno', 'Apellido Materno', ['for' => 'icon-prefix'])!!}
-					{!! Form::text('ap_materno',$alumno->ap_materno,['class' => 'validate', 'placeholder' => 'Apellido Materno','id' => 'icon-prefix'])!!}
-				</div>
+			<div class="input-field col s6">
+				<i class="material-icons">account_circle</i>
+				{!! Form::label('ap_materno', 'Apellido Materno', ['for' => 'icon-prefix'])!!}
+				{!! Form::text('ap_materno',$alumno->ap_materno,['class' => 'validate', 'placeholder' => 'Apellido Materno','id' => 'icon-prefix'])!!}
 			</div>
-			<div class="row">
-				<div class="input-field col s6">
-					<i class="material-icons">account_circle</i>
-					{!! Form::label('direccion', 'Escribe la Direccion', ['for' => 'icon-prefix'])!!}
-					{!! Form::text('direccion',$alumno->direccion,['class' => 'validate', 'placeholder' => 'Escribe la Direccion','id' => 'icon-prefix'])!!}
-				</div>
-				<div class="input-field col s6">
-					<i class="material-icons">account_circle</i>
-					{!! Form::label('tel', 'Escribe el Telefono', ['for' => 'icon-prefix'])!!}
-					{!! Form::text('tel',$alumno->tel,['class' => 'validate', 'placeholder' => 'Escribe el Telefono','id' => 'icon-prefix'])!!}
-				</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons">account_circle</i>
+				{!! Form::label('direccion', 'Escribe la Direccion', ['for' => 'icon-prefix'])!!}
+				{!! Form::text('direccion',$alumno->direccion,['class' => 'validate', 'placeholder' => 'Escribe la Direccion','id' => 'icon-prefix'])!!}
 			</div>
-			<div class="row">
-				<div class="input-field col s6">
-					<i class="material-icons">email</i>
-					{!! Form::label('email', 'Escribe el Email', ['for' => 'icon-prefix'])!!}
-					{!! Form::email('email',$alumno->email,['class' => 'validate', 'placeholder' => 'Escribe el Correo Electronico','id' => 'icon-prefix'])!!}
-				</div>
+			<div class="input-field col s6">
+				<i class="material-icons">account_circle</i>
+				{!! Form::label('tel', 'Escribe el Telefono', ['for' => 'icon-prefix'])!!}
+				{!! Form::text('tel',$alumno->tel,['class' => 'validate', 'placeholder' => 'Escribe el Telefono','id' => 'icon-prefix'])!!}
 			</div>
-			<div class="row">          
-                    <div class="input-field col s16 m6">                
-                    {!! Form::select('sexo', array('1' => 'Hombre', '0' => 'Mujer'),['placeholder' =>'Selecciona su sexo','required']) !!}
-                    </div>
-                    <div class="input-field col s6">
-                    	{!! Form::number('edad', $alumno->edad);!!}
-                    </div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<i class="material-icons">email</i>
+				{!! Form::label('email', 'Escribe el Email', ['for' => 'icon-prefix'])!!}
+				{!! Form::email('email',$alumno->email,['class' => 'validate', 'placeholder' => 'Escribe el Correo Electronico','id' => 'icon-prefix'])!!}
+			</div>
+		</div>
+		<div class="row">          
+            <div class="input-field col s16 m6">                
+               {!! Form::select('sexo', ['Femenino','Masculino'],$alumno->sexo,['placeholder' =>'Selecciona su sexo','required']) !!}
             </div>
-           
-			
+            <div class="input-field col s6">
+               {!! Form::number('edad', $alumno->edad);!!}
+            </div>
+        </div>	
       <div class="row">
     	<div class="col s12">
       		{!! Form::submit('Editar Alumno', ['class' => 'btn']) !!}

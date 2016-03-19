@@ -17,4 +17,8 @@ class Administrador extends Model
     {
     	return $this->belongsTo('App\Rol');
     }
+    public function images()
+	{
+		return $this->hasMany('App\Image');
+	}
 }

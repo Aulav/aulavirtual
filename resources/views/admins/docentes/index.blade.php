@@ -3,17 +3,8 @@
 
 @section('contenido')
 
-    <!-- Este row probablemente se quite de aqui -->
-    <div class="row">
-        <div class="col s12">
-            @if (Session::has('message'))
-                <p class="flow-text center">{{ Session::get('message') }}</p>
-            @endif
-        </div>
-    </div>
-    <!-- /Este row probablemente se quite de aqui -->
-    <div class="row center">
-        <a class="btn-large waves-effect waves-light btn light-blue accent-3  z-depth-5 left" 
+    <div class="row col s3">
+        <a class="waves-effect waves-light btn btn-custom blue-grey darken-4 z-depth-5 left" 
             href="{{ route('docente.panel.create')}}">
                 Crear nuevo Docente
         </a>        

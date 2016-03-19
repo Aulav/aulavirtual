@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Http\UploadedFile;
 use App\Http\Requests;
 use Session;
 use App\Administrador;
 use App\Institucion;
 use App\Rol;
 use App\Docente;
+<<<<<<< HEAD
 use App\Grafica;
+=======
+use App\Image;
+>>>>>>> a5a3fe0351c4559c743d6951bb74a965044bd32d
 
 class AdminsController extends Controller
 {
@@ -18,7 +22,12 @@ class AdminsController extends Controller
     {
         if( Session::has('id') ){
             $admins = Administrador::orderBy('name')->paginate(3);
+<<<<<<< HEAD
             return view('graficas.index', ['admins' => $admins]);
+=======
+           
+            return view('admins.administradores.index', ['admins' => $admins]);
+>>>>>>> a5a3fe0351c4559c743d6951bb74a965044bd32d
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
             return redirect('/admin/login');
@@ -75,13 +84,22 @@ class AdminsController extends Controller
     
     public function store(Request $request)
     {
+        //manipulacion de imagenes
+       /* if($request->file('avatar'))
+        {
+            $file = $request->file('avatar');
+          
+            $name = 'perfil_'. time() . '.' .$file->getClientOriginalExtension();
+            $path = public_path() . '/images/perfil/';
+            $file->move($path, $name);
+            
+        }*/
+
         $this->validate(
             $request, [
                 'name'        => 'required',
                 'ap_paterno'  => 'required',
                 'ap_materno'  => 'required',
-                'user'        => 'required',
-                'password'    => 'required',
                 'tel'         => 'required',
                 'email'       => 'required',
                 'sexo'        => 'required',  
@@ -90,9 +108,16 @@ class AdminsController extends Controller
         );
 
         $admin = new administrador($request->all());
+        $admin->user =$request->email;
+        $admin->password = bcrypt($request->matricula);
         $admin->institucion_id = 1;
         $admin->rol_id = 1;
         $admin->save();
+
+        /*$image = new Image();
+        $image->avatar = $name;
+        $image->administrador()->associate($admin);
+        $image->save(); */
 
         Session::flash('message', $admin->name . ' ha sido creado correctamente');
         return redirect('/admin/panel');
@@ -116,6 +141,17 @@ class AdminsController extends Controller
 
     public function update(Request $request, $id)
     {
+        //manipulacion de imagenes
+       /* if($request->file('avatar'))
+        {
+            $file = $request->file('avatar');
+          
+            $name = 'perfil_'. time() . '.' .$file->getClientOriginalExtension();
+            $path = public_path() . '/images/perfil/';
+            $file->move($path, $name);
+        
+        }*/
+
         $this->validate(
             $request, [
                 'name'        => 'required',
@@ -135,8 +171,18 @@ class AdminsController extends Controller
         $admin->rol_id = 1;
         $admin->save();
 
+        /*$image = new Image();
+        $image->avatar = $name;
+        $image->administrador()->associate($admin);
+        $image->save(); */
+
         Session::flash('message', 'El Administrador ' . $admin->name . ' ha sido editado correctamente');
         return redirect('/admin/paneladmin');
+    }
+    public function profile()
+    {
+        return view('admin.profile');
+       
     }
     
     public function destroy($id)

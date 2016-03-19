@@ -4,8 +4,8 @@
 @section('contenido')
 
     <!-- /Este row probablemente se quite de aqui -->
-	<div class="row center">
-        <a class="btn-large waves-effect waves-light btn light-blue accent-3  z-depth-5 left" 
+	<div class="row col s3">
+        <a class="waves-effect waves-light btn btn-custom blue-grey darken-4 z-depth-5 left" 
         	href="{{ route('admin.paneladmin.create')}}">
         	Crear Administrador
         </a>        
@@ -18,11 +18,10 @@
 		        <thead>
 		          <tr>
 		              <th data-field="name">Nombre</th>
-		              <th data-field="ap_paterno">Ap. Paterno</th>
-		              <th data-field="ap_materno">Ap. Materno</th>
 		              <th data-field="user">Usuario</th>
-		              <th data-field="password">Password</th>
+		              <th data-field="status">Status</th>
 		              <th data-field="email">E-mail</th>
+		              <th data-field="mensaje">Mensaje</th>
 		              <th data-field="editar">Editar</th>
 		              <th data-field="eliminar">Eliminar</th>
 		          </tr>
@@ -31,11 +30,14 @@
 		        @foreach ($admins as $admin)
 		        	<tr>
 		          		<td>{{ $admin->name }}</td>
-		          		<td>{{ $admin->ap_paterno }}</td>
-		          		<td>{{ $admin->ap_materno }}</td>
 		          		<td>{{ $admin->user }}</td>
-		          		<td>{{ $admin->password }}</td>
-		          		<td>{{ $admin->email }}<td>
+		          		<td>{{ $admin->avatar}}</td>
+		          		<td>{{ $admin->email}}</td>
+                  <td>
+                   @foreach($admins->avatar as $image)
+    <img src="{{ asset('/images/perfil/'.$image->avatar)}}">
+    @endforeach </td>
+		          		<td><a href="#modal-msj" class="btn tooltipped modal-trigger  grey darken-3" data-position="bottom" data-delay="50" data-tooltip="Enviar mensaje"><i class="material-icons">message</i></a></td>
 		          		<td>
 		          			<a href="{{ route('admin.paneladmin.edit', $admin->id) }}" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Editar Admin">
 		          				<i class="material-icons">edit</i>
@@ -60,4 +62,47 @@
     		{{ $admins->render() }}
     	</div>
     </div>
+    <!--star modal messages-->
+        <div id="modal-msj" class="modal">
+          <div class="modal-content">
+            <h4>Enviar mensaje</h4>
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">email</i>
+                    <input id="icon_email" type="text" class="validate" placeholder="Felipe Guzman" disabled selected >
+                    <label for="icon_email">A: </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">mood</i>
+                    <input id="icon_msj" type="text" class="validate">
+                    <label for="icon_msj">Asunto</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">inbox</i>
+                    <textarea id="mensaje" class="materialize-textarea"></textarea>
+                    <label for="mensaje">Mensaje</label>
+                  </div>
+                </div>
+                 <div class="row">
+                  <div class="file-field input-field">
+                    <div class="btn">
+                      <span>Subir archivo</span>
+                      <input type="file">
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-fixed-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Enviar</a>
+          </div>
+      </div><!--end modal mensaje admin-->
 @endsection

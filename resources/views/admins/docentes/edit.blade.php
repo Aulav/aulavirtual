@@ -2,9 +2,18 @@
 @section('title', 'Editar docente' . $docente->name)
 
 @section('contenido')
-  <br><br>
-
-
+<div class="row">
+          <div class="col s12">
+              <nav>
+                  <div class="nav-wrapper teal darken-1">
+                    <div class="col s12">
+                      <a href="{{ asset('/alumno/panel') }}" class="breadcrumb">Atrás</a>
+                      <span class="breadcrumb">Editar Alumnos</span>
+                    </div>
+                  </div>
+              </nav>
+          </div>
+      </div>
 	<div class="row">
     {!! Form::open(['route' => ['docente.panel.update', $docente], 'method' => 'PUT']) !!}
       <div class="row">
@@ -85,5 +94,6 @@
       		{!! Form::submit('Editar Docente', ['class' => 'btn']) !!}
     	</div>  
     {!! Form::close(); !!}
+  </div>
   </div>
 @endsection

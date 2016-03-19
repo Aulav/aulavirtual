@@ -14,6 +14,14 @@
   <link type="text/css" rel="stylesheet" href="{{ asset('css/materialize.min.css') }}"  media="screen,projection"/>
   <!--import ajax for preloader-->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <!--alerts desvanece en 3 segundos-->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      setTimeout(function() {
+          $(".content").fadeOut(1500);
+      },3000);
+    });
+  </script>
 <style type="text/css">
   body {
     display: flex;
@@ -33,33 +41,32 @@
       <div class="indeterminate"></div>
     </div>
   </div>
-   <nav class="nav-login">
-
-    <div class="nav-wrapper">
-      
-      <img src="{{ asset('images/logo.jpg') }}" class="brand-logo center nav-logo circle responsive-img">
-
-      <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
-    </div>
+   <nav class="nav-login z-depth-3">
+      <div class="nav-wrapper">
+        <img src="{{ asset('images/logo.jpg') }}" class="brand-logo center nav-logo circle responsive-img">
+        <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
+      </div>
   </nav>
   <div class="container"><!--star contenido inicial-->
     <div class="col m6">
         <div class="row">
             <div class="col s12">
                 @if (Session::has('message'))
-                    <p class="flow-text center">{{ Session::get('message') }}</p>
+                    <p class="content flow-text error">
+                    {{ Session::get('message') }}</p>
                 @endif
             </div>
         </div>
         <div class="row">
-            <div class="col s12">
-                @if ($errors->has())
-                    @foreach ($errors->all() as $error)
-                        <p class="flow-text center">{{ $error }}</p>
-                    @endforeach
-                @endif
-            </div>
+          <div class="col s12">
+            @if ($errors->has())
+              @foreach ($errors->all() as $error)   
+                 <p class="content flow-text error">{{ $error }}</p>
+              @endforeach
+            @endif
+          </div>
         </div>
+   
         @yield('contenido')
     </div>
   </div>

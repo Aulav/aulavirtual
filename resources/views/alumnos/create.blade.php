@@ -14,7 +14,9 @@
 				</div>
 			</nav>
 		</div>
+		
 	</div>
+
 	<div class="row">
 		<div class="col s12">
 			<h1 class="center flow-text">Agregar Nuevo Alumno</h1>
@@ -35,18 +37,6 @@
 					<i class="material-icons">person</i>
 					{!! Form::label('name', 'Nombre del Alumno', ['for' => 'icon-prefix']) !!}
 					{!! Form::text('name', null, ['class' => 'validate', 'placeholder' => 'Escribe aqui el nombre', 'id' => 'icon-prefix'])!!}
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s6">
-					<i class="material-icons">account_circle</i>
-					{!! Form::label('user', 'Nombre de Usuario', ['for' => 'icon-prefix'])!!}
-					{!! Form::text('user',null,['class' => 'validate', 'placeholder' => 'Nombre de Usuario','id' => 'icon-prefix'])!!}
-				</div>
-				<div class="input-field col s6">
-					<i class="material-icons">vpn_key</i>
-					{!! Form::label('passwor', 'Contraseña', ['for' => 'icon-prefix']) !!}
-					{!! Form::password('password',null,['class' => 'validate', 'placeholder' => 'Contraseña', 'id' => 'icon-prefix'])!!}
 				</div>
 			</div>
 			<div class="row">
@@ -88,25 +78,8 @@
                     	{!! Form::number('edad', 'value');!!}
                     </div>
             </div>
-             <div class="row">	       
-	        	<div class="input-field col s12 m6">	        	
-				{!! Form::select('rol_id', $roles, null,['placeholder' =>'Selecciona un tipo de Usuario','required']) !!}			
-	        	</div>
-	        </div>    
-            <p>Si desea puede subir aquí un listado de archivo en formato CSV (Excel) Impirma la plantilla <a href="plantilla.blade.php">Aquí</a></p>
-            <div class="row">
-                <div class="col s12 m12">
-                    <div class="file-field input-field">
-                        <div class="btn">
-                            <span>Archivo</span>
-                            <input type="file" name="listado">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" value="Ningún archivo seleccionado" type="text">
-                        </div>
-                    </div>
-                </div>
-            </div>
+                 
+            
             <div class="row">
 		    	<div class="col s12">
 		      		{!! Form::submit('Crear alumno', ['class' => 'btn']) !!}

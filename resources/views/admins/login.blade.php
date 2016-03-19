@@ -1,29 +1,22 @@
 @extends('plantillas.login')
 @section('title', 'Login del administrador')
 @section('contenido')
-    <div class="row">
-      <h2 class="center-align">Login</h2>
+    <div class="card-login form z-depeth-4">
+     <!-- <h4 class="center-align">Login</h4>-->
+      <div class="foto-login"><img src="../images/school.svg"/></div>
         {!! Form::open(['route' => 'admin.acceso', 'method' => 'POST']) !!}
-            <div class="row">
-              <div class="input-field col s12">
+           
+             <div class="input-field col s12 m6">
+                <i class="material-icons prefix">person</i>
                 {!! Form::label('email', 'correo Electronico') !!}
                 {!! Form::email('email', null, ['class' => '', 'placeholder' => 'example@example.com']) !!}
               </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
+       
+                 <div class="input-field col s12 m6">
+                <i class="material-icons prefix">vpn_key</i>
                 {!! Form::label('password', 'Contraseña') !!}
                 {!! Form::password('password', ['class' => 'form-control', 'placeholder' => '*******************']) !!}
               </div>
-            </div>
-            <div class="row">
-              <div class="col s12">
-                  <p>
-                    <input type="checkbox" id="remember">
-                    <label for="remember">Remember me</label>
-                  </p>
-              </div>
-            </div>
             <div class="divider"></div>
             <div class="row">
               <div class="col m12">

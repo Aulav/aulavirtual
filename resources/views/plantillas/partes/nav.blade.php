@@ -1,7 +1,7 @@
 <!--inithial menu-->
     <!-- Dropdown Structure -->
     <ul id="dropdown1" class="dropdown-content ">
-        <li><a href="profile_user.html"><i class="material-icons ">person</i>Perfíl</a></li>
+        <li><a href="{{ asset('admin/profile') }}"><i class="material-icons ">person</i>Perfíl</a></li>
         <li class="divider"></li>
         @if (Session::get('rol') == 1)
             <li><a href="{{ asset('admin/logout') }}"><i class="material-icons">input</i>Salir</a></li>

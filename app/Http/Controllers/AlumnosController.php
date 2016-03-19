@@ -3,13 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\filesystem;
 use App\Http\Requests;
 use Session;
 use App\Alumno;
 use App\Rol;
 use App\Institucion;
-use Laracasts\Flash\Flash;
+// Import the necessary classes
+use Cartalyst\Alerts\Native\Facades\Alert;
+
+// Include the composer autoload file
+
 use App\Administrador;
 
 
@@ -30,7 +34,7 @@ class AlumnosController extends Controller
 
     public function getLogin()
     {        
-        return view('alumnos.login');
+        return view('/alumnos.login');
     }
 
     public function getAcceso( Request $request )
@@ -83,11 +87,15 @@ class AlumnosController extends Controller
     {
         $alumno = new Alumno($request->all());
         $alumno->reticula_id = 1;
+        $alumno->rol_id = 4;
+        $alumno->user = $request->matricula;
+     
+        $alumno->password=bcrypt($request->matricula);
        
         $alumno->save();
-
-        Flash::success('El Alumno ' . $alumno->name. ' ha sido creado con exito');
-        return redirect()->route('/alumno/panel');
+        Session::flash('message', 'El alumno ' .$alumno->name. ' Ha sido creado Correctamente');
+       
+        return redirect('/alumno/panel');
     }
 
     public function show()
@@ -115,16 +123,25 @@ class AlumnosController extends Controller
         $alumno = Alumno::find($id);
         $alumno->fill($request->all());
         $alumno->save();
-
-        Session::flash('message', 'El Alumno ' . $alumno->name . ' ha sido editado correctamente');
+     
+        Session::Flash('message', 'El Alumno ' . $alumno->name . ' ha sido editado Exitosamente');
+        
         return redirect('/alumno/panel');
+    }
+    public function getImport()
+    {
+        return redirect('/alumno/panel/createExcel');
     }
     
     public function destroy($id)
     {
         $alumno = Alumno::find($id);
         $alumno->delete();
+
+        Session::flash('message', 'El Alumno ' .$alumno->name . ' se ah Eliminado Correctamente');
+
         Session::flash('message', 'El Alumno' .$alumno->name . ' se ha Eliminado Correctamente');
+
        return redirect('/alumno/panel');
 
     }   

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Alumno extends Model
 {
     use SoftDeletes;
+
     protected $table = 'alumnos';
     protected $dates = ['deleted_at'];
    
@@ -47,5 +48,9 @@ class Alumno extends Model
     public function examenes()
     {
         return $this->belongsToMany('App\Examen');
+    }
+    public function images()
+    {
+        return $this->hasMany('App\Image');
     }
 }

@@ -14,6 +14,21 @@
             </nav>
           </div>
         </div>
+<<<<<<< HEAD
+=======
+      </nav>
+    </div>
+  </div>
+	<div class="row">
+    <h1 class="center flow-text">Editar Administrador {{ $admin->name }}</h1>
+    {!! Form::open(['route' => ['admin.paneladmin.update', $admin], 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
+       <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">school</i>
+          {!! Form::label('name', 'Nombre del admin', ['for' => 'icon-prefix']) !!}
+          {!! Form::text('name', $admin->name, ['class' => 'validate', 'placeholder' => 'Escribe aquí el nombre', 'id' => 'icon-prefix']) !!}
+        </div>
+>>>>>>> a5a3fe0351c4559c743d6951bb74a965044bd32d
 
       	<div class="row">
           <h1 class="center flow-text">Editar Administrador {{ $admin->name }}</h1>
@@ -97,4 +112,15 @@
           	</div>  
           {!! Form::close(); !!}
         </div>
+<<<<<<< HEAD
+=======
+      </div>
+      <div class="row">
+    	<div class="col s12">
+      		{!! Form::submit('Editar Administrador', ['class' => 'btn']) !!}
+    	</div>  
+    {!! Form::close(); !!}
+  </div>
+  </div>
+>>>>>>> a5a3fe0351c4559c743d6951bb74a965044bd32d
 @endsection
