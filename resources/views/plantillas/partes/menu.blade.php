@@ -2,9 +2,9 @@
 <div class="collection ">
     <div class="logo"><a id="logo-container" class="brand-logo">
     <a href="{{ asset('admin/profile') }}">
-    @foreach($admins->avatar as $avatar)
-    <img src="{{ asset('/images/perfil/'.$avatar->avatar)}}">
-    @endforeach       
+    
+    <img src="{{ asset('/images/user.png') }} " class="responsive-img circle no-grande" >
+         
 
     </div>
         <p class="user-name"> {{ Session::get('name') }} </p>
