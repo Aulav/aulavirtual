@@ -10,11 +10,8 @@ use App\Administrador;
 use App\Institucion;
 use App\Rol;
 use App\Docente;
-<<<<<<< HEAD
 use App\Grafica;
-=======
 use App\Image;
->>>>>>> a5a3fe0351c4559c743d6951bb74a965044bd32d
 
 class AdminsController extends Controller
 {
@@ -22,12 +19,9 @@ class AdminsController extends Controller
     {
         if( Session::has('id') ){
             $admins = Administrador::orderBy('name')->paginate(3);
-<<<<<<< HEAD
             return view('graficas.index', ['admins' => $admins]);
-=======
            
             return view('admins.administradores.index', ['admins' => $admins]);
->>>>>>> a5a3fe0351c4559c743d6951bb74a965044bd32d
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
             return redirect('/admin/login');

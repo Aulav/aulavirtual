@@ -187,7 +187,7 @@ Route::group(['middleware' => ['web']], function () {
 	    
 	});
 
-<<<<<<< HEAD
+
 	/**
 	 * Grupo de rutas para las graficas
 	 */
@@ -203,7 +203,3 @@ Route::group(['middleware' => ['web']], function () {
 	});
 
 });
-=======
-});
-
->>>>>>> a5a3fe0351c4559c743d6951bb74a965044bd32d

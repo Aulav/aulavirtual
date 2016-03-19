@@ -21,7 +21,7 @@
 			                    UNION
 			                    SELECT roles.name, COUNT(*) FROM docentes, roles where docentes.rol_id=roles.id 
 			                    group by roles.name";
-			            $result = mysqli_query(mysqli_connect("localhost","root","","aulavirtual"),$sql)
+			            $result = mysqli_query(mysqli_connect("localhost","root","","test"),$sql);
 			            ?>
 						<table width="75%" align="centered" class="highlight teal lighten-4">
 			              <thead>
@@ -31,7 +31,7 @@
 			                  </tr>
 			                </thead>
 			                <tbody>
-			                        <?php     
+			                        <?php
 			                       while($row=$result->fetch_assoc()) { ?>
 			                              <tr>                                      
 			                              <td><?php echo $row['name'];?></td>  
