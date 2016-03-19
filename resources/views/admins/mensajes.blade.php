@@ -1,5 +1,5 @@
 @extends('plantillas.main')
-@section('title', 'Editar Administrador' . $admin->name)
+@section('title', 'Enviar mensaje' . $admin->name)
 
 @section('contenido')
         <div class="row">
@@ -8,20 +8,20 @@
               <div class="nav-wrapper teal darken-1">
                 <div class="col s12">
                   <a href="{{ asset('/admin/paneladmin') }}" class="breadcrumb">Atras</a>
-                    <span class="breadcrumb">Editar Administrador</span>
+                    <span class="breadcrumb">Enviar mensaje</span>
                 </div>
               </div>
             </nav>
           </div>
         </div>
 
-      	<div class="row">
-          <h1 class="center flow-text">Editar Administrador {{ $admin->name }}</h1>
+        <div class="row">
+          <h1 class="center flow-text">Enviar mensaje {{ $admin->name }}</h1>
           {!! Form::open(['route' => ['admin.paneladmin.update', $admin], 'method' => 'PUT', 'files' => true]) !!}
              <div class="row">
               <div class="input-field col s6">
                 <i class="material-icons prefix">school</i>
-                {!! Form::label('name', 'Nombre del admin', ['for' => 'icon-prefix']) !!}
+                {!! Form::label('name', 'De', ['for' => 'icon-prefix']) !!}
                 {!! Form::text('name', $admin->name, ['class' => 'validate', 'placeholder' => 'Escribe aquí el nombre', 'id' => 'icon-prefix']) !!}
               </div>
 
@@ -92,9 +92,9 @@
               </div>
             </div>
             <div class="row">
-          	<div class="col s12">
-            		{!! Form::submit('Editar Administrador', ['class' => 'btn']) !!}
-          	</div>  
+            <div class="col s12">
+                {!! Form::submit('Editar Administrador', ['class' => 'btn']) !!}
+            </div>  
           {!! Form::close(); !!}
         </div>
 @endsection

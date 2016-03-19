@@ -164,4 +164,18 @@ Route::group(['middleware' => ['web']], function () {
 	    
 	});
 
+	/**
+	 * Grupo de rutas para las graficas
+	 */
+
+	Route::group(['prefix' => 'grafica'], function () {
+	    Route::resource('panel', 'GraficaController');
+
+	    Route::get('Graficas/{id}/destroy', [
+	    	'uses'	=> 'GraficasController@destroy',
+	    	'as'	=> 'Graficas.panel.destroy',
+	    ]);
+	    
+	});
+
 });
