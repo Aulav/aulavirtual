@@ -39,4 +39,8 @@ class Docente extends Model
     {
         return $this->belongsToMany('App\Grupo');
     }
+    public function images()
+    {
+        return $this->hasMany('App\Image');
+    }
 }

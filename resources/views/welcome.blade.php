@@ -18,7 +18,7 @@
     <link href="{{ asset('front/min/custom-min.css')}}" type="text/css" rel="stylesheet" >
      <link type="text/css" rel="stylesheet" href="{{ asset('css/materialize.min.css') }}"  media="screen,projection"/>
    
-<body id="top" class="scrollspy">
+<body id="top" class="scrollspy ">
 <!-- animation Pre Loader -->
 <div id="loader-wrapper">
     <div id="loader"></div>
@@ -50,7 +50,7 @@
     </nav>
 </div>
 <!--End Navegacion de la pagina principal-->
-<div class="section no-pad-bot" id="banner_plataform">
+<div class="section no-pad-bot intro " id="banner_plataform">
     <div class="container">
         <h1 class="text_b center header cd-headline letters type">
             <span>Bienvenido</span>
@@ -113,12 +113,22 @@
         </div>
     </div>
 </div><!--en servicios-->
-<div class="footer-copyright default_color">
-        <div class="container">
-            © 2016 Plataforma Educativa <a class="white-text" href="http://sotfmark.tab">SoftMark Inc.</a>
+<footer class="page-footer default_color">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 center">
+                <a href="#" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Facebook"><img src="{{ asset('/images/icons/you_tube.png') }}"></a>
+                <a href="#" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Twitter"><img src="{{ asset('/images/icons/twitter.png') }}"></a>
+                 <a href="#" class="tooltipped " data-position="top" data-delay="50" data-tooltip="Youtebe"><img src="{{ asset('/images/icons/facebook.png') }}"></a> 
+              </div>
+            </div>
         </div>
+    <div class="footer-copyright default_color">
+        <div class="container center">
+        © 2016 Plataforma Educativa <a class="white-text" href="http://sotfmark.tab">SoftMark Inc.</a>
     </div>
 </footer>
+
 
      <!--  Scripts para el tema principal-->
     <script src="{{ asset('front/min/plugin-min.js')}}"></script>

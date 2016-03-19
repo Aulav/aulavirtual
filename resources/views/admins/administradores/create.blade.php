@@ -1,14 +1,14 @@
 @extends('plantillas.main')
-@section('title', 'Crear nuevo Docente')
+@section('title', 'Crear nuevo Administrador')
 
 @section('contenido')
 	<div class="row">
-	<h1 class="center flow-text">Registrar un Nuevo Docente</h1>
-    {!! Form::open(['route' => 'docente.panel.store', 'method' => 'POST', 'files' => true]) !!}
+	<h1 class="center flow-text">Registrar un Nuevo Administrdor</h1>
+    {!! Form::open(['route' => 'admin.paneladmin.store', 'method' => 'POST', 'files' => true]) !!}
       <div class="row">
         <div class="input-field col s4">
         	<i class="material-icons prefix">school</i>
-        	{!! Form::label('name', 'Nombre del docente', ['for' => 'icon-prefix']) !!}
+        	{!! Form::label('name', 'Nombre del admin', ['for' => 'icon-prefix']) !!}
         	{!! Form::text('name', null, ['class' => 'validate', 'placeholder' => 'Escribe aquí el nombre', 'id' => 'icon-prefix']) !!}
         </div>
 
@@ -21,19 +21,6 @@
         	{!! Form::label('ap_materno', 'Apellido Materno', ['for' => 'icon-prefix']) !!}
         	{!! Form::text('ap_materno', null, ['class' => 'validate', 'placeholder' => 'Escribe aquí Apellido Materno', 'id' => 'icon-prefix']) !!}
         </div>
-
-  		<div class="input-field col s6">
-        	<i class="material-icons prefix">school</i>
-        	{!! Form::label('user', 'Usuario', ['for' => 'icon-prefix']) !!}
-        	{!! Form::text('user', null, ['class' => 'validate', 'placeholder' => 'Escribe aquí nombre de Usuario', 'id' => 'icon-prefix']) !!}
-        </div>
-
-        <div class="input-field col s6">
-        	<i class="material-icons prefix">school</i>
-        	{!! Form::label('password', 'Passwrod', ['for' => 'icon-prefix']) !!}
-        	{!! Form::password('password', null, ['class' => 'password', 'placeholder' => 'Escribe aquí su password', 'id' => 'icon-prefix']) !!}
-        </div>
-
         <div class="input-field col s6">
         	<i class="material-icons prefix">vpn_key</i>
         	{!! Form::label('direccion', 'Dirección', ['for' => 'icon-prefix']) !!}
@@ -63,7 +50,7 @@
              </div>
         </div>
       </div>
-      <div class="row">
+      <!--<div class="row">
 	    <div class="input-field col s12">
 	     	<div class="file-field input-field">
 		    	<div class="btn">
@@ -75,12 +62,13 @@
 		      	</div>
     		</div>          	
         </div>
-      </div>
+      </div>-->
       <div class="row">
     	<div class="col s12">
-      		{!! Form::submit('Crear Docente', ['class' => 'btn']) !!}
+      		{!! Form::submit('Crear Administrador', ['class' => 'btn']) !!}
     	</div>  
       </div>
     {!! Form::close(); !!}
   </div>
 @endsection
+

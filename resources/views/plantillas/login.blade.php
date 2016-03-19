@@ -41,36 +41,32 @@
       <div class="indeterminate"></div>
     </div>
   </div>
-   <nav class="nav-login">
-
-    <div class="nav-wrapper">
-      
-      <img src="{{ asset('images/logo.jpg') }}" class="brand-logo center nav-logo circle responsive-img">
-
-      <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
-    </div>
+   <nav class="nav-login z-depth-3">
+      <div class="nav-wrapper">
+        <img src="{{ asset('images/logo.jpg') }}" class="brand-logo center nav-logo circle responsive-img">
+        <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
+      </div>
   </nav>
   <div class="container"><!--star contenido inicial-->
     <div class="col m6">
         <div class="row">
             <div class="col s12">
                 @if (Session::has('message'))
-                    <p class="content card-panel  red darken-4 z-depth-5 center">
+                    <p class="content flow-text error">
                     {{ Session::get('message') }}</p>
                 @endif
             </div>
         </div>
         <div class="row">
-
-            <div class="col s12">
-                @if ($errors->has())
-                    @foreach ($errors->all() as $error)
-                  
-                        <p class="content card-panel  red lighten-1 z-depth-5 center">{{ $error }}</p>
-                    @endforeach
-                @endif
-            </div>
+          <div class="col s12">
+            @if ($errors->has())
+              @foreach ($errors->all() as $error)   
+                 <p class="content flow-text error">{{ $error }}</p>
+              @endforeach
+            @endif
+          </div>
         </div>
+   
         @yield('contenido')
     </div>
   </div>

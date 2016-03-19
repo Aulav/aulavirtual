@@ -10,9 +10,18 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Book;
 use App\BooksImport;
 use App\User;
+use App\Administrador;
+
 
 class ImportController extends Controller
 {
+	public function index()
+    {
+        
+
+        return view('admins.profile');
+       
+    }
 	public function create()
     {
         if(Session::has('id')){
@@ -70,32 +79,36 @@ class ImportController extends Controller
 
 		
     }
-
-    
-    /*public function import()
+ 	public function profile()
     {
+        return view('admins.profile');
+       
+    }
+    public function updateProfile(Request $request)
+    {
+       /*$this->validate(
+            $request, [
+                'avatar'        => 'image',
+            ]
+        );*/
+        if($request->file('avatar'))
+        {
+            $file = $request->file('avatar');
+          
+            $name = 'perfil_'. time() . '.' .$file->getClientOriginalExtension();
+            $path = public_path() . '/images/perfil/';
+            $file->move($path, $name);
+            //dd($file);
+            
+        }
+            $admin = new Administrador();
+            $admin->where('email', '=', Session::get('email'))->update(['avatar' => '/images/perfil/'.$name]);
+           /* $user->where('email', '=', Auth::user()->email)->update(['perfiles' => 'perfiles/'.$name]);*/
 
-    	Excel::load('alumnos.csv', function($reader){
-    		foreach ($reader->get() as $alumno) {
-    			Alumno::create([
-    				'matricula' => $alumno->matricula, 
-		        	'name' => $alumno->name, 
-		        	/*'user' => $alumno->matricula, 
-		        	'password' => $alumno->bcrypt($matricula), 
-		        	'ap_paterno' => $alumno->ap_paterno, 
-		        	'ap_materno' => $alumno->ap_materno, 
-		        	'direccion' => $alumno->direccion, 
-		        	'tel' => $alumno->telefono, 
-		        	'email' => $alumno->email, 
-		        	'sexo' => $alumno->sexo, 
-		        	'edad' => $alumno->edad, 
-		        	'reticula_id' => 1,
-		        	'institucion_id' => 1, 
-		        	'rol_id' => 4, 
-		        	'grupo_id' => 1
-    				]);
-    		}
-    	});
-    	return Alumno::all();
-    }*/
+            return redirect('/admin/profile')->with('admin',$admin);
+
+        /*Session::flash('message', 'SU imagen de perfil ah sido cambiada con exito');
+        return redirect('/admin/paneladmin');*/
+        
+    }
 }

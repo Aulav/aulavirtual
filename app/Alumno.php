@@ -49,4 +49,8 @@ class Alumno extends Model
     {
         return $this->belongsToMany('App\Examen');
     }
+    public function images()
+    {
+        return $this->hasMany('App\Image');
+    }
 }

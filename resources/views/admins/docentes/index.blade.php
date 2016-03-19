@@ -3,17 +3,8 @@
 
 @section('contenido')
 
-    <!-- Este row probablemente se quite de aqui -->
-    <div class="row">
-        <div class="col s12">
-            @if (Session::has('message'))
-                <p class="flow-text center">{{ Session::get('message') }}</p>
-            @endif
-        </div>
-    </div>
-    <!-- /Este row probablemente se quite de aqui -->
-    <div class="row center">
-        <a class="btn-large waves-effect waves-light btn light-blue accent-3  z-depth-5 left" 
+    <div class="row col s3">
+        <a class="waves-effect waves-light btn btn-custom blue-grey darken-4 z-depth-5 left" 
             href="{{ route('docente.panel.create')}}">
                 Crear nuevo Docente
         </a>        
@@ -51,7 +42,7 @@
                         </td>
                         <td>
                             {!!Form::open(['route'=>['docente.panel.destroy', $docente->id], 'method'=>'DELETE'])!!}
-                            {!!Form::submit('Eliminar',['class'=>'btn btn-danger'])!!}
+                            {!!Form::submit('Eliminar',['class'=>'btn red'])!!}
                             {!!Form::close()!!}
                            <!-- <a href="{{ route('docente.panel.destroy', $docente->id) }}" onclick="return confirm('Seguro desea eliminar este docente?')" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Eliminar Docente">
                                 <i class="material-icons">delete</i>

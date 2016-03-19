@@ -1,6 +1,6 @@
 @extends('plantillas.main')
 
-@section('title', 'Grupos') 
+@section('title', 'Alumnos') 
 
 @section('contenido')
   	<div class="col s6 m6 l4">
@@ -41,7 +41,9 @@
 		              <th data-field="clave">No. de Materias</th>
 		              <th data-field="editar">Faltas</th>
 		              <th data-field="eliminar">Promedio</th>
-		              <th data-field="settings">Configuraciones</th>
+		              <th></th>
+		              <th></th>
+		              <th data-field="settings">Confi</th>
 		          </tr>
 		        </thead>
 		        <tbody>
@@ -59,13 +61,13 @@
 		          			</a>
 		          		</td>
 		          		<td>
-		          		{!! Form::open(['route'=>['alumno.panel.destroy', $alumno->id], 'method' => 'DELETE'])!!}
-		          		{!! Form::submit('ELiminar', ['class'=>'btn'])!!}
+		          		{!! Form::open(['route'=>['alumno.panel.destroy', $alumno->id], 'method'=>'DELETE'])!!}
+
+		          		{!! Form::submit('Eliminar',['class'=>'btn red' ])!!}
 		          		{!! Form::close() !!}
-		          			<a href="{{ route('alumno.panel.destroy', $alumno->id) }}"  class="tooltipped" data-position="top" data-delay="50" data-tooltip="Eliminar alumno">
-		          				<i class="material-icons">delete</i>
-		          			</a>
+		          			
 		          		</td>
+		          		<td><a href="#configuracion" class="modal-trigger"><i class="tiny material-icons ">settings</i></a></td>
 		        	</tr>
     			@endforeach
         		</tbody>
@@ -77,4 +79,16 @@
     		{{ $alumnos->render() }}
     	</div>
     </div>
+    <!-- Modal para las configuraciones de los alumnos -->
+    <div id="configuracion" class="modal">
+        <div class="modal-content">
+            <p class="flow-text">Elija una opción:</p>
+                <p class="flow-text"><a href="#!"><i class="material-icons right">info</i>Detalles del alumno</a></p>
+                <p class="flow-text"><a href="#mensaje" class="modal-trigger"><i class="material-icons right">mail_outline</i>Enviar mensaje</a></p>
+                <p class="flow-text"><a href="#"><i class="material-icons right">star</i>Avances</a></p>
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:void(0)" class="modal-action modal-close btn-flat">Cancelar</a>
+        </div>
+      	</div>
 @endsection

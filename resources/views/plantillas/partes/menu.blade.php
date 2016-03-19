@@ -1,14 +1,19 @@
 <!-- Page Layout here -->    
 <div class="collection ">
     <div class="logo"><a id="logo-container" class="brand-logo">
-        <img src="{{ asset('images/user.png') }}" class="responsive-img circle no-grande"></a>
+    <a href="{{ asset('admin/profile') }}">
+    @foreach($admins->avatar as $avatar)
+    <img src="{{ asset('/images/perfil/'.$avatar->avatar)}}">
+    @endforeach       
+
     </div>
         <p class="user-name"> {{ Session::get('name') }} </p>
         <a href="{{ asset('/admin/panel') }}" class="collection-item active"><i class="material-icons">home</i>Inicio</a>
         <a href="{{ asset('/alumno/panel')}}" class="collection-item "><i class="material-icons">people</i>Alumnos</a>
         <a href="{{ asset('/docente/panel')}}" class="collection-item"><i class="material-icons">person</i>Docentes</a>
 
-        <a href="admins.html" class="collection-item"><i class="material-icons">person</i>Administradores</a>
+        <a href="{{ asset('/admin/paneladmin')}}" class="collection-item"><i class="material-icons">person</i>Administradores</a>
+
         <a href="{{ asset('/grupo/panel') }}" class="collection-item"><i class="material-icons">group</i>Grupos</a>
         <a href="asignaturas.html" class="collection-item"><i class="material-icons">import_contacts</i>Materias</a>
         <a href="graficos.html" class="collection-item"><i class="material-icons">insert_chart</i>Graficas</a>

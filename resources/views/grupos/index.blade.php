@@ -2,8 +2,8 @@
 @section('title', 'Grupos') 
 
 @section('contenido')	
-	<div class="row center">
-        <a class="btn-large waves-effect waves-light btn light-blue accent-3  z-depth-5 left" 
+	<div class="row col s3">
+        <a class="waves-effect waves-light btn btn-custom blue-grey darken-4 z-depth-5 left" 
         	href="{{ route('grupo.panel.create')}}">
         		Crear Grupo
         </a>        

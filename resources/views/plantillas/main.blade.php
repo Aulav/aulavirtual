@@ -34,7 +34,8 @@
 	<div class="row">
         <div class="col s12">
             @if (Session::has('message'))
-                <p class="content card-panel cyan z-depth-5 center flow-text center ">{{ Session::get('message') }}</p>
+                <p class="content card-panel cyan z-depth-5 center flow-text center ">
+                {{ Session::get('message') }}</p>
             @endif
         </div>
     </div>
@@ -47,11 +48,11 @@
 	          2-Menu Profesor que este caso seria practicamente lo mismo
 	          3-Menu alumnos-->
 	        @include('plantillas.partes.menu')
- 			
+ 			 
  		
     	</div><!--End Contenido de toda la pagina-->
     	<div class="col s12 m9">
-    		@include('plantillas.partes.errors')
+    	 @include('plantillas.partes.errors')
        	 	@yield('contenido')
     	</div>
   	</div><!--end Todo el contenido-->  

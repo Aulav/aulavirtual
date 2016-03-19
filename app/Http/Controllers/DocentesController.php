@@ -16,7 +16,7 @@ class DocentesController extends Controller
     public function index()
     {
         if( Session::has('id') ){
-           $docentes = Docente::orderBy('name')->paginate(10);
+           $docentes = Docente::orderBy('name')->paginate(5);
             return view('admins.docentes.index', ['docentes' => $docentes]);
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
@@ -85,13 +85,12 @@ class DocentesController extends Controller
                 'password'    => 'required',
                 'tel'         => 'required',
                 'email'       => 'required',
-                'sexo'        => 'Masculino',  
+                'sexo'        => 'required',  
                 
             ]
         );
 
         $docente = new docente($request->all());
-        $docente->sexo = 'masculino';
         $docente->institucion_id = 1;
         $docente->rol_id = 2;
         $docente->save();
@@ -125,12 +124,12 @@ class DocentesController extends Controller
                 'password'    => 'required',
                 'tel'         => 'required',
                 'email'       => 'required',
+                'sexo'        => 'required',
             ]
         );
 
         $docente = docente::find($id);
         $docente->fill($request->all());
-        $docente->sexo = 'masculino';
         $docente->institucion_id = 1;
         $docente->rol_id = 2;
         $docente->save();

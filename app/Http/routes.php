@@ -34,6 +34,11 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::group(['prefix' => 'admin'], function () {
 	    Route::resource('panel', 'AdminsController');
+
+	    Route::get('admins/{id}/destroy', [
+	    	'uses'	=> 'AdminsController@destroy',
+	    	'as'	=> 'admins.panel.destroy',
+	    ]);
 	    
 	    Route::get('login', [
 	    	'uses'		=>	'AdminsController@getLogin',
@@ -49,7 +54,23 @@ Route::group(['middleware' => ['web']], function () {
 	    	'uses'		=>	'AdminsController@getAcceso',
 	    	'as'		=> 	'admin.acceso'
 	    ]);
-
+	    /*Route::get('profile', 'AdminsController@profile');
+		Route::post('updateprofile', 'AdminsController@updateProfile');*/
+		/*Route::resource('profile', 'AdminsController');
+	    Route::get('profile', [
+	    	'uses'      => 'AdminsController@import',
+	    	'as'        => 'admin.profile'
+	    	]); */
+	     Route::resource('profile', 'ImportController');
+	     Route::get('profile', [
+	    	'uses'      => 'ImportController@profile',
+	    	'as'        => 'admin.profile'
+	    	]); 
+	    Route::resource('profile', 'ImportController');
+	    Route::post('updateprofile', [
+	    	'uses'      => 'ImportController@updateProfile',
+	    	'as'        => 'admin.updateprofile'
+	    	]); 
 	});
 
 	/**
@@ -73,6 +94,7 @@ Route::group(['middleware' => ['web']], function () {
 	    	'uses'		=>	'DocentesController@getAcceso',
 	    	'as'		=> 	'docente.acceso'
 	    ]);
+	    
 	});
 
 
@@ -101,7 +123,7 @@ Route::group(['middleware' => ['web']], function () {
 	    	'uses'		=>	'AlumnosController@getAcceso',
 	    	'as'		=> 	'alumno.acceso'
 	    ]);
-	      Route::resource('import', 'ImportController');
+	    Route::resource('import', 'ImportController');
 	    Route::get('import', [
 	    	'uses'      => 'ImportController@import',
 	    	'as'        => 'alumnos.createExcel'
@@ -152,4 +174,18 @@ Route::group(['middleware' => ['web']], function () {
 	    
 	});
 
+	/**
+	 * Grupo de rutas para los docentes
+	 */
+
+	Route::group(['prefix' => 'admin'], function () {
+	    Route::resource('paneladmin', 'AdminsController');
+	    Route::get('Admins/{id}/destroy', [
+	    	'uses'	=> 'AdminsController@destroy',
+	    	'as'	=> 'Admins.panel.destroy',
+	    ]);
+	    
+	});
+
 });
+
