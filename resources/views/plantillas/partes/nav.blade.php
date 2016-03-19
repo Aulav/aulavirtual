@@ -49,7 +49,7 @@
             <a href="index.html" class="brand-logo logo-left">PLATAFORMA EDUCATIVA</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-            <li><a href="sass.html" >Institucion</a></li>
+            <li><a href="{{ asset('/institucion/panel')}}" >Institucion</a></li>
             <li><a href="#modal-msj" class="modal-trigger">Mensajes</a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Utilidades<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="admins.html" data-activates="dropdown1">{{ Session::get('email') }}<i class="material-icons right">arrow_drop_down</i></a></li>

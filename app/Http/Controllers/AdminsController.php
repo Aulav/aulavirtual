@@ -10,16 +10,13 @@ use App\Administrador;
 use App\Institucion;
 use App\Rol;
 use App\Docente;
-<<<<<<< HEAD
-use App\Grafica;
-use App\Image;
-=======
 
 use App\Grafica;
-
 use App\Image;
 
->>>>>>> 9f667cb22a87e20c3d4b4ee9c219b28ae01f5375
+
+
+
 
 class AdminsController extends Controller
 {
@@ -27,13 +24,11 @@ class AdminsController extends Controller
     {
         if( Session::has('id') ){
             $admins = Administrador::orderBy('name')->paginate(3);
-<<<<<<< HEAD
-            return view('graficas.index', ['admins' => $admins]);
-=======
+            //return view('graficas.index', ['admins' => $admins]);
 
-            return view('graficas.index', ['admins' => $admins]);
 
->>>>>>> 9f667cb22a87e20c3d4b4ee9c219b28ae01f5375
+            /*return view('graficas.index', ['admins' => $admins]);
+*/
            
             return view('admins.administradores.index', ['admins' => $admins]);
         }else{

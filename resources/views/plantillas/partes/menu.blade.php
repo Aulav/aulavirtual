@@ -15,9 +15,9 @@
         <a href="{{ asset('/admin/paneladmin')}}" class="collection-item"><i class="material-icons">person</i>Administradores</a>
 
         <a href="{{ asset('/grupo/panel') }}" class="collection-item"><i class="material-icons">group</i>Grupos</a>
-        <a href="asignaturas.html" class="collection-item"><i class="material-icons">import_contacts</i>Materias</a>
+        <a href="{{ asset('/materia/panel')}}" class="collection-item"><i class="material-icons">import_contacts</i>Materias</a>
         <a href="{{ asset('/grafica/panel')}}" class="collection-item"><i class="material-icons">insert_chart</i>Graficas</a>
-        <a href="asistencia_alumno.html" class="collection-item"><i class="material-icons">check_circle</i>Asistencia</a>
+        <a href="#" class="collection-item"><i class="material-icons">check_circle</i>Asistencia</a>
         <a href="reportes.html" class="collection-item"><i class="material-icons">print</i>Imprimir</a>
     <ul class="collapsible collapsible-accordion">
         <li>

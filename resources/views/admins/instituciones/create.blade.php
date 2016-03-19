@@ -5,7 +5,7 @@
     @include('admins.instituciones.partials.migas')
 	<div class="row">
 	<h1 class="center flow-text">Registrar nueva institución</h1>
-    {!! Form::open(['route' => 'institucion.panel.store', 'method' => 'POST', 'files' => true]) !!}
+    {!! Form::open(['route' => 'institucion.panel.store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
         @include('admins.instituciones.partials.form')
         <div class="row">
             <div class="input-field col s12">

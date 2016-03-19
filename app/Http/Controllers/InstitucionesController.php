@@ -15,7 +15,9 @@ class InstitucionesController extends Controller
     public function index()
     {
     	if(Session::has('id')){
-            return redirect('/admin/panel');
+            $instituciones = Institucion::orderBy('name','id')->paginate(5);
+
+            return view('admins.instituciones.index')->with('instituciones', $instituciones);
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
             return redirect('/admin/login');
@@ -41,7 +43,7 @@ class InstitucionesController extends Controller
                 'clave'      => 'required|min:3',
                 'direccion'  => 'required|min:5',
                 'email'      => 'email',
-                'logo'       => 'required|image',
+                'logo'       => 'required',
             ]
         );
 

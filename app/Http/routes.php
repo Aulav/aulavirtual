@@ -96,6 +96,16 @@ Route::group(['middleware' => ['web']], function () {
 	    ]);
 	    
 	});
+	Route::group(['prefix' => 'docente'], function () {
+	    Route::resource('panel', 'DocentesController');
+
+	    Route::get('Docentes/{id}/destroy', [
+	    	'uses'	=> 'DocentesController@destroy',
+	    	'as'	=> 'Docentes.panel.destroy',
+	    ]);
+	    
+	});
+
 
 	/**
 	 * Grupo de rutas para la institución
@@ -173,62 +183,14 @@ Route::group(['middleware' => ['web']], function () {
 	    
 	 
 	});
-
-	/**
-	 * Grupo de rutas para la institución
-	 */
-
-	Route::group(['prefix' => 'institucion'], function () {
-	    Route::resource('panel', 'InstitucionesController');
-
-	    Route::get('institucion/{id}/destroy', [
-	    	'uses'	=> 'InstitucionesController@destroy',
-	    	'as'	=> 'institucion.panel.destroy',
-	    ]);
-	    
-	});
-
-	/**
-	 * Grupo de rutas para los grupos
-	 */
-
-	Route::group(['prefix' => 'grupo'], function () {
-	    Route::resource('panel', 'GruposController');
-
-	    Route::get('Grupos/{id}/destroy', [
-	    	'uses'	=> 'GruposController@destroy',
-	    	'as'	=> 'Grupos.panel.destroy',
-	    ]);
-	    
-	});
-
-	/**
-	 * Grupo de rutas para los docentes
-	 */
-
-	Route::group(['prefix' => 'docente'], function () {
-	    Route::resource('panel', 'DocentesController');
-
-	    Route::get('Docentes/{id}/destroy', [
-	    	'uses'	=> 'DocentesController@destroy',
-	    	'as'	=> 'Docentes.panel.destroy',
-	    ]);
-	    
-	});
-
-	/**
-	 * Grupo de rutas para los docentes
-	 */
-
 	Route::group(['prefix' => 'admin'], function () {
-	    Route::resource('paneladmin', 'AdminsController');
-	    Route::get('Admins/{id}/destroy', [
-	    	'uses'	=> 'AdminsController@destroy',
-	    	'as'	=> 'Admins.panel.destroy',
-	    ]);
-	    
-	});
-
+  	    Route::resource('paneladmin', 'AdminsController');
+  	    Route::get('Admins/{id}/destroy', [
+  	    	'uses'	=> 'AdminsController@destroy',
+  	    	'as'	=> 'Admins.panel.destroy',
+  	    	]); 
+  	    
+  	});
 
 	/**
 	 * Grupo de rutas para las graficas
@@ -243,11 +205,4 @@ Route::group(['middleware' => ['web']], function () {
 	    ]);
 	    
 	});
-
-<<<<<<< HEAD
 });
-=======
-});
-
-
->>>>>>> 9f667cb22a87e20c3d4b4ee9c219b28ae01f5375

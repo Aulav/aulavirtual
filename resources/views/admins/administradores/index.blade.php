@@ -31,12 +31,10 @@
 		        	<tr>
 		          		<td>{{ $admin->name }}</td>
 		          		<td>{{ $admin->user }}</td>
-		          		<td>{{ $admin->avatar}}</td>
+		          		<td>Activo</td>
 		          		<td>{{ $admin->email}}</td>
-                  <td>
-                   @foreach($admins->avatar as $image)
-    <img src="{{ asset('/images/perfil/'.$image->avatar)}}">
-    @endforeach </td>
+                  
+                   
 		          		<td><a href="#modal-msj" class="btn tooltipped modal-trigger  grey darken-3" data-position="bottom" data-delay="50" data-tooltip="Enviar mensaje"><i class="material-icons">message</i></a></td>
 		          		<td>
 		          			<a href="{{ route('admin.paneladmin.edit', $admin->id) }}" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Editar Admin">
