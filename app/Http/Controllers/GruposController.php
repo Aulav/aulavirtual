@@ -17,7 +17,7 @@ class GruposController extends Controller
     {
     	if( Session::has('id') ){    		
             $grupos = Grupo::orderBy('name')->paginate(3);
-            return view('grupos.index', ['grupos' => $grupos]);
+            return view('admins.grupos.index', ['grupos' => $grupos]);
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
             return redirect('/admin/login');
@@ -28,7 +28,7 @@ class GruposController extends Controller
     {
         if(Session::has('id')){
         	$instituciones = Institucion::orderBy('name', 'ASC')->lists('name', 'id');        	
-            return view('grupos.create', ['instituciones' => $instituciones]);
+            return view('admins.grupos.create', ['instituciones' => $instituciones]);
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
             return redirect('/admin/login');
@@ -63,7 +63,7 @@ class GruposController extends Controller
     {
     	if(Session::has('id')){
     		$grupo = Grupo::find($id);
-            return view('grupos.edit', ['grupo' => $grupo]);
+            return view('admins.grupos.edit', ['grupo' => $grupo]);
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
             return redirect('/admin/login');
@@ -84,14 +84,14 @@ class GruposController extends Controller
     	$grupo->fill($request->all());
     	$grupo->save();
 
-    	Session::flash('message', 'El grupo ' . $grupo->name . ' ha sido editada correctamente');
+    	Session::flash('message', 'El grupo ' . $grupo->name . ' ha sido editado correctamente');
     	return redirect('/grupo/panel');
     }
     
     public function destroy( $id )
     {
-    	$institucion = Institucion::find($id);
-    	dd($institucion);
-    	$institucion->delete();
+    	$grupo = Grupo::find($id);
+    	dd($grupo);
+    	$grupo->delete();
     }
 }

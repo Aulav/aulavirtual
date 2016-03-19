@@ -26,7 +26,7 @@ class InstitucionesController extends Controller
     public function create()
     {
         if(Session::has('id')){
-            return view('instituciones.create');
+            return view('admins.instituciones.create');
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
             return redirect('/admin/login');
@@ -69,7 +69,7 @@ class InstitucionesController extends Controller
     {
     	if(Session::has('id')){            
     		$institucion = Institucion::find($id);    	
-            return view('instituciones.edit', ['institucion' => $institucion]);
+            return view('admins.instituciones.edit', ['institucion' => $institucion]);
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
             return redirect('/admin/login');
@@ -78,6 +78,15 @@ class InstitucionesController extends Controller
 
     public function update( Request $request, $id )
     {
+        $this->validate(
+            $request, [
+                'name'       => 'required|min:4',
+                'clave'      => 'required|min:3',
+                'direccion'  => 'required|min:5',
+                'email'      => 'email',
+            ]
+        );
+        
     	$institucion = Institucion::find($id);
     	$institucion->fill($request->all());
     	$institucion->save();

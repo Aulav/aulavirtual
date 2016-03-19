@@ -97,6 +97,48 @@ Route::group(['middleware' => ['web']], function () {
 	    
 	});
 
+	/**
+	 * Grupo de rutas para la institución
+	 */
+
+	Route::group(['prefix' => 'institucion'], function () {
+	    Route::resource('panel', 'InstitucionesController');
+
+	    Route::get('institucion/{id}/destroy', [
+	    	'uses'	=> 'InstitucionesController@destroy',
+	    	'as'	=> 'institucion.panel.destroy',
+	    ]);
+	    
+	});
+
+	/**
+	 * Grupo de rutas para los grupos
+	 */
+
+	Route::group(['prefix' => 'grupo'], function () {
+	    Route::resource('panel', 'GruposController');    
+
+	    Route::get('grupo/{id}/destroy', [
+	    	'uses'	=> 'GruposController@destroy',
+	    	'as'	=> 'grupo.panel.destroy',
+	    ]);
+	    
+	});
+
+	/**
+	 * Grupo de rutas para las materias
+	 */
+
+	Route::group(['prefix' => 'materia'], function () {
+	    Route::resource('panel', 'MateriasController');
+
+	    Route::get('materia/{id}/destroy', [
+	    	'uses'	=> 'MateriasController@destroy',
+	    	'as'	=> 'materia.panel.destroy',
+	    ]);    
+	    
+	});
+
 
 	/**
 	 * Grupo de rutas para el alumno
@@ -202,4 +244,10 @@ Route::group(['middleware' => ['web']], function () {
 	    
 	});
 
+<<<<<<< HEAD
 });
+=======
+});
+
+
+>>>>>>> 9f667cb22a87e20c3d4b4ee9c219b28ae01f5375
