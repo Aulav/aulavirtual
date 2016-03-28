@@ -15,9 +15,7 @@
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Archivo</span>
-                               
                                 {!! Form::file('avatar')!!}
-                               
                             </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" value="Ningún archivo seleccionado" type="text">

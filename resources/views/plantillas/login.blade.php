@@ -55,6 +55,7 @@
                     <p class="content flow-text error">
                     {{ Session::get('message') }}</p>
                 @endif
+                  
             </div>
         </div>
         <div class="row">

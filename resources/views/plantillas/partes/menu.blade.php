@@ -8,7 +8,7 @@
 
     </div>
         <p class="user-name"> {{ Session::get('name') }} </p>
-        <a href="{{ asset('/admin/panel') }}" class="collection-item active"><i class="material-icons">home</i>Inicio</a>
+        <a href="{{ asset('/grafica/panel') }}" class="collection-item active"><i class="material-icons">home</i>Inicio</a>
         <a href="{{ asset('/alumno/panel')}}" class="collection-item "><i class="material-icons">people</i>Alumnos</a>
         <a href="{{ asset('/docente/panel')}}" class="collection-item"><i class="material-icons">person</i>Docentes</a>
 

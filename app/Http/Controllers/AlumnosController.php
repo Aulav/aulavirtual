@@ -21,13 +21,12 @@ class AlumnosController extends Controller
 {
     public function index()
     {
-
-
         if( Session::has('id') ){
            $alumnos = Alumno::orderBy('name')->paginate(3);
             return view('alumnos.index', ['alumnos' => $alumnos]);
       
         }else{
+            Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
             return redirect('/alumno/login');
         }
     }

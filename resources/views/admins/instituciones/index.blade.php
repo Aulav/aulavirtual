@@ -35,7 +35,7 @@
 		        <tbody>
 		        @foreach ($instituciones as $institucion)
 		        	<tr>
-		          		<td>{{ $institucion->name }}</td>
+		          		<td><a href="{{ asset('/grafica/panel') }}">{{ $institucion->name }}</a></td>
 		          		<td>{{ $institucion->direccion }}</td>
 		          		<td>{{ $institucion->tel }}</td>
 		          		<td>{{ $institucion->clave }}</td>

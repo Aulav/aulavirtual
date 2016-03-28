@@ -104,11 +104,11 @@ class ImportController extends Controller
             $admin = new Administrador();
             $admin->where('email', '=', Session::get('email'))->update(['avatar' => '/images/perfil/'.$name]);
            /* $user->where('email', '=', Auth::user()->email)->update(['perfiles' => 'perfiles/'.$name]);*/
-
+           Session::flash('message', 'Su imagen de perfil ah sido cambiada con exito');
             return redirect('/admin/profile')->with('admin',$admin);
 
-        /*Session::flash('message', 'SU imagen de perfil ah sido cambiada con exito');
-        return redirect('/admin/paneladmin');*/
+        
+        //return redirect('/admin/paneladmin');
         
     }
 }

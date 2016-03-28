@@ -3,18 +3,18 @@
 
 @section('contenido')
 <div class="row">
-          <div class="col s12">
-              <nav>
-                  <div class="nav-wrapper teal darken-1">
-                    <div class="col s12">
-                      <a href="{{ asset('/alumno/panel') }}" class="breadcrumb">Atrás</a>
-                      <span class="breadcrumb">Editar Alumnos</span>
-                    </div>
-                  </div>
-              </nav>
-          </div>
-      </div>
-	<div class="row">
+    <div class="col s12">
+      <nav>
+        <div class="nav-wrapper teal darken-1">
+            <div class="col s12">
+                <a href="{{ asset('/alumno/panel') }}" class="breadcrumb">Atrás</a>
+                <span class="breadcrumb">Editar Alumnos</span>
+            </div>
+        </div>
+      </nav>
+    </div>
+</div>
+<div class="row">
     {!! Form::open(['route' => ['docente.panel.update', $docente], 'method' => 'PUT']) !!}
       <div class="row">
         <div class="input-field col s6">
@@ -78,22 +78,22 @@
       </div>
       <div class="row">
       <div class="input-field col s12">
-        <div class="file-field input-field">
-          <div class="btn">
-            <span>Avatar</span>
-          {!! Form::file('avatar') !!}
-          </div>
-          <div class="file-path-wrapper">
-              <input class="file-path validate" type="text" placeholder="Suba aquí foto del Docente">
+          <div class="file-field input-field">
+            <div class="btn">
+              <span>Avatar</span>
+            {!! Form::file('avatar') !!}
             </div>
-        </div>            
-        </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Suba aquí foto del Docente">
+            </div>
+          </div>            
+      </div>
       </div>
       <div class="row">
-    	<div class="col s12">
-      		{!! Form::submit('Editar Docente', ['class' => 'btn']) !!}
-    	</div>  
-    {!! Form::close(); !!}
-  </div>
+      	<div class="col s12">
+        		{!! Form::submit('Editar Docente', ['class' => 'btn']) !!}
+      	</div>  
+        {!! Form::close(); !!}
+      </div>
   </div>
 @endsection

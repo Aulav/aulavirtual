@@ -14,10 +14,6 @@ use App\Docente;
 use App\Grafica;
 use App\Image;
 
-
-
-
-
 class AdminsController extends Controller
 {
     public function index()
@@ -63,7 +59,7 @@ class AdminsController extends Controller
             Session::put(['name' => $administrador->name]);
             Session::put(['email' => $administrador->email]);
             Session::put(['rol' => $administrador->rol_id]);            
-            return redirect('/admin/panel');
+            return redirect('/institucion/panel');
         }
 
     }
