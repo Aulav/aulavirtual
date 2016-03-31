@@ -5,9 +5,15 @@ $(document).ready(function(){
      $(".button-collapse").sideNav();
     
      $('select').material_select();
-     //$('.modal-trigger').leanModal();
-    
+     //$('.modal-trigger').leanModal();    
  });
+
+$.respuesta = function(url, dato, div){
+    $.get(url, { num : dato }, function(data){
+            $("#formulario").html(data);
+        }
+    );
+}
 /************************************************
 ***animacion de preloader para la pagina pricipal
 *************************************************/

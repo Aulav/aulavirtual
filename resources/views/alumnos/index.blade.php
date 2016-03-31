@@ -1,6 +1,10 @@
 @extends('plantillas.main')
 
-@section('title', 'Alumnos') 
+@section('title', 'Alumnos')
+
+@section('menu')
+  @include('plantillas.partes.menu')
+@endsection
 
 @section('contenido')
   	<div class="col s6 m6 l4">

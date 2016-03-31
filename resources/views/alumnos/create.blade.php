@@ -2,6 +2,10 @@
 
 @section('title', 'alumno')
 
+@section('menu')
+  @include('plantillas.partes.menu')
+@endsection
+
 @section('contenido')
 	<div class="row">
 		<div class="col s12">

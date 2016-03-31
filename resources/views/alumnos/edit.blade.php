@@ -1,6 +1,10 @@
 @extends('plantillas.main')
 @section('title', 'Editar el Alumno ' . $alumno->name)
 
+@section('menu')
+  @include('plantillas.partes.menu')
+@endsection
+
 @section('contenido')
 	    <div class="row">
 	        <div class="col s12">

@@ -18,7 +18,7 @@
     <ul id="dropdown2" class="dropdown-content">
        <li><a href="Docentes/examen.html"> <i class="material-icons">assignment</i>Examenes</a></li>
         <li class="divider"></li>
-        <li><a href="tarjetas.html"><i class="material-icons">speaker_notes</i>Ficha de estudio</a></li>
+        <li><a href="{{ asset('/ficha/panel') }}"><i class="material-icons">speaker_notes</i>Tarjetas de estudio</a></li>
         <li class="divider"></li>
         <li><a href="alumnos/foro.html"> <i class="material-icons">chat</i>Foro</a></li>
     </ul>
@@ -39,7 +39,7 @@
     <ul id="dropdown2" class="dropdown-content">
        <li><a href="Docentes/examen.html"> <i class="material-icons">assignment</i>Examenes</a></li>
         <li class="divider"></li>
-        <li><a href="tarjetas.html"><i class="material-icons">speaker_notes</i>Ficha de estudio</a></li>
+        <li><a href="{{ asset('/ficha/panel') }}"><i class="material-icons">speaker_notes</i>Tarjetas de estudio</a></li>
         <li class="divider"></li>
         <li><a href="alumnos/foro.html"> <i class="material-icons">chat</i>Foro</a></li>
     </ul>

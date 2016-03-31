@@ -1,6 +1,10 @@
 @extends('plantillas.main')
 @section('title', 'Crear nuevo Docente')
 
+@section('menu')
+  @include('plantillas.partes.menu')
+@endsection
+
 @section('contenido')
 	<div class="row">
 	<h1 class="center flow-text">Registrar un Nuevo Docente</h1>

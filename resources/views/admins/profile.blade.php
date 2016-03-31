@@ -1,6 +1,10 @@
 @extends('plantillas.main')
 @section('title', 'Cambiar foto de Perlfil')
 
+@section('menu')
+  @include('plantillas.partes.menu')
+@endsection
+
 @section('contenido')
 	<div class="center align">
          <h3>Configuracion de la Cuenta</h3>

@@ -1,6 +1,10 @@
 @extends('plantillas.main')
 @section('title', 'Editar grupo ' . $grupo->name)
 
+@section('menu')
+  @include('plantillas.partes.menu')
+@endsection
+
 @section('contenido')
     @include('admins.grupos.partials.migas')
 	<div class="row">

@@ -1,6 +1,11 @@
 @extends('plantillas.main')
 @section('title', 'Crear nuevo Administrador')
 
+@section('menu')
+  @include('plantillas.partes.menu')
+@endsection
+
+
 @section('contenido')
 	<div class="row">
 	<h1 class="center flow-text">Registrar un Nuevo Administrdor</h1>

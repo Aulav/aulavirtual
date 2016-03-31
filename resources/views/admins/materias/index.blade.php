@@ -1,5 +1,9 @@
 @extends('plantillas.main')
-@section('title', 'Materias') 
+@section('title', 'Materias')
+
+@section('menu')
+  @include('plantillas.partes.menu')
+@endsection
 
 @section('contenido')	
 	<div class="row col s3">

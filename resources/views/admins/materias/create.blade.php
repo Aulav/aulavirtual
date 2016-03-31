@@ -1,6 +1,10 @@
 @extends('plantillas.main')
 @section('title', 'Crear nueva materia')
 
+@section('menu')
+  @include('plantillas.partes.menu')
+@endsection
+
 @section('contenido')
     @include('admins.materias.partials.migas')
     <h1 class="center flow-text">Registrar nueva materia</h1>

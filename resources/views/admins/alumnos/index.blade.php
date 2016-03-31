@@ -1,6 +1,11 @@
 @extends('plantillas.main')
 
-@section('title', 'Grupos') 
+@section('title', 'Grupos')
+
+@section('menu')
+  @include('plantillas.partes.menu')
+@endsection
+
 
 @section('contenido')
   	<div class="col s12 m12 l4">

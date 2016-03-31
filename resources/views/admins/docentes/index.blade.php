@@ -1,5 +1,9 @@
 @extends('plantillas.main')
-@section('title', 'Panel del Docente') 
+@section('title', 'Panel del Docente')
+
+@section('menu')
+  @include('plantillas.partes.menu')
+@endsection
 
 @section('contenido')
 

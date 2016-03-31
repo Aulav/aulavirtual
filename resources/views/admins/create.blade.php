@@ -1,6 +1,10 @@
 @extends('plantillas.main')
 @section('title', 'Crear nueva institución')
 
+@section('menu')
+  @include('plantillas.partes.menu')
+@endsection
+
 @section('contenido')
 	<div class="row">
 	<h1 class="center flow-text">Registrar nueva institución</h1>

@@ -1,6 +1,11 @@
 @extends('plantillas.main')
 @section('title', 'Crear nuevo grupo')
 
+@section('menu')
+  @include('plantillas.partes.menu')
+@endsection
+
+
 @section('contenido')
     @include('admins.grupos.partials.migas')
     <div class="row">

@@ -1,6 +1,10 @@
 @extends('plantillas.main')
 @section('title', 'Editar materia ' . $materia->name)
 
+@section('menu')
+  @include('plantillas.partes.menu')
+@endsection
+
 @section('contenido') 
     @include('admins.materias.partials.migas')
 	<div class="row">

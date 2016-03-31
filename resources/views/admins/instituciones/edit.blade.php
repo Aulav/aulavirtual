@@ -1,6 +1,11 @@
 @extends('plantillas.main')
 @section('title', 'Editar la institución ' . $institucion->name)
 
+@section('menu')
+  @include('plantillas.partes.menu')
+@endsection
+
+
 @section('contenido')
     @include('admins.instituciones.partials.migas')
 	<div class="row">

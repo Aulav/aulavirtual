@@ -199,10 +199,33 @@ Route::group(['middleware' => ['web']], function () {
 	Route::group(['prefix' => 'grafica'], function () {
 	    Route::resource('panel', 'GraficaController');
 
-	    Route::get('Graficas/{id}/destroy', [
-	    	'uses'	=> 'GraficasController@destroy',
-	    	'as'	=> 'Graficas.panel.destroy',
+	    Route::get('Grafica/{id}/destroy', [
+	    	'uses'	=> 'GraficaController@destroy',
+	    	'as'	=> 'Grafica.panel.destroy',
 	    ]);
 	    
+	});
+
+
+	/**
+	 * Grupo de rutas para las ficha de estudio
+	 */
+
+	Route::group(['prefix' => 'ficha'], function () {
+	    Route::resource('panel', 'FichasController');
+
+	    Route::get('Fichas/{id}/destroy', [
+	    	'uses'	=> 'FichasController@destroy',
+	    	'as'	=> 'Fichas.panel.destroy',
+	    ]);
+
+		Route::get('getRequest', 'FichasController@getRespuesta');
+		
+		Route::get('/{id}/detalles', [
+	    	'uses'	=> 'FichasController@getDetalles',
+	    	'as'	=> 'fichas.panel.detalles',
+	    ]);
+		//Route::get('detalles/{id}', 'FichasController@getDetalles');
+	    //ficha/panel/{panel}/edit
 	});
 });

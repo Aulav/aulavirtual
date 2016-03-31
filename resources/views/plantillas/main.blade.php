@@ -47,8 +47,7 @@
 	          1-Menu Administrador o Academico
 	          2-Menu Profesor que este caso seria practicamente lo mismo
 	          3-Menu alumnos-->
-	        @include('plantillas.partes.menu')
- 			 
+            @yield('menu')
  		
     	</div><!--End Contenido de toda la pagina-->
     	<div class="col s12 m9">

@@ -1,6 +1,11 @@
 @extends('plantillas.main')
 @section('title', 'Grupos') 
 
+@section('menu')
+  @include('plantillas.partes.menu')
+@endsection
+
+
 @section('contenido')	
 	<div class="row col s3">
         <a class="waves-effect waves-light btn btn-custom blue-grey darken-4  z-depth-5 left" 
