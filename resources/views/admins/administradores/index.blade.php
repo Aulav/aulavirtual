@@ -1,5 +1,10 @@
 @extends('plantillas.main')
-@section('title', 'Panel del administrador') 
+@section('title', 'Panel del administrador')
+
+@section('menu')
+  @include('plantillas.partes.menu')
+@endsection
+
 
 @section('contenido')
 

@@ -5,7 +5,7 @@
         <img src="{{ asset('/images/user.png') }} " class="responsive-img circle no-grande" >  
     </div>
     <p class="user-name"> {{ Session::get('name') }} </p>
-    <a href="{{ asset('/grafica/panel') }}" class="collection-item"><i class="material-icons">assignment</i> Exámenes</a>
+    <a href="{{ asset('/examen/panel') }}" class="collection-item"><i class="material-icons">assignment</i> Exámenes</a>
     <a href="{{ asset('/ficha/panel')}}" class="collection-item active">
         <i class="material-icons">speaker_notes</i> Tarjetas de estudio
     </a>
