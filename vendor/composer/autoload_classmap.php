@@ -9,6 +9,7 @@ return array(
     'AddDeletedToAdministradoresTable' => $baseDir . '/database/migrations/2016_03_15_185228_add_deleted_to_administradores_table.php',
     'AddDeletedToAlumnosTable' => $baseDir . '/database/migrations/2016_03_15_013227_add_deleted_to_alumnos_table.php',
     'AddDeletedToDocentesTable' => $baseDir . '/database/migrations/2016_03_15_004535_add_deleted_to_docentes_table.php',
+    'AddRespToPreguntasTable' => $baseDir . '/database/migrations/2016_03_30_172731_add_resp_to_preguntas_table.php',
     'AddTemarioToMateriasTable' => $baseDir . '/database/migrations/2016_03_23_180955_add_temario_to_materias_table.php',
     'AlumnoSeeder' => $baseDir . '/database/seeds/AlumnoSeeder.php',
     'CreateAdministradoresTable' => $baseDir . '/database/migrations/2016_03_13_044559_create_administradores_table.php',

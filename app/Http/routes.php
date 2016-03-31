@@ -205,4 +205,33 @@ Route::group(['middleware' => ['web']], function () {
 	    ]);
 	    
 	});
+
+	/**
+	 * Grupo de rutas para los examenes
+	 */
+
+	Route::group(['prefix' => 'examen'], function () {
+	    Route::resource('panel', 'ExamenesController');
+
+	    Route::get('Examenes/{id}/destroy', [
+	    	'uses'	=> 'ExamenesController@destroy',
+	    	'as'	=> 'Examenes.panel.destroy',
+	    ]);
+	    
+	});
+
+	/**
+	 * Grupo de rutas para las preguntas
+	 */
+
+	Route::group(['prefix' => 'pregunta'], function () {
+	    Route::resource('panel', 'PreguntasController');
+
+	    Route::get('Preguntas/{id}/destroy', [
+	    	'uses'	=> 'PreguntasController@destroy',
+	    	'as'	=> 'Preguntas.panel.destroy',
+	    ]);
+	    
+	});
+
 });

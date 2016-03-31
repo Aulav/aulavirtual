@@ -3,7 +3,7 @@
 
 @section('contenido')
 
-    <!-- /Este row probablemente se quite de aqui -->
+     <!-- /Este row probablemente se quite de aqui -->
 	<div class="row col s3">
         <a class="waves-effect waves-light btn btn-custom blue-grey darken-4 z-depth-5 left" 
         	href="{{ route('admin.paneladmin.create')}}">
