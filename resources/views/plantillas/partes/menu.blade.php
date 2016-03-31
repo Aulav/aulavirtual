@@ -1,10 +1,12 @@
-<!-- Page Layout here -->    
+<!-- Page Layout here -->  
+
 <div class="collection ">
     <div class="logo"><a id="logo-container" class="brand-logo">
     <a href="{{ asset('admin/profile') }}">
     
     <img src="{{ asset('/images/user.png') }} " class="responsive-img circle no-grande" >
-         
+    
+
 
     </div>
         <p class="user-name"> {{ Session::get('name') }} </p>

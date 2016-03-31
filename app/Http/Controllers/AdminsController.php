@@ -20,6 +20,7 @@ class AdminsController extends Controller
     {
         if( Session::has('id') ){
             $admins = Administrador::orderBy('name')->paginate(3);
+
             //return view('graficas.index', ['admins' => $admins]);
 
 
@@ -191,5 +192,6 @@ class AdminsController extends Controller
         Session::flash('message', 'El administrador ' . $admin->name . ' ha sido eliminado correctamente');
         return redirect('/admin/paneladmin');
     }
+
     
 }
