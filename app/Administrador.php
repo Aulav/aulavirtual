@@ -26,4 +26,8 @@ class Administrador extends Model
     {
         return $this->hasMany('App\Tarjeta');
     }
+    public function users()
+    {
+         return $this->belongsTo('App\User');
+    }
 }

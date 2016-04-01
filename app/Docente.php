@@ -19,6 +19,10 @@ class Docente extends Model
     {
     	return $this->belongsTo('App\Rol');
     }
+    public function users()
+    {
+        return $this->belongsTo('App\User');
+    }
 
     public function examenes()
     {

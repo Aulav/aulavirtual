@@ -14,7 +14,7 @@
 		<!--Grafica 1-->
 		<div class="row" >
             <div class="col s4">
-              <div class="card teal lighten-5">
+              <div class="card teal lighten-5 hoverable">
                 <div class="card-content z-depth-4">
 			 		<?php 
 			            $sql = "SELECT roles.name, COUNT(*) FROM administradores, roles where administradores.rol_id=roles.id 
@@ -51,7 +51,7 @@
 
 		<div class="row" >
             <div class="col s6">
-              <div class="card">
+              <div class="card hoverable">
                 <div class="card-content z-depth-3">
 
 		<script type="text/javascript"> 
@@ -126,7 +126,7 @@
 
 					<!--Grafica 2-->
 				            <div class="col s6">
-				              <div class="card">
+				              <div class="card hoverable">
 				                <div class="card-content z-depth-3">
 
 						<script type="text/javascript">
@@ -219,7 +219,7 @@
 
 					
 				            <div class="col s6">
-				              <div class="card">
+				              <div class="card hoverable">
 				     
 				                <div class="card-content z-depth-3">
 
@@ -314,7 +314,7 @@
 				<!--grafica 4-->
 					
 				            <div class="col s6">
-				              <div class="card">
+				              <div class="card hoverable">
 				     
 				                <div class="card-content z-depth-3">
 

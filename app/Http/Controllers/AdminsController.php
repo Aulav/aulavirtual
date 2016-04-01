@@ -60,7 +60,7 @@ class AdminsController extends Controller
             Session::put(['name' => $administrador->name]);
             Session::put(['email' => $administrador->email]);
             Session::put(['rol' => $administrador->rol_id]);            
-            return redirect('/institucion/panel');
+            return redirect('/grafica/panel');
         }
 
     }
@@ -120,7 +120,7 @@ class AdminsController extends Controller
         $image->save(); */
 
         Session::flash('message', $admin->name . ' ha sido creado correctamente');
-        return redirect('/admin/panel');
+        return redirect('/auth/register');
     }
 
     public function show()

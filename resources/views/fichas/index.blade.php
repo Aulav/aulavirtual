@@ -16,7 +16,7 @@
 	        </a>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row card">
 		<div class="col s12">
 			<h4>Tarjetas de estudio</h4>
 			<table class="bordered responsive-table">

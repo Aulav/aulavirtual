@@ -19,6 +19,10 @@ class Alumno extends Model
     {
     	return $this->belongsTo('App\Rol');
     }
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
     public function reticula()
     {

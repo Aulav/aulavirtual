@@ -26,6 +26,24 @@ Route::get('/', function () {
 |
 */
 
+/******rutas de prueba******/
+Route::get('auth/register',[ 
+	'uses' => 'Auth\AuthController@getRegister',
+	'as'  => 'auth.register',
+	]);
+
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+//ruta de registro envio de email
+Route::get('auth/confirm/email/{email}/confirm_token/{confirm_token}', 'Auth\AuthController@confirmRegister');
+
+//Rutas  login
+Route::get('auth/login', [
+	'uses' => 'Auth\AuthController@getLogin',
+	'as'   => 'auth.login',
+	]);
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+/*************middleware para el resto de rutas***********/
 Route::group(['middleware' => ['web']], function () {
    
 	/**

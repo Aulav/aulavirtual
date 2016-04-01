@@ -54,11 +54,9 @@
 
 			<div class="row">          
                     <div class="input-field col s10 m6">                
-                    {!! Form::date('fecha_aplicacion', \Carbon\Carbon::now(),['placeholder' =>'Selecciona Fecha de la Evaluación','required']) !!}
+                    {!! Form::date('fecha_aplicacion', \Carbon\Carbon::now(),['placeholder' =>'Selecciona Fecha de la Evaluación', 'class' => 'datepicker','required']) !!}
                     </div>    
             </div>
-           
-                 
             <div class="row">
 		    	<div class="col s12">
 		      		{!! Form::submit('Crear Examen', ['class' => 'btn']) !!}
@@ -68,10 +66,7 @@
 			{!! Form::close() !!}
 		</div>
 	</div>
-
-
-
-*************         ********************************************************        ****************
+<div class="divider"></div>
 	 <div class="row">
     	<div class="col s12">
     		<h4>Listado de Examenes</h4>
