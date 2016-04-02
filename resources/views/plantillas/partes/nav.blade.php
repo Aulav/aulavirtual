@@ -6,11 +6,11 @@
         @if (Session::get('rol') == 1)
             <li><a href="{{ asset('admin/logout') }}"><i class="material-icons">input</i>Salir</a></li>
         @elseif ( Session::get('rol') == 2 )
-            <li><a href="{{ asset('admin/logout') }}"><i class="material-icons">input</i>Salir</a></li>
+            <li><a href="{{ asset('docente/logout') }}"><i class="material-icons">input</i>Salir</a></li>
         @elseif ( Session::get('rol') == 3 )
             <li><a href="{{ asset('docente/logout') }}"><i class="material-icons">input</i>Salir</a></li>
         @elseif ( Session::get('rol') == 3 )
-            <li><a href="{{ asset('alumno/logout') }}"><i class="material-icons">input</i>Salir</a></li>
+            <li><a href="{{ asset('docente/logout') }}"><i class="material-icons">input</i>Salir</a></li>
         @endif
 
 
@@ -44,7 +44,7 @@
         <li><a href="alumnos/foro.html"> <i class="material-icons">chat</i>Foro</a></li>
     </ul>
     <!--inithial nav-->
-    <nav class="teal darken-1">
+    <nav class="default_color" >
         <div class="nav-wrapper">
             <a href="{{ asset('/grafica/panel')}}" class="brand-logo logo-left">PLATAFORMA EDUCATIVA</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -56,7 +56,7 @@
         </ul>
         <ul class="side-nav" id="mobile-demo">
             <!--<li><a href="sass.html">Institucion</a></li>-->
-            <li><a href="badges.html">Mensajes</a></li>
+            <li><a href="#modal-msj">Mensajes</a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Utilidades<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="#!" data-activates="dropdown1">{{ Session::get('email') }}<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>

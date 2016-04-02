@@ -14,27 +14,28 @@
     <!--import Google Icon Fonts-->
   <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
         <!-- CSS solo para la pagina principal -->
+         <link href="{{ asset('front/min/custom-min.css')}}" type="text/css" rel="stylesheet" >
     <link href="{{ asset('front/min/plugin-min.css')}}" type="text/css" rel="stylesheet">
-    <link href="{{ asset('front/min/custom-min.css')}}" type="text/css" rel="stylesheet" >
-     <link type="text/css" rel="stylesheet" href="{{ asset('css/materialize.min.css') }}"  media="screen,projection"/>
+   
+    
    
 <body id="top" class="scrollspy ">
 <!-- animation Pre Loader -->
 <div id="loader-wrapper">
     <div id="loader"></div>
- 
     <div class="loader-section section-left"></div>
     <div class="loader-section section-right"></div>
- 
 </div>
 <!--Navegacion de la pagina principal-->
 <div class="navbar-fixed">
     <nav id="nav_plataforma" class="default_color" role="navigation">
         <div class="container">
+          <img src="{{ asset('/images/instituto.png')}}" class="logo-img">
             <div class="nav-wrapper">
-            <a href="#" id="logo-container" class="brand-logo">PLATAFORMA EDUCATIVA</a>
+
+            <a href="#" id="logo-container" class="brand-logo">INSTITUTO DE ESTUDIOS SUPERIORES</a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="{{ asset('admin/panel') }}">Administrador</a></li>
+                <li><a href="{{ asset('admin/panel') }}" class="waves-effect">Administrador</a></li>
                 <li><a href="{{ asset('docente/panel') }}">Docente</a></li>
                 <li><a href="{{ asset('alumno/panel') }}">Alumno</a></li>
             </ul>
@@ -82,7 +83,7 @@
                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Cum sociis natoque penatibus et magnis dis parturient montes. 
                     </p>
                     <div class="row center">
-                         <a class="btn-large waves-effect waves-light btn light-blue accent-3  z-depth-5 " href="#modal1">Get Iniciar</a>
+                         <a class="btn-large waves-effect waves-light btn accent-3  z-depth-5 " href="#modal1" style="background: #30417c;" >Get Iniciar</a>
                     </div>
                 </div>
             </div>
@@ -94,7 +95,7 @@
                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Cum sociis natoque penatibus et magnis dis parturient montes.  
                     </p>
                     <div class="row center">
-                         <a class="btn-large waves-effect waves-light btn light-blue accent-3  z-depth-5 " href="#modal1">Get Iniciar</a>
+                         <a class="btn-large waves-effect waves-light btn accent-3  z-depth-5 " href="#modal1" style="background: #30417c;">Get Iniciar</a>
                     </div>
                 </div>
             </div>
@@ -106,7 +107,7 @@
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Cum sociis natoque penatibus et magnis dis parturient montes.  
                     </p>
                     <div class="row center">
-                         <a class="btn-large waves-effect waves-light btn light-blue accent-3  z-depth-5 " href="#modal1">Get Iniciar</a>
+                         <a class="btn-large waves-effect waves-light btn  accent-3  z-depth-5 " href="#modal1" style="background: #30417c;">Get Iniciar</a>
                     </div>
                 </div>
             </div>

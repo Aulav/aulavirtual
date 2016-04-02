@@ -9,17 +9,15 @@ return array(
     'AddDeletedToAdministradoresTable' => $baseDir . '/database/migrations/2016_03_15_185228_add_deleted_to_administradores_table.php',
     'AddDeletedToAlumnosTable' => $baseDir . '/database/migrations/2016_03_15_013227_add_deleted_to_alumnos_table.php',
     'AddDeletedToDocentesTable' => $baseDir . '/database/migrations/2016_03_15_004535_add_deleted_to_docentes_table.php',
-
     'AddDescripcionToTarjetasTable' => $baseDir . '/database/migrations/2016_03_30_153908_add_descripcion_to_tarjetas_table.php',
-
     'AddRespToPreguntasTable' => $baseDir . '/database/migrations/2016_03_30_172731_add_resp_to_preguntas_table.php',
-
     'AddTemarioToMateriasTable' => $baseDir . '/database/migrations/2016_03_23_180955_add_temario_to_materias_table.php',
     'AlumnoSeeder' => $baseDir . '/database/seeds/AlumnoSeeder.php',
     'CreateAdministradoresTable' => $baseDir . '/database/migrations/2016_03_13_044559_create_administradores_table.php',
     'CreateAlumnosTable' => $baseDir . '/database/migrations/2016_03_13_043937_create_alumnos_table.php',
     'CreateCursosTable' => $baseDir . '/database/migrations/2016_03_23_174742_create_cursos_table.php',
     'CreateDocentesTable' => $baseDir . '/database/migrations/2016_03_13_044358_create_docentes_table.php',
+    'CreateEventosTable' => $baseDir . '/database/migrations/2016_04_01_161225_create_eventos_table.php',
     'CreateExamenesTable' => $baseDir . '/database/migrations/2016_03_13_045150_create_examenes_table.php',
     'CreateGruposTable' => $baseDir . '/database/migrations/2016_03_13_042125_create_grupos_table.php',
     'CreateImagesTable' => $baseDir . '/database/migrations/2016_03_17_012356_create_images_table.php',
@@ -36,7 +34,7 @@ return array(
     'CreateTarjetasTable' => $baseDir . '/database/migrations/2016_03_30_004450_create_tarjetas_table.php',
     'CreateTiposTable' => $baseDir . '/database/migrations/2016_03_13_053828_create_tipos_table.php',
     'CreateTutoresTable' => $baseDir . '/database/migrations/2016_03_13_043656_create_tutores_table.php',
-    'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
+    'CreateUsersTable' => $baseDir . '/database/migrations/2016_03_31_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',

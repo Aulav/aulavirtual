@@ -1,4 +1,4 @@
-<footer class="page-footer teal darken-1">
+<footer class="page-footer default_color">
     <div class="footer-copyright">
       <div class="container">
         © 2016 Plataforma Educativa

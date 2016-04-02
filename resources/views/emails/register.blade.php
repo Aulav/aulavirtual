@@ -15,6 +15,7 @@
             <div class="card-action">
              <a href="{{url('http://localhost:8000')}}/auth/confirm/email/{{$data['email']}}/confirm_token/{{$data['confirm_token']}}" class="waves-effect waves-light btn btn-custom blue-grey darken-4 z-depth-5 center">Confirmar mi cuenta</a>
             </div>
+            <p>Por favor no responder a este email. Este es un mensaje automático desde una dirección de correo electrónico no supervisada. Si usted tiene alguna pregunta, por favor visite nuestro sitio de ayuda en: <a href="http://plataforma.ahoratabasco.com/public_html/">plataforma.ahoratabasco.com</a>.</p>
         </div>
     </div>
 </div>

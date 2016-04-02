@@ -96,7 +96,7 @@ class AuthController extends Controller
         $user->save();
 
         Mail::send('emails.register', ['data' => $data], function($email) use($data){
-            $email->subject('Confirma tu cuenta porfavor para poder accesar al sistema');
+            $email->subject('Confirma tu cuenta porfavor para poder acceder al sistema');
             $email->to($data['email'], $data['name']);
         });
         

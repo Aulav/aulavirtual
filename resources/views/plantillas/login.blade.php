@@ -43,7 +43,8 @@
   </div>
    <nav class="nav-login z-depth-3">
       <div class="nav-wrapper">
-        <img src="{{ asset('images/logo.jpg') }}" class="brand-logo center nav-logo circle responsive-img">
+      <a href="{{ asset('/') }}">
+        <img src="{{ asset('images/avatar.svg') }}" class="brand-logo center nav-logo responsive-img"></a>
         <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
       </div>
   </nav>
@@ -72,7 +73,7 @@
     </div>
   </div>
  
-  <footer class="page-footer  teal darken-1">        
+  <footer class="page-footer">        
     <div class="footer-copyright">
       <div class="container">
         © 2016 Copyright Plataforma Educativa

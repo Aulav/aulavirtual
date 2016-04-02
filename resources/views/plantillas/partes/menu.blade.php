@@ -3,11 +3,7 @@
 <div class="collection ">
     <div class="logo"><a id="logo-container" class="brand-logo">
     <a href="{{ asset('admin/profile') }}">
-    
     <img src="{{ asset('/images/user.png') }} " class="responsive-img circle no-grande" >
-    
-
-
     </div>
         <p class="user-name"> {{ Session::get('name') }} </p>
         <a href="{{ asset('/grafica/panel') }}" class="collection-item active"><i class="material-icons">home</i>Inicio</a>
@@ -21,6 +17,7 @@
         <a href="{{ asset('/grafica/panel')}}" class="collection-item"><i class="material-icons">insert_chart</i>Graficas</a>
         <a href="#" class="collection-item"><i class="material-icons">check_circle</i>Asistencia</a>
         <a href="reportes.html" class="collection-item"><i class="material-icons">print</i>Imprimir</a>
+        <a href="{{ route('alumnos.calendario')}}" class="collection-item"><i class="material-icons">date_range</i>Calendario</a>
     <ul class="collapsible collapsible-accordion">
         <li>
             <a class="collapsible-header"> Configuracion<i class="mdi-navigation-arrow-drop-down"></i></a>

@@ -12,7 +12,7 @@
 			<nav>
 				<div class="nav-wrapper teal darken-1">
 					<div class="col s12">
-						<a href="{{ asset('/alumno/panel') }}" class="breadcrumb">Atras</a>
+						<a href="{{ asset('/admins/alumno/panel') }}" class="breadcrumb">Atras</a>
 						<span class="breadcrumb">Crear Nuevo Alumno</span>
 					</div>
 				</div>

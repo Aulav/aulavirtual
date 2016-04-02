@@ -23,7 +23,7 @@ class AlumnosController extends Controller
     {
         if( Session::has('id') ){
            $alumnos = Alumno::orderBy('name')->paginate(3);
-            return view('alumnos.index', ['alumnos' => $alumnos]);
+            return view('admins.alumnos.index', ['alumnos' => $alumnos]);
       
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
@@ -56,7 +56,7 @@ class AlumnosController extends Controller
             session(['id' => $alumno->id]);
             session(['name' => $alumno->name]);
             session(['email' => $alumno->email]);            
-            return redirect('/alumno/panel');
+            return redirect('/alumno/inicio');
         }
 
     }
@@ -74,7 +74,7 @@ class AlumnosController extends Controller
             $roles = Rol::orderBy('name', 'ASC')->lists('name', 'id');  
             $instituciones = Institucion::orderBy('name', 'ASC')->lists('name','id');
 
-            return view('alumnos.create', ['roles' => $roles, 'instituciones' => $instituciones]);
+            return view('admins.alumnos.create', ['roles' => $roles, 'instituciones' => $instituciones]);
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
             return redirect('/admin/login');
@@ -88,8 +88,8 @@ class AlumnosController extends Controller
         $alumno->reticula_id = 1;
         $alumno->rol_id = 4;
         $alumno->user = $request->matricula;
-     
-        $alumno->password=bcrypt($request->matricula);
+        $alumno->user = $request->name;
+        /*$alumno->password=bcrypt($request->matricula);*/
        
         $alumno->save();
         Session::flash('message', 'El alumno ' .$alumno->name. ' Ha sido creado Correctamente');
@@ -144,5 +144,9 @@ class AlumnosController extends Controller
        return redirect('/alumno/panel');
 
     }   
+    public function alumnoInicio()
+    {
+        return view('alumnos.index');
+    }
 
 }

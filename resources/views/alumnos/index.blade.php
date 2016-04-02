@@ -1,98 +1,76 @@
-@extends('plantillas.main')
-
-@section('title', 'Alumnos')
+@extends('plantillas.main-alumno')
+@section('title', 'Modulo Alumnos')
 
 @section('menu')
-  @include('plantillas.partes.menu')
+@include('plantillas.partes.menu-alumno')
 @endsection
-
 @section('contenido')
-  	<div class="col s6 m6 l4">
-        <p class="flow-text">
-        <select id="periodo" class="">
-            <option value="" disabled selected>Elija un periodo</option>
-            <option value="1" data-icon="{{asset('images/periodo.png') }}" class="circle">2016</option>
-            <option value="2" data-icon="{{ asset('images/periodo.png') }}" class="circle">2016-2017</option>
-        </select>
-        </p>
-    </div>
-	<div class="col s6 m6 l4">
-	<p class="flow-text center-align">
-			<a class="waves-effect waves-light btn btn-custom blue-grey darken-4" 
-	        	href="{{ route('alumno.panel.create')}}">
-	        	 <i class="material-icons right">add</i>Crear Alumno
-	        </a> 
-	  </p>       
-	</div>
-	<div class="col s6 m6 l4">
-	<p class="flow-text center-align">
-        <a href="{{ route('alumnos.createExcel')}}" class="waves-effect waves-light btn btn-custom blue-grey darken-4">
-        <i class="material-icons right">add</i>Subir Archivo CSV 
-       </a>
-     </p>  
-		
-	</div>
-	
-	 <div class="row">
-    	<div class="col s12">
-    		<h4>Listado de Alumnos</h4>
-    		<table class="borered highlight responsive-table">
-		        <thead>
-		          <tr>
-		              <th data-field="intitucion">Matricula</th>
-		              <th data-field="direccion">Nombre</th>
-		              <th data-field="telefono">Status</th>
-		              <th data-field="clave">No. de Materias</th>
-		              <th data-field="editar">Faltas</th>
-		              <th data-field="eliminar">Promedio</th>
-		              <th></th>
-		              <th></th>
-		              <th data-field="settings">Confi</th>
-		          </tr>
-		        </thead>
-		        <tbody>
-		        @foreach ($alumnos as $alumno)
-		        	<tr>
-		          		<td>{{ $alumno->matricula }}</td>
-		          		<td>{{ $alumno->name }}</td>
-		          		<td>{{ $alumno->user }}</td>
-		          		<td>5</td>
-		          		<td>5</td>
-		          		<td>6</td>
-		          		<td>
-		          			<a href="{{ route('alumno.panel.edit', $alumno->id) }}" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Editar alumno">
-		          				<i class="material-icons">edit</i>
-		          			</a>
-		          		</td>
-		          		<td>
-		          		{!! Form::open(['route'=>['alumno.panel.destroy', $alumno->id], 'method'=>'DELETE'])!!}
+ <div class="row">
+    <div class="col s12">
+        <form class="">
+            <h5>Mis Clases</h5>
+               	<table class="bordered responsive-table">
+                  <thead>
+                    <tr>
+                      <td><b>Clase</td>
+                      <td><b>Docente</td>
+                      <td><b>Avance</td>
+                      </tr>
+                  </thead>
 
-		          		{!! Form::submit('Eliminar',['class'=>'btn red' ])!!}
-		          		{!! Form::close() !!}
-		          			
-		          		</td>
-		          		<td><a href="#configuracion" class="modal-trigger"><i class="tiny material-icons ">settings</i></a></td>
-		        	</tr>
-    			@endforeach
-        		</tbody>
-      		</table>   			
-    	</div>
-    </div>
-    <div class="row">
-    	<div class="col s12 center">
-    		{{ $alumnos->render() }}
-    	</div>
-    </div>
-    <!-- Modal para las configuraciones de los alumnos -->
-    <div id="configuracion" class="modal">
-        <div class="modal-content">
-            <p class="flow-text">Elija una opción:</p>
-                <p class="flow-text"><a href="#!"><i class="material-icons right">info</i>Detalles del alumno</a></p>
-                <p class="flow-text"><a href="#mensaje" class="modal-trigger"><i class="material-icons right">mail_outline</i>Enviar mensaje</a></p>
-                <p class="flow-text"><a href="#"><i class="material-icons right">star</i>Avances</a></p>
-        </div>
-        <div class="modal-footer">
-            <a href="javascript:void(0)" class="modal-action modal-close btn-flat">Cancelar</a>
-        </div>
-      	</div>
+                  <tbody>
+                    <tr>
+                    <td><a href="">Fisica</a></td>
+                    <td>Octavio Aquino</td>
+                    <td>30%</td>
+                    </tr>
+
+                    <tr>
+                    <td><a href=""> Matematicas</a></td>
+                    <td>Gerardo Martinez</td>
+                    <td>70%</td>
+                    </tr>
+
+                    <tr>
+                    <td><a href="">Biologia</a></td>
+                    <td>Jose Luis Martinez</td>
+                    <td>-</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                </form>
+              </div>
+          </div>
+          <!--Inicio modal para enviar mensaje-->
+          <div id="modal3" class="modal">
+
+            <div class="input-field col s12">
+                      <i class="material-icons prefix">email</i>
+                      <input id="icon_email" type="email" class="validate">
+                      <label for="icon_email">Email</label>
+              </div>
+
+            <div class="modal-content">
+              <div class="file-field input-field">
+                  <div class="btn">
+                      <span>Adjuntar archivo:</span>
+                      <input type="file" multiple>
+                  </div>
+                  <div class="file-path-wrapper">
+                      <input class="file-path validate" type="text" placeholder="Ningún archivo seleccionado">
+                  </div>
+              </div>      
+              <div class="row">                     
+                <div class="input-field col s12">                         
+                  <label for="comment">Comentario:</label>
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                </div>       
+              </div> 
+              </div>      
+              <div class="modal-fixed-footer">             
+              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>             
+              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Enviar</a>
+              </div>
+              </div><!--end modal para enviar mensaje-->
 @endsection

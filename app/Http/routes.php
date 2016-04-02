@@ -43,6 +43,8 @@ Route::get('auth/login', [
 	]);
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+
 /*************middleware para el resto de rutas***********/
 Route::group(['middleware' => ['web']], function () {
    
@@ -197,7 +199,15 @@ Route::group(['middleware' => ['web']], function () {
 	    Route::get('import', [
 	    	'uses'      => 'ImportController@import',
 	    	'as'        => 'alumnos.createExcel'
-	    	]); 
+	    ]); 
+/*********************************************************
+*********Rutas para el calendario************************/
+		Route::resource('calendario', 'CalendarioController');
+		Route::get('calendario',[
+			'uses'	=> 'CalendarioController@evento',
+			'as'	=> 'alumnos.calendario',
+
+		]);
 	    
 	 
 	});
@@ -275,5 +285,21 @@ Route::group(['middleware' => ['web']], function () {
 	    ]);
 	    
 	});
+
+	/***********
+	****grupo de rutas para el modulo docentes
+	************/
+	Route::get('docente/inicio', [
+	'uses' => 'DocentesController@inicioDocente',
+	'as'   => 'docente.inicio',
+	]);
+	/***********
+	****grupo de rutas para el modulo Alumnos
+	************/
+	Route::get('alumno/inicio', [
+		'uses' => 'AlumnosController@alumnoInicio',
+		'as'	=> 'Alumno.inicio',
+
+	]);
 
 });

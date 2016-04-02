@@ -20,7 +20,7 @@ class DocentesController extends Controller
             return view('admins.docentes.index', ['docentes' => $docentes]);
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
-            return redirect('/admin/login');
+            return redirect('/docente/login');
         }
     }
 
@@ -46,10 +46,12 @@ class DocentesController extends Controller
             Session::flash('message', 'Los datos ingresados son incorrectos');
             return redirect()->route('docente.login');
         } else{
-            session(['id' => $docente->id]);
-            session(['name' => $docente->name]);
-            session(['email' => $docente->email]);            
-            return redirect('/docente/panel');
+            Session::put(['id' => $docente->id]);
+            Session::put(['name' => $docente->name]);
+            Session::put(['email' => $docente->email]); 
+            Session::put(['rol' => $docente->rol_id]); 
+
+            return redirect('/docente/inicio');
         }
 
     }
@@ -146,5 +148,9 @@ class DocentesController extends Controller
         return redirect('/docente/panel');
         
     }  
+    public function inicioDocente()
+    {
+        return view('docentes.index');
+    }
 
 }
