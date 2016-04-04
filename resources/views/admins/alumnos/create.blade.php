@@ -70,7 +70,7 @@
 			<div class="row">
 				<div class="input-field col s6">
 					<i class="material-icons">email</i>
-					{!! Form::label('email', 'Escribe el Email', ['for' => 'icon-prefix'])!!}
+					{!! Form::label('email', 'Escribe el Email')!!}
 					{!! Form::email('email',null,['class' => 'validate', 'placeholder' => 'Escribe el Correo Electronico','id' => 'icon-prefix'])!!}
 				</div>
 			</div>
@@ -79,8 +79,20 @@
                     {!! Form::select('sexo',['Femenino', 'Masculino'], null,['placeholder' =>'Selecciona su sexo','required']) !!}
                     </div>
                     <div class="input-field col s6">
-                    	{ !! Form::label('Edad', 'Edad');!!}
-                    	{!! Form::number('edad', 'value',null,['placeholder' => 'Edad']);!!}
+                    	{!! Form::label('Edad', 'Edad')!!}
+                    	{!! Form::number('edad', 'value',null,['placeholder' => 'Edad'])!!}
+                    
+                    
+                    </div>
+            </div>
+            	<div class="row">          
+                    <div class="input-field col s16 m6">                
+                    {!! Form::label('usuario', 'Usuario') !!}
+                    {!! Form::text('user',null,['class' => 'validate'])!!}
+                    </div>
+                    <div class="input-field col s6">
+                    	{!! Form::label('password','Contraseña') !!}
+                    	{!! Form::password('password',null,['placeholder' => 'Contraseña'])!!}
                     
                     
                     </div>

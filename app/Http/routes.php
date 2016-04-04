@@ -177,22 +177,22 @@ Route::group(['middleware' => ['web']], function () {
 	Route::group(['prefix' => 'alumno'], function () {
 	    Route::resource('panel', 'AlumnosController');
 	    Route::get('alumnos/{id}/destroy', [
-	    	'uses'	=> 'AlumnosController@destroy',
+	    	'uses'	=> 'ModuloAlumnoController@destroy',
 	    	'as'	=> 'alumnos.panel.destroy',
 	    ]);
 	  	
 	    Route::get('login', [
-	    	'uses'		=>	'AlumnosController@getLogin',
+	    	'uses'		=>	'ModuloAlumnoController@getLogin',
 	    	'as'		=> 	'alumno.login'
 	    ]);
 
 	    Route::get('logout', [
-	    	'uses'		=>	'AlumnosController@getLogout',
+	    	'uses'		=>	'ModuloAlumnoController@getLogout',
 	    	'as'		=> 	'alumno.logout'
 	    ]);
 
 	    Route::post('acceso', [
-	    	'uses'		=>	'AlumnosController@getAcceso',
+	    	'uses'		=>	'ModuloAlumnoController@getAcceso',
 	    	'as'		=> 	'alumno.acceso'
 	    ]);
 	    Route::resource('import', 'ImportController');

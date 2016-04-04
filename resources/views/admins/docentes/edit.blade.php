@@ -80,19 +80,7 @@
              </div>
         </div>
       </div>
-      <div class="row">
-      <div class="input-field col s12">
-          <div class="file-field input-field">
-            <div class="btn">
-              <span>Avatar</span>
-            {!! Form::file('avatar') !!}
-            </div>
-            <div class="file-path-wrapper">
-                <input class="file-path validate" type="text" placeholder="Suba aquí foto del Docente">
-            </div>
-          </div>            
-      </div>
-      </div>
+      
       <div class="row">
       	<div class="col s12">
         		{!! Form::submit('Editar Docente', ['class' => 'btn']) !!}

@@ -57,7 +57,7 @@ class DocentesController extends Controller
 
         $docente = new docente($request->all());
         $docente->institucion_id = 1;
-        $docente->rol_id = 2;
+        $docente->rol_id = 3;
         $docente->save();
 
         Session::flash('message', $docente->name . ' ha sido creado correctamente');

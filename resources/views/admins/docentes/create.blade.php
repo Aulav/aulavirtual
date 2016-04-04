@@ -25,26 +25,28 @@
         	{!! Form::label('ap_materno', 'Apellido Materno', ['for' => 'icon-prefix']) !!}
         	{!! Form::text('ap_materno', null, ['class' => 'validate', 'placeholder' => 'Escribe aquí Apellido Materno', 'id' => 'icon-prefix']) !!}
         </div>
-
-  		<div class="input-field col s6">
-        	<i class="material-icons prefix">school</i>
-        	{!! Form::label('user', 'Usuario', ['for' => 'icon-prefix']) !!}
-        	{!! Form::text('user', null, ['class' => 'validate', 'placeholder' => 'Escribe aquí nombre de Usuario', 'id' => 'icon-prefix']) !!}
-        </div>
-
-        <div class="input-field col s6">
-        	<i class="material-icons prefix">school</i>
-        	{!! Form::label('password', 'Passwrod', ['for' => 'icon-prefix']) !!}
-        	{!! Form::password('password', null, ['class' => 'password', 'placeholder' => 'Escribe aquí su password', 'id' => 'icon-prefix']) !!}
-        </div>
-
-        <div class="input-field col s6">
-        	<i class="material-icons prefix">vpn_key</i>
-        	{!! Form::label('direccion', 'Dirección', ['for' => 'icon-prefix']) !!}
-        	{!! Form::text('direccion', null, ['class' => 'validate', 'placeholder' => 'Escribe aquí la dirección', 'id' => 'icon-prefix']) !!}
-        </div>
+      <div class="row">
+    		<div class="input-field col s6">
+          	<i class="material-icons prefix">school</i>
+          	{!! Form::label('user', 'Usuario', ['for' => 'icon-prefix']) !!}
+          	{!! Form::text('user', null, ['class' => 'user', 'placeholder' => 'Escribe aquí nombre de Usuario', 'id' => 'icon-prefix']) !!}
+          </div>
+   
+     
+          <div class="input-field col s6">
+          	<i class="material-icons prefix">school</i>
+          	{!! Form::label('password', 'Passwrod', ['for' => 'icon-prefix']) !!}
+          	{!! Form::password('password', null, ['class' => 'password', 'placeholder' => 'Escribe aquí su password', 'id' => 'icon-prefix']) !!}
+          </div>
       </div>
       <div class="row">
+          <div class="input-field col s6">
+          	<i class="material-icons prefix">vpn_key</i>
+          	{!! Form::label('direccion', 'Dirección', ['for' => 'icon-prefix']) !!}
+          	{!! Form::text('direccion', null, ['class' => 'validate', 'placeholder' => 'Escribe aquí la dirección', 'id' => 'icon-prefix']) !!}
+          </div>
+     
+      
         <div class="input-field col s6">
         	<i class="material-icons prefix">phone</i>
         	{!! Form::label('tel', 'Telefono', ['for' => 'icon-prefix']) !!}
@@ -67,19 +69,7 @@
              </div>
         </div>
       </div>
-      <div class="row">
-	    <div class="input-field col s12">
-	     	<div class="file-field input-field">
-		    	<div class="btn">
-		        <span>Avatar</span>
-		    	{!! Form::file('avatar') !!}
-		    	</div>
-		    	<div class="file-path-wrapper">
-		        	<input class="file-path validate" type="text" placeholder="Suba aquí foto del Docente">
-		      	</div>
-    		</div>          	
-        </div>
-      </div>
+     
       <div class="row">
     	<div class="col s12">
       		{!! Form::submit('Crear Docente', ['class' => 'btn']) !!}

@@ -31,43 +31,7 @@ class AlumnosController extends Controller
         }
     }
 
-    public function getLogin()
-    {        
-        return view('/alumnos.login');
-    }
-
-    public function getAcceso( Request $request )
-    {        
-        $this->validate(
-            $request, [
-                'email'     => 'required|email',
-                'password'  => 'required',
-            ]
-        );
-
-        $alumno = Alumno::where('email', '=', $request->input('email'))
-                          ->where('password', '=', $request->input('password'))
-                          ->first();
-        
-        if( sizeof( $alumno ) == 0 ){
-            Session::flash('message', 'Los datos ingresados son incorrectos');
-            return redirect()->route('admin.login');
-        } else{
-            session(['id' => $alumno->id]);
-            session(['name' => $alumno->name]);
-            session(['email' => $alumno->email]);            
-            return redirect('/alumno/inicio');
-        }
-
-    }
-
-    public function getLogout()
-    {
-        Session::flush();
-        Session::flash('message', 'Ha cerrado sesión correctamente');
-        return redirect('/alumno/login');
-    }
-    
+   
     public function create()
     {
         if(Session::has('id')){
@@ -111,7 +75,7 @@ class AlumnosController extends Controller
             
 
             $roles = Rol::orderBy('name', 'ASC')->lists('name', 'id');    
-            return view('alumnos.edit', ['alumno' => $alumno, 'roles' => $roles]);
+            return view('admins.alumnos.edit', ['alumno' => $alumno, 'roles' => $roles]);
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
             return redirect('/admin/login');

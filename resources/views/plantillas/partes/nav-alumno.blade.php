@@ -1,64 +1,65 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>@yield('title','Default') | Plataforma Educativa</title>
-	<!--estilos principales de la plataforma Educativa-->
-	<link rel="stylesheet"  href="{{ asset('css/estilos.css')}}">
-	<!--import materialize.css-->
-  	<link type="text/css" rel="stylesheet" href="{{ asset('css/materialize.min.css')}}"  media="screen,projection"/>
-  	<!--import Google Icon Fonts-->
-  	<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
-  	<!--import ajax for preloader-->
-  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-</head>
-<body>
-	 <!--inithial menu-->
-     <!-- Dropdown Structure -->
-      <ul id="dropdown1" class="dropdown-content ">
-       <li><a href="profile_user.html"><i class="material-icons ">person</i>Perfil</a></li>
+<!--inithial menu-->
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content ">
+        <li><a href="{{ asset('admin/profile') }}"><i class="material-icons ">person</i>profile</a></li>
         <li class="divider"></li>
-        <li><a href="#!"><i class="material-icons">input</i>Salir</a></li>
-      </ul>
-      <ul id="dropdown2" class="dropdown-content">
-       <li><a href="examen_alumno.html"> <i class="material-icons">assignment</i>Examenes</a></li>
-            <li class="divider"></li>
-            <li><a href="#!"><i class="material-icons">speaker_notes</i>Ficha de estudio</a></li>
-            <li class="divider"></li>
-            <li><a href="#"> <i class="material-icons">chat</i>Foro</a></li>
-      </ul>
-      <ul id="dropdown1" class="dropdown-content">
-       <li><a href="profile_user.html"><i class="material-icons">person</i>Perfil</a></li>
-        <li class="divider"></li>
-        <li><a href="#!"><i class="material-icons">input</i>Salir</a></li>
-      </ul>
-      <ul id="dropdown2" class="dropdown-content">
-       <li><a href="#"> <i class="material-icons">assignment</i>Examenes</a></li>
-            <li class="divider"></li>
-            <li><a href="#!"><i class="material-icons">speaker_notes</i>Ficha de estudio</a></li>
-            <li class="divider"></li>
-            <li><a href="#"> <i class="material-icons">chat</i>Foro</a></li>
-      </ul>
+        @if (Session::get('rol') == 1)
+            <li><a href="{{ asset('admin/logout') }}"><i class="material-icons">input</i>Salir</a></li>
+        @elseif ( Session::get('rol') == 2 )
+            <li><a href="{{ asset('docente/logout') }}"><i class="material-icons">input</i>Salir</a></li>
+        @elseif ( Session::get('rol') == 3 )
+            <li><a href="{{ asset('docente/logout') }}"><i class="material-icons">input</i>Salir</a></li>
+        @elseif ( Session::get('rol') == 4 )
+            <li><a href="{{ asset('docente/logout') }}"><i class="material-icons">input</i>Salir</a></li>
+        @endif
 
-      <ul id="dropdown3" class="dropdown-content">
-       <li><a href="#"> <i class="material-icons">spellcheck</i>Asistencia</a></li>
-            <li class="divider"></li>
-            <li><a href="#!"><i class="material-icons">perm_media</i>Entregas</a></li>
-            <li class="divider"></li>
-            <li><a href="#"> <i class="material-icons">comment</i>Discusiones</a></li>
-            <li class="divider"></li>
-            <li><a href="#"> <i class="material-icons">assignment</i>Pruebas</a></li>
-            <li class="divider"></li>
-            <li><a href="#"> <i class="material-icons">star_rate</i>Comentario</a></li>
-      </ul>
-	
-	<!-- Pie de pagina -->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="{{ asset('plugin/choosen/chosen.jquery.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/menu.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/funciones.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
-</body>
-</html>
+
+    </ul>
+    <ul id="dropdown2" class="dropdown-content">
+       <li><a href="{{ asset('/examen/panel') }}"> <i class="material-icons">assignment</i>Examenes</a></li>
+        <li class="divider"></li>
+        <li><a href="{{ asset('/ficha/panel') }}"><i class="material-icons">speaker_notes</i>Tarjetas de estudio</a></li>
+        <li class="divider"></li>
+        <li><a href="alumnos/foro.html"> <i class="material-icons">chat</i>Foro</a></li>
+    </ul>
+        
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="profile_user.html"><i class="material-icons">person</i>Perfil</a></li>
+        <li class="divider"></li>
+        @if (Session::get('rol') == 1)
+            <li><a href="{{ asset('admin/logout') }}"><i class="material-icons">input</i>Salir</a></li>
+        @elseif ( Session::get('rol') == 2 )
+            <li><a href="{{ asset('admin/logout') }}"><i class="material-icons">input</i>Salir</a></li>
+        @elseif ( Session::get('rol') == 3 )
+            <li><a href="{{ asset('docente/logout') }}"><i class="material-icons">input</i>Salir</a></li>
+        @elseif ( Session::get('rol') == 4 )
+            <li><a href="{{ asset('alumno/logout') }}"><i class="material-icons">input</i>Salir</a></li>
+        @endif
+    </ul>
+    <ul id="dropdown2" class="dropdown-content">
+       <li><a href="{{ asset('/examen/panel') }}"> <i class="material-icons">assignment</i>Examenes</a></li>
+        <li class="divider"></li>
+        <li><a href="{{ asset('/ficha/panel') }}"><i class="material-icons">speaker_notes</i>Tarjetas de estudio</a></li>
+        <li class="divider"></li>
+        <li><a href="alumnos/foro.html"> <i class="material-icons">chat</i>Foro</a></li>
+    </ul>
+    <!--inithial nav-->
+    <nav class="default_color" >
+        <div class="nav-wrapper">
+            <a href="{{ asset('/grafica/panel')}}" class="brand-logo logo-left">PLATAFORMA EDUCATIVA</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+           <!-- <li><a href="{{ asset('/institucion/panel')}}" >Institucion</a></li>-->
+            <li><a href="#modal-msj" class="modal-trigger">Mensajes</a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Utilidades<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-button" href="admins.html" data-activates="dropdown1">{{ Session::get('email') }}<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+            <!--<li><a href="sass.html">Institucion</a></li>-->
+            <li><a href="#modal-msj">Mensajes</a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Utilidades<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">{{ Session::get('email') }}<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+        </div>
+    </nav><!--end nav-->
+  

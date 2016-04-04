@@ -109,7 +109,8 @@ class AdminsController extends Controller
 
         $admin = new administrador($request->all());
         $admin->user =$request->email;
-        $admin->password = bcrypt($request->matricula);
+        $admin->password =$request->password;
+        //$admin->password = bcrypt($request->matricula);
         $admin->institucion_id = 1;
         $admin->rol_id = 1;
         $admin->save();
@@ -120,7 +121,7 @@ class AdminsController extends Controller
         $image->save(); */
 
         Session::flash('message', $admin->name . ' ha sido creado correctamente');
-        return redirect('/auth/register');
+        return redirect('/admin/panel');
     }
 
     public function show()

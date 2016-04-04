@@ -21,7 +21,7 @@
 	      <div class="indeterminate"></div>
 	    </div>
 	  </div>
-	@include('plantillas.partes.nav-docente')
+	@include('plantillas.partes.nav-alumno')
 
 	<div class="row">
         <div class="col s12">
