@@ -79,7 +79,10 @@
                     {!! Form::select('sexo',['Femenino', 'Masculino'], null,['placeholder' =>'Selecciona su sexo','required']) !!}
                     </div>
                     <div class="input-field col s6">
-                    	{!! Form::number('edad', 'value');!!}
+                    	{ !! Form::label('Edad', 'Edad');!!}
+                    	{!! Form::number('edad', 'value',null,['placeholder' => 'Edad']);!!}
+                    
+                    
                     </div>
             </div>
                  

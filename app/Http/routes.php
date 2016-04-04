@@ -101,17 +101,17 @@ Route::group(['middleware' => ['web']], function () {
 	    Route::resource('panel', 'DocentesController');
 	    
 	    Route::get('login', [
-	    	'uses'		=>	'DocentesController@getLogin',
+	    	'uses'		=>	'ModuloDocentesController@getLogin',
 	    	'as'		=> 	'docente.login'
 	    ]);
 
 	    Route::get('logout', [
-	    	'uses'		=>	'DocentesController@getLogout',
+	    	'uses'		=>	'ModuloDocentesController@getLogout',
 	    	'as'		=> 	'docente.logout'
 	    ]);
 
 	    Route::post('acceso', [
-	    	'uses'		=>	'DocentesController@getAcceso',
+	    	'uses'		=>	'ModuloDocentesController@getAcceso',
 	    	'as'		=> 	'docente.acceso'
 	    ]);
 	    
@@ -289,17 +289,51 @@ Route::group(['middleware' => ['web']], function () {
 	/***********
 	****grupo de rutas para el modulo docentes
 	************/
+
 	Route::get('docente/inicio', [
-	'uses' => 'DocentesController@inicioDocente',
+	'uses' => 'ModuloDocentesController@index',
 	'as'   => 'docente.inicio',
 	]);
+	Route::get('docente/calificaciones', [
+	'uses'	=> 'ModuloDocentesController@calificaciones',
+	'as'	=> 'docente/calificaciones'
+
+		]);
+	Route::get('docente/tareas', [
+		'uses'	=> 'ModuloDocentesController@tareas',
+		'as'	=> 'Modulo.tareas',
+		]);
+	Route::get('docente/calendario', [
+		'uses'	=> 'ModuloDocentesController@calendario',
+		'as'	=> 'Modulo.calendario',
+		]);
+	Route::get('docente/asistencia', [
+		'uses'	=> 'ModuloDocentesController@asistencia',
+		'as'	=> 'Modulo.asistencia',
+		]);
+	Route::get('docente/alumno', [
+		'uses'	=> 'ModuloDocentesController@alumnos',
+		'as'	=> 'Modulo.alumnos',
+		]);
+	Route::get('docente/examenes', [
+		'uses'	=> 'ModuloDocentesController@examenes',
+		'as'	=> 'Modulo.examenes',
+		]);
+	Route::get('docente/tareasentregadas', [
+		'uses'	=> 'ModuloDocentesController@tareasentregadas',
+		'as'	=> 'Modulo.tareasentregadas',
+		]);
 	/***********
 	****grupo de rutas para el modulo Alumnos
 	************/
 	Route::get('alumno/inicio', [
-		'uses' => 'AlumnosController@alumnoInicio',
+		'uses' => 'ModuloAlumnoController@index',
 		'as'	=> 'Alumno.inicio',
 
 	]);
-
+	Route::get('alumno/calificaciones', [
+		'uses'	=> 'ModuloAlumnoController@calificaciones',
+		'as'	=> 'Modulo.calificaciones',
+		]);
+	
 });

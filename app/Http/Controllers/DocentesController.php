@@ -24,44 +24,7 @@ class DocentesController extends Controller
         }
     }
 
-    public function getLogin()
-    {        
-        return view('docentes.login');
-    }
-
-    public function getAcceso( Request $request )
-    {        
-        $this->validate(
-            $request, [
-                'email'     => 'required|email',
-                'password'  => 'required',
-            ]
-        );
-
-        $docente = Docente::where('email', '=', $request->input('email'))
-                            ->where('password', '=', $request->input('password'))
-                            ->first();
-        
-        if( sizeof( $docente ) == 0 ){
-            Session::flash('message', 'Los datos ingresados son incorrectos');
-            return redirect()->route('docente.login');
-        } else{
-            Session::put(['id' => $docente->id]);
-            Session::put(['name' => $docente->name]);
-            Session::put(['email' => $docente->email]); 
-            Session::put(['rol' => $docente->rol_id]); 
-
-            return redirect('/docente/inicio');
-        }
-
-    }
-
-    public function getLogout()
-    {
-        Session::flush();
-        Session::flash('message', 'Ha cerrado sesión correctamente');
-        return redirect('/docente/login');
-    }
+   
     
     public function create()
     {
@@ -148,9 +111,5 @@ class DocentesController extends Controller
         return redirect('/docente/panel');
         
     }  
-    public function inicioDocente()
-    {
-        return view('docentes.index');
-    }
-
+    
 }
