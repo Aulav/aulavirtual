@@ -11,7 +11,7 @@
 <div class="row">
 		<div class="col s12">
 			<nav>
-				<div class="nav-wrapper teal darken-1">
+				<div class="nav-wrapper indigo darken-2">
 					<div class="col s12">
 						<a href="{{ asset('/examen/panel') }}" class="breadcrumb">Atras</a>
 						<span class="breadcrumb">Crear Nuevo Examen</span>

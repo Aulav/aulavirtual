@@ -195,6 +195,7 @@ Route::group(['middleware' => ['web']], function () {
 	    	'uses'		=>	'ModuloAlumnoController@getAcceso',
 	    	'as'		=> 	'alumno.acceso'
 	    ]);
+
 	    Route::resource('import', 'ImportController');
 	    Route::get('import', [
 	    	'uses'      => 'ImportController@import',
@@ -355,14 +356,27 @@ Route::get('temarios/{pdf}', function ($pdf) {
 	/***********
 	****grupo de rutas para el modulo Alumnos
 	************/
+
 	Route::get('alumno/inicio', [
 		'uses' => 'ModuloAlumnoController@index',
 		'as'	=> 'Alumno.inicio',
 
 	]);
-	Route::get('alumno/calificaciones', [
-		'uses'	=> 'ModuloAlumnoController@calificaciones',
-		'as'	=> 'Modulo.calificaciones',
-		]);
+	
+	Route::get('alumno/calificacion', [
+		'uses'	=> 'ModuloAlumnoController@calificacion',
+		'as'	=> 'Modulo.calificacion',
+	]);
+
+	Route::get('alumno/tareas', [
+		'uses'	=> 'ModuloAlumnoController@tareas',
+		'as'	=> 'Modulo.tareas',
+	]);
+
+
+	Route::get('alumno/inicio2', [
+	'uses'	=> 'ModuloAlumnoController@index2',
+	'as'	=> 'Modulo.inicio2',
+	]);
 	
 });
