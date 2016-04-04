@@ -12,10 +12,29 @@
             </div>
         </div>
         <div class="row">
-        <div class="input-field col s6">
-        	<i class="material-icons prefix">home</i>
-        	{!! Form::label('numero_unidades', 'Número de unidades', ['for' => 'icon-prefix']) !!}
-        	{!! Form::text('numero_unidades', null, ['class' => 'validate', 'placeholder' => 'Escribe aquí el número de unidades', 'id' => 'icon-prefix']) !!}
+            <div class="input-field col s6">
+            	<i class="material-icons prefix">home</i>
+            	{!! Form::label('numero_unidades', 'Número de unidades', ['for' => 'icon-prefix']) !!}
+            	{!! Form::text('numero_unidades', null, ['class' => 'validate', 'placeholder' => 'Escribe aquí el número de unidades', 'id' => 'icon-prefix']) !!}
+            </div>
         </div>
-    </div>
+        <div class="row">
+            <p>Subir Temario en formato PDF</p>
+        <div class="row">
+            <div class="col s12 m12">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>Archivo</span>
+                       
+                        {!! Form::file('pdf')!!}
+                       
+                    </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" value="Ningún archivo seleccionado" type="text">
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
 </div>

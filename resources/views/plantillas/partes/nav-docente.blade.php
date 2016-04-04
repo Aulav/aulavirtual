@@ -4,9 +4,9 @@
         <li><a href="profile_user.html"><i class="material-icons ">person</i>Perfíl</a></li>
         <li class="divider"></li>
         @if (Session::get('rol') == 1)
-            <li><a href="{{ asset('admin/logout') }}"><i class="material-icons">input</i>Salir</a></li>
+            <li><a href="{{ asset('docente/logout') }}"><i class="material-icons">input</i>Salir</a></li>
         @elseif ( Session::get('rol') == 2 )
-            <li><a href="{{ asset('admin/logout') }}"><i class="material-icons">input</i>Salir</a></li>
+            <li><a href="{{ asset('docente/logout') }}"><i class="material-icons">input</i>Salir</a></li>
         @elseif ( Session::get('rol') == 3 )
             <li><a href="{{ asset('docente/logout') }}"><i class="material-icons">input</i>Salir</a></li>
         @elseif ( Session::get('rol') == 3 )
@@ -16,9 +16,9 @@
 
     </ul>
     <ul id="dropdown2" class="dropdown-content">
-       <li><a href="Docentes/examen.html"> <i class="material-icons">assignment</i>Examenes</a></li>
+       <li><a href="{{ asset('/examen/panel') }}"> <i class="material-icons">assignment</i>Examenes</a></li>
         <li class="divider"></li>
-        <li><a href="tarjetas.html"><i class="material-icons">speaker_notes</i>Ficha de estudio</a></li>
+        <li><a href="{{ asset('/ficha/panel') }}"><i class="material-icons">speaker_notes</i>Ficha de estudio</a></li>
         <li class="divider"></li>
         <li><a href="alumnos/foro.html"> <i class="material-icons">chat</i>Foro</a></li>
     </ul>
@@ -27,9 +27,9 @@
         <li><a href="profile_user.html"><i class="material-icons">person</i>Perfil</a></li>
         <li class="divider"></li>
         @if (Session::get('rol') == 1)
-            <li><a href="{{ asset('admin/logout') }}"><i class="material-icons">input</i>Salir</a></li>
+            <li><a href="{{ asset('docente/logout') }}"><i class="material-icons">input</i>Salir</a></li>
         @elseif ( Session::get('rol') == 2 )
-            <li><a href="{{ asset('admin/logout') }}"><i class="material-icons">input</i>Salir</a></li>
+            <li><a href="{{ asset('docente/logout') }}"><i class="material-icons">input</i>Salir</a></li>
         @elseif ( Session::get('rol') == 3 )
             <li><a href="{{ asset('docente/logout') }}"><i class="material-icons">input</i>Salir</a></li>
         @elseif ( Session::get('rol') == 3 )
@@ -37,9 +37,9 @@
         @endif
     </ul>
     <ul id="dropdown2" class="dropdown-content">
-       <li><a href="Docentes/examen.html"> <i class="material-icons">assignment</i>Examenes</a></li>
+       <li><a href="{{ asset('/examen/panel') }}"> <i class="material-icons">assignment</i>Examenes</a></li>
         <li class="divider"></li>
-        <li><a href="tarjetas.html"><i class="material-icons">speaker_notes</i>Ficha de estudio</a></li>
+        <li><a href="{{ asset('/ficha/panel') }}"><i class="material-icons">speaker_notes</i>Ficha de estudio</a></li>
         <li class="divider"></li>
         <li><a href="alumnos/foro.html"> <i class="material-icons">chat</i>Foro</a></li>
     </ul>

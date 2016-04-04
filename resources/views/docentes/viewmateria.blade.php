@@ -1,10 +1,10 @@
 @extends('plantillas.main-docente')
-@section('title', 'Panel Docentes')
+@section('title', 'Materia Docente')
 @section('menu')
-  @include('plantillas.partes.menu-docente')
+@include('plantillas.partes.menu-docente')
 @endsection
 @section('contenido')
- <div class="col s12 "><!--start contenido dinamico de la pagina-->
+<div class="col s12 "><!--start contenido dinamico de la pagina-->
         
         <div class="col s4">
         <a href="../nueva_asignatura.html" class="waves-effect waves-light btn modal-trigger blue-grey darken-4"><i class="material-icons">note_add</i>Crear nueva Tarea</a>

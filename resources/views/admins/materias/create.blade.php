@@ -8,7 +8,7 @@
 @section('contenido')
     @include('admins.materias.partials.migas')
     <h1 class="center flow-text">Registrar nueva materia</h1>
-    {!! Form::open(['route' => 'materia.panel.store', 'method' => 'POST']) !!}
+    {!! Form::open(['route' => 'materia.panel.store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
         @include('admins.materias.partials.form')
         <div class="row">
         	<div class="col s12">

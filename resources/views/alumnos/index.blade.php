@@ -19,23 +19,13 @@
                   </thead>
 
                   <tbody>
+                  @foreach ($materias as $materia)
                     <tr>
-                    <td><a href="">Fisica</a></td>
+                    <td><a href=""></a>{{$materia->name}}</td>
                     <td>Octavio Aquino</td>
                     <td>30%</td>
                     </tr>
-
-                    <tr>
-                    <td><a href=""> Matematicas</a></td>
-                    <td>Gerardo Martinez</td>
-                    <td>70%</td>
-                    </tr>
-
-                    <tr>
-                    <td><a href="">Biologia</a></td>
-                    <td>Jose Luis Martinez</td>
-                    <td>-</td>
-                    </tr>
+                    @endforeach
 
                   </tbody>
                 </table>

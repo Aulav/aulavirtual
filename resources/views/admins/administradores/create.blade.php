@@ -26,13 +26,27 @@
         	{!! Form::label('ap_materno', 'Apellido Materno', ['for' => 'icon-prefix']) !!}
         	{!! Form::text('ap_materno', null, ['class' => 'validate', 'placeholder' => 'Escribe aquí Apellido Materno', 'id' => 'icon-prefix']) !!}
         </div>
+      </div>
+      <div class="row">
+       <div class="input-field col s6">
+            <i class="material-icons prefix">people</i>
+            {!! Form::label('user', 'Usuario', ['for' => 'icon-prefix']) !!}
+            {!! Form::text('user', null, ['class' => 'validate', 'placeholder' => 'Escribe aquí el Usuario', 'id' => 'icon-prefix']) !!}
+          </div>
+          <div class="input-field col s6">
+            <i class="material-icons prefix">school</i>
+            {!! Form::label('password', 'Contraseña', ['for' => 'icon-prefix']) !!}
+            {!! Form::password('password', null, ['class' => 'validate', 'placeholder' => 'Escribe aquí la Contraseña', 'id' => 'icon-prefix']) !!}
+          </div>
+      </div>
+      <div class="row">
         <div class="input-field col s6">
         	<i class="material-icons prefix">vpn_key</i>
         	{!! Form::label('direccion', 'Dirección', ['for' => 'icon-prefix']) !!}
         	{!! Form::text('direccion', null, ['class' => 'validate', 'placeholder' => 'Escribe aquí la dirección', 'id' => 'icon-prefix']) !!}
         </div>
-      </div>
-      <div class="row">
+      
+      
         <div class="input-field col s6">
         	<i class="material-icons prefix">phone</i>
         	{!! Form::label('tel', 'Telefono', ['for' => 'icon-prefix']) !!}
@@ -49,10 +63,7 @@
             <div class="input-field col s16 m3">                
                 {!! Form::select('sexo',['Femenino', 'Masculino'], null,['placeholder' =>'Selecciona su sexo','required']) !!}
              </div>
-             <div class="input-field col s3">
-                {!!Form::label('Edad','Edad',['for'=> 'icon-prefix'])!!}
-                {!! Form::number('edad', 'value');!!}
-             </div>
+             
         </div>
       </div>
       <!--<div class="row">

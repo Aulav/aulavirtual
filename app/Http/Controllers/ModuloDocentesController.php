@@ -10,6 +10,8 @@ use Session;
 use App\Docente;
 use App\Rol;
 use App\Institucion;
+use App\Materia;
+use App\Alumno;
 
 
 class ModuloDocentesController extends Controller
@@ -17,7 +19,12 @@ class ModuloDocentesController extends Controller
 	public function index()
 	{
 	    if( Session::has('id') ){
-	        return view('docentes.index');
+            //$materias = Materia::orderBy('name', 'ASC')->lists('name', 'id');
+            $materias = Materia::orderBy('name', 'ASC')->paginate(3);
+            $alumnos = Alumno::orderBy('name')->paginate(3);
+            
+	        return view('docentes.index')->with('materias', $materias)->with('alumnos', $alumnos);
+            //return view('admins.materias.index', ['materias' => $materias]);
 	    }
 	    else
 	    {
@@ -65,7 +72,8 @@ class ModuloDocentesController extends Controller
     }
     public function calificaciones()
     {
-        return view('docentes.viewcalificacion');
+         $alumnos = Alumno::orderBy('name')->paginate(3);
+        return view('docentes.viewcalificacion')->with('alumnos', $alumnos);
     }
     public function tareas()
     {
@@ -81,11 +89,37 @@ class ModuloDocentesController extends Controller
     }
     public function tareasentregadas()
     {
-        return view('docentes.viewtaentregadas');
+        return view('docentes.viewtaentregada');
     }
     public function calendario()
     {
+
         return view('alumnos.calendario.index');
     }
-    
+    public function materia()
+    {
+        $alumnos = Alumno::orderBy('name')->paginate(5);
+        return view('docentes.viewmateria')->with('alumnos', $alumnos);
+    }
+    public function alumnos()
+    {
+        $alumnos = Alumno::orderBy('name')->paginate(3);
+        return view('docentes.viewalumnos')->with('alumnos', $alumnos);
+    }
+    public function alumnoedit($id)
+    {
+        if(Session::has('id')){            
+            $alumnos = Alumno::find($id);  
+            /*$alumno->materia();
+         
+            $materia = Materia::orderBy('name', 'ASC')->lists('name', 'id'); */
+            
+
+              
+            return view('admins.alumnos.edit', ['alumnos' => $alumnos, 'roles' => $roles]);
+        }else{
+            Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
+            return redirect('/docente/login');
+        }
+    }
 }

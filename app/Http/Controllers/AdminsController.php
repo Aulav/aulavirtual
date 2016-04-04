@@ -159,7 +159,7 @@ class AdminsController extends Controller
                 'ap_paterno'  => 'required',
                 'ap_materno'  => 'required',
                 'user'        => 'required',
-                'password'    => 'required',
+                
                 'tel'         => 'required',
                 'email'       => 'required',
                 'sexo'        => 'required',
