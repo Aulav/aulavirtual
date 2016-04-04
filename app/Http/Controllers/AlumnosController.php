@@ -113,4 +113,9 @@ class AlumnosController extends Controller
         return view('alumnos.index');
     }
 
+     public function alumnoInicio2()
+    {
+        return view('alumnos.index-dinamico');
+    }
+
 }

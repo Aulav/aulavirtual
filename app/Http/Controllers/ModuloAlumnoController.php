@@ -58,5 +58,12 @@ class ModuloAlumnoController extends Controller
         Session::flash('message', 'Ha cerrado sesión correctamente');
         return redirect('/alumno/login');
     }
+
+
+   public function index2()
+    {
+        return view('/alumnos.index-dinamico');
+    }
+
     
 }
