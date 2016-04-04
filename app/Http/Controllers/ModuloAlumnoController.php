@@ -65,5 +65,14 @@ class ModuloAlumnoController extends Controller
         return view('/alumnos.index-dinamico');
     }
 
-    
+    public function calificacion()
+    {
+        return view('/alumnos.calificacion');
+    }
+
+    public function tareas()
+    {
+        return view('/alumnos.tareas');
+    }   
+ 
 }
