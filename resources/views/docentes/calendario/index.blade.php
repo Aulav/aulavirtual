@@ -1,4 +1,4 @@
-@extends('plantillas.main-alumno')
+@extends('plantillas.main-docente')
 @section('title', 'Calendario de eventos')
 
 @section('menu')
