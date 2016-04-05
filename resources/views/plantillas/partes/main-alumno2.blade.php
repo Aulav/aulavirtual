@@ -5,18 +5,18 @@
           </div>
           <p class="user-name">{{ Session::get('name') }}</p>
           <a href="{{asset('/alumno/inicio')}}" class="collection-item active"><i class="material-icons">home</i>Inicio</a>
-<<<<<<< HEAD
-          <a href="docente.html" class="collection-item"><i class="material-icons">work</i>Tareas</a>
+
+          <a href="{{asset('/alumno/tareas')}}" class="collection-item"><i class="material-icons">work</i>Tareas</a>
           <a href="{{asset('/alumno/material')}}" class="collection-item"><i class="material-icons">work</i>Material Didactico</a>
           <a href="{{asset('/alumno/alive')}}" class="collection-item"><i class="material-icons">live_tv</i>Clases en vivo</a>
           <a href="alumno.html" class="collection-item "><i class="material-icons">people</i>Calendario</a>
           <a href="admins.html" class="collection-item"><i class="material-icons">group</i>Calificaciones</a>
-=======
+
           <a href="{{asset('/alumno/tareas')}}" class="collection-item"><i class="material-icons">work</i>Tareas</a>
           <a href="docente.html" class="collection-item"><i class="material-icons">work</i>Material Didactico</a>
           <a href="{{asset('alumno/calendario')}}" class="collection-item "><i class="material-icons">people</i>Calendario</a>
           <a href="{{asset('/alumno/calificacion')}}" class="collection-item"><i class="material-icons">group</i>Calificaciones</a>
->>>>>>> d830ca694ac0840f801cb7a8db85566398492b23
+
           <a href="admins.html" class="collection-item"><i class="material-icons">group</i>Enviar mensajes</a>
           
               <ul class="collapsible collapsible-accordion">

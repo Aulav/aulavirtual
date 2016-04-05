@@ -11,13 +11,16 @@ use App\Docente;
 use App\Alumno;
 use App\Rol;
 use App\Institucion;
+use App\Materia;
 
 
 class ModuloAlumnoController extends Controller
 {
 	public function index()
 	{
-		return view('/alumnos.index');
+        $alumnos = Alumno::orderBy('name')->paginate(5);
+        $materias = Materia::orderBy('name')->paginate(5);
+		return view('/alumnos.index')->with('alumnos', $alumnos)->with('materias', $materias);
 	}
      public function getLogin()
 	
@@ -65,7 +68,6 @@ class ModuloAlumnoController extends Controller
         return view('/alumnos.index-dinamico');
     }
 
-<<<<<<< HEAD
     public function material()
     {
         return view('alumnos.material');
@@ -76,7 +78,6 @@ class ModuloAlumnoController extends Controller
         return view('alumnos.alive');
     }
     
-=======
     public function calificacion()
     {
         return view('/alumnos.calificacion');
@@ -87,5 +88,4 @@ class ModuloAlumnoController extends Controller
         return view('/alumnos.tareas');
     }   
  
->>>>>>> d830ca694ac0840f801cb7a8db85566398492b23
 }
