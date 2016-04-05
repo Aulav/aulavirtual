@@ -19,7 +19,17 @@
                   </thead>
 
                   <tbody>
-                 
+
+
+                  @foreach ($materias as $materia)
+                    <tr>
+
+                    <td><a href=""></a>{{$materia->name}}</td>
+                    <td>Octavio Aquino</td>
+                    <td>30%</td>
+                    </tr>
+                    @endforeach
+
 
                     <td><a href="{{ asset('/alumno/tareas') }}">Fisica</a></td>
                     <td>Octavio Aquino</td>

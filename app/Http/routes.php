@@ -379,6 +379,27 @@ Route::get('temarios/{pdf}', function ($pdf) {
 	'as'	=> 'Modulo.inicio2',
 	]);
 
+
+	Route::get('alumno/calendario', [
+	'uses'	=> 'ModuloAlumnoController@calendario',
+	'as'	=> 'Modulo.calendario',
+	]);
+
+	Route::get('alumno/mensaje', [
+	'uses'	=> 'ModuloAlumnoController@mensaje',
+	'as'	=> 'Modulo.mensaje',
+	]);
+
+	Route::get('alumno/asistencia', [
+	'uses'	=> 'ModuloAlumnoController@asistencia',
+	'as'	=> 'Modulo.asistencia',
+	]);
+
+	Route::get('alumno/foro', [
+	'uses'	=> 'ModuloAlumnoController@foro',
+	'as'	=> 'Modulo.foro',
+	]);
+
 	Route::get('alumno/material', [
 		'uses'	=> 'ModuloAlumnoController@material',
 		'as'	=> 'alumno.material',
