@@ -65,6 +65,7 @@ class ModuloAlumnoController extends Controller
         return view('/alumnos.index-dinamico');
     }
 
+<<<<<<< HEAD
     public function material()
     {
         return view('alumnos.material');
@@ -75,4 +76,16 @@ class ModuloAlumnoController extends Controller
         return view('alumnos.alive');
     }
     
+=======
+    public function calificacion()
+    {
+        return view('/alumnos.calificacion');
+    }
+
+    public function tareas()
+    {
+        return view('/alumnos.tareas');
+    }   
+ 
+>>>>>>> d830ca694ac0840f801cb7a8db85566398492b23
 }

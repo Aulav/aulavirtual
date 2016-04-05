@@ -16,7 +16,7 @@ class MateriasController extends Controller
         public function index()
     {
     	if( Session::has('id') ){    		
-            $materias = Materia::orderBy('id', 'DESC')->paginate(3);
+            $materias = Materia::orderBy('id', 'ASC')->paginate(5);
             return view('admins.materias.index', ['materias' => $materias]);
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
@@ -44,17 +44,34 @@ class MateriasController extends Controller
                 'numero_unidades'  => 'integer',
             ]
         );
-
-        $materia = new Materia($request->all());
-        $materia->save();
+        if($request->file('pdf'))
+        {
+            $file = $request->file('pdf');
+            $name = 'temario_' .time() . '.' .$file->getClientOriginalExtension();
+            $path = public_path() . '/temarios/';
+            $file->move($path, $name);
+            $file = 'public/temarios/' . $name;
+            $newPDF = 'public/temarios/' .$name;
+           
+            $materia = new Materia($request->all());
+            $materia->temario =$newPDF;
+            
+            $materia->save();
 
         Session::flash('message', $materia->name . ' ha sido creada correctamente');
         return redirect('/materia/panel');
+    }
+      
 
     }
 
     public function show()
     {
+        return view('/materia/panel');
+      
+
+
+
 
     }
 

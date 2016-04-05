@@ -19,23 +19,32 @@
                   </thead>
 
                   <tbody>
+                  @foreach ($materias as $materia)
                     <tr>
-                    <td><a href="{{ asset('/alumno/inicio2') }}">Fisica</a></td>
+<<<<<<< HEAD
+                    <td><a href=""></a>{{$materia->name}}</td>
+                    <td>Octavio Aquino</td>
+                    <td>30%</td>
+                    </tr>
+                    @endforeach
+=======
+                    <td><a href="{{ asset('/alumno/tareas') }}">Fisica</a></td>
                     <td>Octavio Aquino</td>
                     <td>30%</td>
                     </tr>
 
                     <tr>
-                    <td><a href="{{ asset('/alumno/inicio2') }}"> Matematicas</a></td>
+                    <td><a href="{{ asset('/alumno/tareas') }}"> Matematicas</a></td>
                     <td>Gerardo Martinez</td>
                     <td>70%</td>
                     </tr>
 
                     <tr>
-                    <td><a href="{{ asset('/alumno/inicio2') }}">Biologia</a></td>
+                    <td><a href="{{ asset('/alumno/tareas') }}">Biologia</a></td>
                     <td>Jose Luis Martinez</td>
                     <td>-</td>
                     </tr>
+>>>>>>> 7d79d1fba643e4b18e00c3daa5f8a31f46123e5c
 
                   </tbody>
                 </table>

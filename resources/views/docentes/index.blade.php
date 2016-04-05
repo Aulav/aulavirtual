@@ -13,7 +13,7 @@
           <table class="responsive-table bordered">
             <thead>
               <tr>
-                <th>Periodo 206-2017</th>
+                <th>Periodo 2016-2017</th>
                 <th><i class="material-icons">group</i></th>
                 <th><i class="material-icons">insert_chart</i></th>
                 <th><i class="material-icons">error</i></th>
@@ -22,30 +22,31 @@
               </tr>
             </thead>
             <tbody>
+            @foreach($materias as $materia)
               <tr>
-                <td>Informatica</td>
+                <td><a href="{{ asset('/docente/materia')}}">{{ $materia->name}}</a></td>
+                <td>20%</td>
+                <td>20%</td>
+                <td>30%</td>
+                <td><a href="#modal-drop" class="btn tooltipped modal-trigger grey darken-3" data-position="bottom" data-delay="50" data-tooltip="Eliminar Materia"><i class="material-icons">delete</i></a></td>
+              </tr>
+               <!--<tr>
+                <td>Taller de Lectura y Redaccion l</td>
                 <td>20</td>
                 <td>20%</td>
                 <td>30%</td>
-                <td><a href="#modal-edit" class="btn tooltipped modal-trigger grey darken-3" data-position="bottom" data-delay="50" data-tooltip="Editar Admin"><i class="material-icons" data-tooltip="I am tooltip">mode_edit</i></a></td>
-                <td><a href="#modal-drop" class="btn tooltipped modal-trigger grey darken-3" data-position="bottom" data-delay="50" data-tooltip="Eliminar admin"><i class="material-icons">delete</i></a></td>
+                <td><a href="#modal-drop" class="btn tooltipped modal-trigger grey darken-3" data-position="bottom" data-delay="50" data-tooltip="Eliminar Materia"><i class="material-icons">delete</i></a></td>
               </tr>
               <tr>
-                <td>Matematicas</td>
+                <td>Administracion l</td>
                 <td>20</td>
                 <td>20%</td>
                 <td>30%</td>
-                <td><a href="#modal-edit" class="btn tooltipped modal-trigger grey darken-3" data-position="bottom" data-delay="50" data-tooltip="Editar Admin"><i class="material-icons" data-tooltip="I am tooltip">mode_edit</i></a></td>
-                <td><a href="#modal-drop" class="btn tooltipped modal-trigger grey darken-3" data-position="bottom" data-delay="50" data-tooltip="Eliminar admin"><i class="material-icons">delete</i></a></td>
-              </tr>
-              <tr>
-                <td>Español</td>
-                <td>20</td>
-                <td>20%</td>
-                <td>30%</td>
-                <td><a href="#modal-edit" class="btn tooltipped modal-trigger grey darken-3" data-position="bottom" data-delay="50" data-tooltip="Editar Admin"><i class="material-icons" data-tooltip="I am tooltip">mode_edit</i></a></td>
-                <td><a href="#modal-drop" class="btn tooltipped modal-trigger grey darken-3" data-position="bottom" data-delay="50" data-tooltip="Eliminar admin"><i class="material-icons">delete</i></a></td>
-              </tr>
+                <td><a href="#modal-drop" class="btn tooltipped modal-trigger grey darken-3" data-position="bottom" data-delay="50" data-tooltip="Eliminar Materia"><i class="material-icons">delete</i></a></td>
+              </tr>-->
+
+            @endforeach
+              
             </tbody>
           </table>
         </div>
@@ -57,14 +58,14 @@
     <div class="modal-content">
       <div class="row">
       <form class="col s12">
-        <div class="input-field col s12">
+        <!--<div class="input-field col s12">
           <select>
             <option value="" disabled selected>Seleciona una Institucion</option>
             <option>Ujat</option>
             <option>Uttab</option>
             <option>UMV</option>
           </select>
-        </div>
+        </div>-->
         <div class="input-field col s12">
           <i class="material-icons prefix">library_books</i>
           <input type="text" name="name_clase" class="validate">

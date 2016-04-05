@@ -9,9 +9,11 @@
 		             <th data-field="telefono">Número de unidades</th>
 		             <th data-field="editar">Editar</th>
 		             <th data-field="eliminar">Eliminar</th>
+		             <th data-field="temario">Temario</th>
 		        </tr>
 			</thead>
 		    <tbody>
+		    <tr><td><strong>1 semestre</strong></strong></td></tr>
 		        @foreach ($materias as $materia)
 		        	<tr>
 		          		<td>{{ $materia->name }}</td>
@@ -27,8 +29,16 @@
 		          				<i class="material-icons">delete</i>
 		          			</a>
 		          		</td>
+		          		<td>
+		          			<a href="{{url('/temarios/temario_1459810042.pdf')}}" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Ver Temario">
+		          				<i class="material-icons">visibility</i>
+		          			</a>
+		          		
+		          		</td>
+
 		        	</tr>
     			@endforeach
+    			<tr><td><strong>2 semestre</strong></strong></td></tr>
         	</tbody>
       	</table>   			
     </div>

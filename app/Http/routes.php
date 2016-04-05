@@ -209,6 +209,10 @@ Route::group(['middleware' => ['web']], function () {
 			'as'	=> 'alumnos.calendario',
 
 		]);
+		/*Route::get('calendario',[
+			'uses'=> 'CalendarioController@index',
+			'as' => 'alumnos.calendario',
+			]);*/
 	    
 	 
 	});
@@ -324,6 +328,31 @@ Route::group(['middleware' => ['web']], function () {
 		'uses'	=> 'ModuloDocentesController@tareasentregadas',
 		'as'	=> 'Modulo.tareasentregadas',
 		]);
+	Route::get('docente/materia', [
+		'uses'	=> 'ModuloDocentesController@materia',
+		'as'	=> 'Modulo.materia',
+		]);
+	Route::get('docente/editar', [
+		'uses'	=> 'ModuloDocentesController@alumnoedit',
+		'as'	=> 'alumno.editar',
+		]);
+
+	
+
+Route::get('temarios/{pdf}', function ($pdf) {
+     $public_path = public_path();
+     $url = $public_path.'/temarios/'.$pdf;
+     //verificamos si el archivo existe y lo retornamos
+     if (Storage::exists($pdf))
+     {
+       return response()->download($url);
+     }
+     //si no se encuentra lanzamos un error 404.
+     abort(404);
+
+});
+
+
 	/***********
 	****grupo de rutas para el modulo Alumnos
 	************/
@@ -334,10 +363,16 @@ Route::group(['middleware' => ['web']], function () {
 
 	]);
 	
-	Route::get('alumno/calificaciones', [
-		'uses'	=> 'ModuloAlumnoController@calificaciones',
-		'as'	=> 'Modulo.calificaciones',
+	Route::get('alumno/calificacion', [
+		'uses'	=> 'ModuloAlumnoController@calificacion',
+		'as'	=> 'Modulo.calificacion',
 	]);
+
+	Route::get('alumno/tareas', [
+		'uses'	=> 'ModuloAlumnoController@tareas',
+		'as'	=> 'Modulo.tareas',
+	]);
+
 
 	Route::get('alumno/inicio2', [
 	'uses'	=> 'ModuloAlumnoController@index2',

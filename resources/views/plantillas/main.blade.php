@@ -70,38 +70,7 @@
   <script type="text/javascript" src="{{ asset('js/highcharts-3d.js')}}"></script>
   <script type="text/javascript" src="{{ asset('js/modules/exporting.js')}}"></script>
 
-  <script type="text/javascript" src="{{asset('fullcalendar/lib/jquery-ui.custom.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('fullcalendar/lib/moment.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('fullcalendar/fullcalendar.js')}}"></script>
-  <script type="text/javascript" src="{{asset('fullcalendar/lang-all.js')}}"></script>
-  <script type="text/javascript" src="{{asset('fullcalendar/even.js')}}"></script>
-<script>
-
-  $(document).ready(function() {
-  var currentLangCode = 'es';//cambiar el idioma al español
-    $('#calendar').fullCalendar({
-      header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,agendaWeek,agendaDay'
-      },
-      lang:currentLangCode,
-      editable: true,
-      eventLimit: true, // allow "more" link when too many events
-      events: {
-        url: '{{asset('fullcalendar/demos/php/get-events.php')}}',
-        error: function() {
-          $('#script-warning').show();
-        }
-      },
-      loading: function(bool) {
-        $('#loading').toggle(bool);
-      }
-    });
-    
-  });
-
-</script>
+  
 
   
 </body>

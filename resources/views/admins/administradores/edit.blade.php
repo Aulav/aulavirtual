@@ -45,6 +45,7 @@
             {!! Form::label('user', 'Usuario', ['for' => 'icon-prefix']) !!}
             {!! Form::text('user', $admin->user, ['class' => 'validate', 'placeholder' => 'Escribe aquí nombre de Usuario', 'id' => 'icon-prefix']) !!}
           </div>
+         
         </div>
         <div class="row">
           <div class="input-field col s6">
@@ -69,10 +70,7 @@
           <div class="input-field col s16 m3">                
             {!! Form::select('sexo',['Femenino', 'Masculino'], $admin->sexo,['placeholder' =>'Selecciona su sexo','required']) !!}
           </div>
-          <div class="input-field col s3">
-            {!!Form::label('Edad','Edad',['for'=> 'icon-prefix'])!!}
-            {!! Form::number('edad', $admin->edad);!!}
-          </div>
+          
         </div>
             
         
