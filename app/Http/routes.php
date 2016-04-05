@@ -343,5 +343,15 @@ Route::group(['middleware' => ['web']], function () {
 	'uses'	=> 'ModuloAlumnoController@index2',
 	'as'	=> 'Modulo.inicio2',
 	]);
+
+	Route::get('alumno/material', [
+		'uses'	=> 'ModuloAlumnoController@material',
+		'as'	=> 'alumno.material',
+	]);
+
+	Route::get('alumno/alive', [
+		'uses'	=> 'ModuloAlumnoController@alive',
+		'as'	=> 'alumno.alive',
+	]);
 	
 });
