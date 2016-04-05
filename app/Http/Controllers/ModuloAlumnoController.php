@@ -55,7 +55,7 @@ class ModuloAlumnoController extends Controller
     public function getLogout()
     {
         Session::flush();
-        Session::flash('message', 'Ha cerrado sesión correctamente');
+        Session::flash('message', 'Ha cerrado sessión correctamente');
         return redirect('/alumno/login');
     }
 
@@ -65,6 +65,17 @@ class ModuloAlumnoController extends Controller
         return view('/alumnos.index-dinamico');
     }
 
+
+    public function material()
+    {
+        return view('alumnos.material');
+    }
+
+    public function alive()
+    {
+        return view('alumnos.alive');
+    }
+    
     public function calificacion()
     {
         return view('/alumnos.calificacion');
@@ -94,4 +105,5 @@ class ModuloAlumnoController extends Controller
     {
         return view('/alumnos.foro');
     } 
+
 }
