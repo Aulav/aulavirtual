@@ -103,5 +103,9 @@ class InstitucionesController extends Controller
     	dd($institucion);
     	$institucion->delete();
     }
+    public function profile()
+    {
+        return view('admins.instituciones.profile');
+    }
  
 }

@@ -74,6 +74,14 @@ Route::group(['middleware' => ['web']], function () {
 	    	'uses'		=>	'AdminsController@getAcceso',
 	    	'as'		=> 	'admin.acceso'
 	    ]);
+	    Route::get('admin/mensajes', [
+	    	'uses'	=> 'AdminsController@mensaje',
+	    	'as'	=> 'admin.mensajes',
+	    	]);
+	    Route::get('admin/viewmensajes', [
+	    	'uses'	=> 'AdminsController@viewmensaje',
+	    	'as'	=> 'admin.viewmensaje',
+	    	]);
 	    /*Route::get('profile', 'AdminsController@profile');
 		Route::post('updateprofile', 'AdminsController@updateProfile');*/
 		/*Route::resource('profile', 'AdminsController');
@@ -138,6 +146,10 @@ Route::group(['middleware' => ['web']], function () {
 	    	'uses'	=> 'InstitucionesController@destroy',
 	    	'as'	=> 'institucion.panel.destroy',
 	    ]);
+	    Route::get('profile', [
+	    	'uses'	=> 'InstitucionesController@profile',
+	    	'as'	=> 'institucion.profile',
+	    	]);
 	    
 	});
 
@@ -180,7 +192,7 @@ Route::group(['middleware' => ['web']], function () {
 	    	'uses'	=> 'ModuloAlumnoController@destroy',
 	    	'as'	=> 'alumnos.panel.destroy',
 	    ]);
-	  	
+
 	    Route::get('login', [
 	    	'uses'		=>	'ModuloAlumnoController@getLogin',
 	    	'as'		=> 	'alumno.login'
@@ -195,6 +207,7 @@ Route::group(['middleware' => ['web']], function () {
 	    	'uses'		=>	'ModuloAlumnoController@getAcceso',
 	    	'as'		=> 	'alumno.acceso'
 	    ]);
+	    
 
 	    Route::resource('import', 'ImportController');
 	    Route::get('import', [
@@ -324,6 +337,10 @@ Route::group(['middleware' => ['web']], function () {
 		'uses'	=> 'ModuloDocentesController@examenes',
 		'as'	=> 'Modulo.examenes',
 		]);
+	Route::get('docente/verexamenes', [
+		'uses'	=> 'ModuloDocentesController@verexamenes',
+		'as'	=> 'Modulo.verexamenes',
+		]);
 	Route::get('docente/tareasentregadas', [
 		'uses'	=> 'ModuloDocentesController@tareasentregadas',
 		'as'	=> 'Modulo.tareasentregadas',
@@ -334,7 +351,11 @@ Route::group(['middleware' => ['web']], function () {
 		]);
 	Route::get('docente/editar', [
 		'uses'	=> 'ModuloDocentesController@alumnoedit',
-		'as'	=> 'alumno.editar',
+		'as'	=> 'docente.editar',
+		]);
+	Route::get('docente/profile', [
+		'uses'	=> 'ModuloDocentesController@profile',
+		'as'	=> 'docente.profile',
 		]);
 
 	
@@ -351,11 +372,38 @@ Route::get('temarios/{pdf}', function ($pdf) {
      abort(404);
 
 });
+Route::get('alumnos/{plantilla}', function ($plantilla) {
+     $public_path = public_path();
+     $url = $public_path.'/alumnos/'.$plantilla;
+     //verificamos si el archivo existe y lo retornamos
+     if (Storage::exists($plantilla))
+     {
+       return response()->download($url);
+     }
+     //si no se encuentra lanzamos un error 404.
+     abort(404);
 
+});
+/**********************
+***ruta emergente de asistencia vista admin**/
+ Route::get('alumno/verasistencia', [
+	    	'uses'      => 'AlumnosController@asistencia',
+	    	'as'        => 'alumnos.asistencia',
+	    ]); 
+ Route::get('admin/imprimir', [
+	    	'uses'      => 'AdminsController@imprimir',
+	    	'as'        => 'alumnos.imprimir',
+	    ]); 
+ Route::get('admin/verexamenes', [
+	    	'uses'      => 'ExamenesController@examen',
+	    	'as'        => 'admin.examen',
+	    ]); 
+	  	
 
 	/***********
 	****grupo de rutas para el modulo Alumnos
 	************/
+
 
 	Route::get('alumno/inicio', [
 		'uses' => 'ModuloAlumnoController@index',
@@ -409,5 +457,8 @@ Route::get('temarios/{pdf}', function ($pdf) {
 		'uses'	=> 'ModuloAlumnoController@alive',
 		'as'	=> 'alumno.alive',
 	]);
-	
+	Route::get('alumno/profile', [
+		'uses'	=> 'ModuloAlumnoController@profile',
+		'as'	=> 'alumno.profile',
+		]);
 });

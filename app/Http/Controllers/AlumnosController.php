@@ -117,5 +117,10 @@ class AlumnosController extends Controller
     {
         return view('alumnos.index-dinamico');
     }
+    public function asistencia()
+    {
+        $alumnos = Alumno::orderBy('name')->paginate(5);
+        return view('admins.alumnos.viewasistencia')->with('alumnos', $alumnos);
+    }
 
 }

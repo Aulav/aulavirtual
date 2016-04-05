@@ -12,6 +12,8 @@ use App\Rol;
 use App\Institucion;
 use App\Materia;
 use App\Alumno;
+use App\Examen;
+use App\Pregunta;
 
 
 class ModuloDocentesController extends Controller
@@ -85,7 +87,15 @@ class ModuloDocentesController extends Controller
     }
     public function examenes()
     {
-        return view('docentes.viewexamenes');
+        $examenes = Examen::orderBy('id', 'DESC')->paginate(6);
+      
+        return view('docentes.examenes')->with('examenes', $examenes);
+    }
+    public function verexamenes()
+    {
+        $examenes = Examen::orderBy('id', 'DESC')->paginate(6);
+        $preguntas = Pregunta::orderBy('id')->paginate(5);
+        return view('docentes.viewexamenes')->with('examenes', $examenes)->with('preguntas', $preguntas);
     }
     public function tareasentregadas()
     {
@@ -113,13 +123,14 @@ class ModuloDocentesController extends Controller
             /*$alumno->materia();
          
             $materia = Materia::orderBy('name', 'ASC')->lists('name', 'id'); */
-            
-
-              
             return view('admins.alumnos.edit', ['alumnos' => $alumnos, 'roles' => $roles]);
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
             return redirect('/docente/login');
         }
+    }
+    public function profile()
+    {
+        return view('docentes.profile');
     }
 }

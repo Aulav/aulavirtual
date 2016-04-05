@@ -1,9 +1,11 @@
 @extends('plantillas.main')
 @section('title', 'Crear archivo de Excel')
-
+@section('menu')
+@include('plantillas.partes.menu')
+@endsection
 @section('contenido')
 {!! Form::open(['route' =>'alumno.import.store','method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
-    <p>Si desea puede subir aquí un listado de archivo en formato CSV (Excel) Impirma la plantilla <a href="plantilla.blade.php">Aquí</a></p>
+    <p>Si desea puede subir aquí un listado de archivo en formato CSV (Excel) Impirma la plantilla <a href="#">Aquí</a></p>
         <div class="row">
             <div class="col s12 m12">
                 <div class="file-field input-field">

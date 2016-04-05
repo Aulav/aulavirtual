@@ -37,8 +37,9 @@
 		          		</td>
 
 		        	</tr>
+		        	
     			@endforeach
-    			<tr><td><strong>2 semestre</strong></strong></td></tr>
+    
         	</tbody>
       	</table>   			
     </div>

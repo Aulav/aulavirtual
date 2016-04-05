@@ -114,7 +114,7 @@
         </div>
     </div>
 </div><!--en servicios-->
-<footer class="page-footer default_color">
+<footer class="page-footer default_color_footer">
     <div class="container">
         <div class="row">
             <div class="col s12 center">
@@ -124,7 +124,7 @@
               </div>
             </div>
         </div>
-    <div class="footer-copyright default_color">
+    <div class="footer-copyright default_color_footer">
         <div class="container center">
         © 2016 Plataforma Educativa <a class="white-text" href="http://sotfmark.tab">SoftMark Inc.</a>
     </div>

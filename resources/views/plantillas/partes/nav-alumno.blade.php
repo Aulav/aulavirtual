@@ -1,7 +1,7 @@
 <!--inithial menu-->
     <!-- Dropdown Structure -->
     <ul id="dropdown1" class="dropdown-content ">
-        <li><a href="{{ asset('admin/profile') }}"><i class="material-icons ">person</i>profile</a></li>
+        <li><a href="{{ asset('alumno/profile') }}"><i class="material-icons ">person</i>profile</a></li>
         <li class="divider"></li>
         @if (Session::get('rol') == 1)
             <li><a href="{{ asset('admin/logout') }}"><i class="material-icons">input</i>Salir</a></li>
@@ -24,7 +24,7 @@
     </ul>
         
     <ul id="dropdown1" class="dropdown-content">
-        <li><a href="profile_user.html"><i class="material-icons">person</i>Perfil</a></li>
+        <li><a href="{{ asset('alumno/profile')}}"><i class="material-icons">person</i>Perfil</a></li>
         <li class="divider"></li>
         @if (Session::get('rol') == 1)
             <li><a href="{{ asset('admin/logout') }}"><i class="material-icons">input</i>Salir</a></li>
@@ -62,4 +62,47 @@
         </ul>
         </div>
     </nav><!--end nav-->
+    <!--star modal messages-->
+        <div id="modal-msj" class="modal">
+          <div class="modal-content">
+            <h4>Enviar mensaje</h4>
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">email</i>
+                    <input id="icon_email" type="text" class="validate" placeholder="Felipe Guzman" disabled selected >
+                    <label for="icon_email">A: </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">mood</i>
+                    <input id="icon_msj" type="text" class="validate">
+                    <label for="icon_msj">Asunto</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">inbox</i>
+                    <textarea id="mensaje" class="materialize-textarea"></textarea>
+                    <label for="mensaje">Mensaje</label>
+                  </div>
+                </div>
+                 <div class="row">
+                  <div class="file-field input-field">
+                    <div class="btn">
+                      <span>Subir archivo</span>
+                      <input type="file">
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-fixed-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Enviar</a>
+          </div>
+      </div><!--end modal mensaje admin-->
   

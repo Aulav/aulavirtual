@@ -193,6 +193,17 @@ class AdminsController extends Controller
         Session::flash('message', 'El administrador ' . $admin->name . ' ha sido eliminado correctamente');
         return redirect('/admin/paneladmin');
     }
-
+    public function mensaje()
+    {
+        return view('admins.mensajes.index');
+    }
+    public function viewmensaje()
+    {
+        return view('admins.mensajes.viewmensaje');
+    }
+    public function imprimir()
+    {
+        return view('admins.imprimir');
+    }
     
 }

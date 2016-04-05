@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Examen;
 use Session;
+use App\Pregunta;
 
 
 
@@ -22,9 +23,9 @@ class PreguntasController extends Controller
     {
        if( Session::has('id') ){           
             $examenes = Examen::orderBy('id', 'DESC')->paginate(6);
-            
+            $preguntas = Pregunta::orderBy('id')->paginate(5);
 
-            return view('admins.preguntas.index', ['preguntas' => $preguntas, 'examenes' => $examenes, ]);
+            return view('admins.preguntas.create', ['preguntas' => $preguntas, 'examenes' => $examenes, ]);
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
             return redirect('/admin/login');

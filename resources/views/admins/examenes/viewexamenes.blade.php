@@ -1,7 +1,7 @@
-@extends('plantillas.main-docente')
-@section('title', 'Panel Docentes')
+@extends('plantillas.main')
+@section('title','Examen')
 @section('menu')
-  @include('plantillas.partes.menu-docente')
+  @include('plantillas.partes.menu')
 @endsection
 @section('contenido')
 <div class="row">

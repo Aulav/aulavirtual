@@ -111,5 +111,9 @@ class ModuloAlumnoController extends Controller
     {
         return view('/alumnos.foro');
     } 
+    public function profile()
+    {
+        return view('alumnos.profile');
+    }
 
 }

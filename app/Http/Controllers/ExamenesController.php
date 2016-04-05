@@ -11,6 +11,7 @@ use App\Docente;
 use App\Rol;
 use Session;
 use App\Examen;
+use App\Pregunta;
 
 class ExamenesController extends Controller
 {
@@ -123,5 +124,11 @@ class ExamenesController extends Controller
         $examenes->delete();
         Session::flash('message', 'El examen ' . $examenes->name . ' ha sido eliminado correctamente');
         return redirect('/examenes/panel');
+    }
+    public function examen()
+    {
+        $examenes = Examen::orderBy('id', 'DESC')->paginate(6);
+        $preguntas = Pregunta::orderBy('id')->paginate(5);
+        return view('admins.examenes.viewexamenes')->with('examenes', $examenes)->with('preguntas', $preguntas);
     }
 }

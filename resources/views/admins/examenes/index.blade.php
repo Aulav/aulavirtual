@@ -81,7 +81,7 @@
 		        <tbody>
 		        @foreach ($examenes as $examen)
 		        	<tr>	
-		          		<td><a href="{{ asset('/pregunta/panel') }}">{{ $examen->name }}</a></td>
+		          		<td><a href="{{ asset('/admin/verexamenes') }}">{{ $examen->name }}</a></td>
 		          		<td>{{ $examen->duracion }}</td>
 		          		<td>{{ $examen->materia_id}}</td>
 		          		<td>{{ $examen->docente_id}}</td>

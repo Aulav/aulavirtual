@@ -20,7 +20,7 @@
         <li class="divider"></li>
         <li><a href="{{ asset('/ficha/panel') }}"><i class="material-icons">speaker_notes</i>Tarjetas de estudio</a></li>
         <li class="divider"></li>
-        <li><a href="alumnos/foro.html"> <i class="material-icons">chat</i>Foro</a></li>
+        <!--<li><a href="#"> <i class="material-icons">chat</i>Foro</a></li>-->
     </ul>
         
     <ul id="dropdown1" class="dropdown-content">
@@ -41,7 +41,7 @@
         <li class="divider"></li>
         <li><a href="{{ asset('/ficha/panel') }}"><i class="material-icons">speaker_notes</i>Tarjetas de estudio</a></li>
         <li class="divider"></li>
-        <li><a href="alumnos/foro.html"> <i class="material-icons">chat</i>Foro</a></li>
+       <!-- <li><a href="#"> <i class="material-icons">chat</i>Foro</a></li>-->
     </ul>
     <!--inithial nav-->
     <nav class="default_color" >
@@ -62,4 +62,47 @@
         </ul>
         </div>
     </nav><!--end nav-->
+    <!--star modal messages-->
+        <div id="modal-msj" class="modal">
+          <div class="modal-content">
+            <h4>Enviar mensaje</h4>
+            <div class="row">
+              <form class="col s12" method="POST" action="">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <i class="material-icons prefix">email</i>
+                    <input id="icon_email" type="text" class="validate" placeholder="Example@example.com">
+                    <label for="icon_email">A: </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">mood</i>
+                    <input id="icon_msj" type="text" class="validate">
+                    <label for="icon_msj">Asunto</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">inbox</i>
+                    <textarea id="mensaje" class="materialize-textarea"></textarea>
+                    <label for="mensaje">Mensaje</label>
+                  </div>
+                </div>
+                 <div class="row">
+                  <div class="file-field input-field">
+                    <div class="btn">
+                      <span>Subir archivo</span>
+                      <input type="file">
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-fixed-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+            <a href="{{ route('admin.mensajes') }}" class="modal-action modal-close waves-effect waves-green btn-flat">Enviar</a>
+          </div>
+      </div><!--end modal mensaje admin-->
 	
