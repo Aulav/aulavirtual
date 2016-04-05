@@ -1,8 +1,8 @@
-@extends('plantillas.main')
+@extends('plantillas.main-alumno')
 @section('title', 'Calendario de eventos')
 
 @section('menu')
-	@include('plantillas.partes.menu')
+	@include('plantillas.partes.menu-docente')
 @endsection
 @section('contenido')
 

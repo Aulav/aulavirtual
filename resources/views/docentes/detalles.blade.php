@@ -1,8 +1,8 @@
-@extends('plantillas.main')
+@extends('plantillas.main-doncente')
 @section('title', 'Editar el Alumno ' . $alumno->name)
 
 @section('menu')
-  @include('plantillas.partes.menu')
+  @include('plantillas.partes.menu-docente')
 @endsection
 
 @section('contenido')
@@ -70,7 +70,9 @@
             <div class="input-field col s16 m6">                
                {!! Form::select('sexo', ['Femenino','Masculino'],$alumno->sexo,['placeholder' =>'Selecciona su sexo','required']) !!}
             </div>
-            
+            <div class="input-field col s6">
+               {!! Form::number('edad', $alumno->edad);!!}
+            </div>
         </div>	
       <div class="row">
     	<div class="col s12">

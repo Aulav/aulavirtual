@@ -12,15 +12,18 @@
   	<!--import Google Icon Fonts-->
   	<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
   	<!--import ajax for preloader-->
+  	<link rel="stylesheet" type="text/css" href="{{ asset('fullcalendar/fullcalendar.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('fullcalendar/fullcalendar.print.css')}}" media="print">
+    <link rel="stylesheet" type="text/css" href="{{ asset('fullcalendar/lib/cupertino/jquery-ui.min.css')}}">
   	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
-	<!--preoloader para la pagina principal-->
+	<!--preoloader para la pagina principal--
 	  <div id="preloader">
 	   <div class="progress">
 	      <div class="indeterminate"></div>
 	    </div>
-	  </div>
+	  </div>-->
 	@include('plantillas.partes.nav-alumno')
 
 	<div class="row">
@@ -52,5 +55,37 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="{{ asset('js/funciones.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
+	<script type="text/javascript" src="{{asset('fullcalendar/lib/jquery-ui.custom.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('fullcalendar/lib/moment.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('fullcalendar/fullcalendar.js')}}"></script>
+  <script type="text/javascript" src="{{asset('fullcalendar/lang-all.js')}}"></script>
+  <script type="text/javascript" src="{{asset('fullcalendar/even.js')}}"></script>
+<script>
+
+  $(document).ready(function() {
+  var currentLangCode = 'es';//cambiar el idioma al español
+    $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      },
+      lang:currentLangCode,
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: {
+        url: '{{asset('fullcalendar/demos/php/get-events.php')}}',
+        error: function() {
+          $('#script-warning').show();
+        }
+      },
+      loading: function(bool) {
+        $('#loading').toggle(bool);
+      }
+    });
+    
+  });
+
+</script>
 </body>
 </html>

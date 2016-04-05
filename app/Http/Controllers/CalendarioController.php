@@ -10,7 +10,11 @@ use App\Evento;
 
 class CalendarioController extends Controller
 {
-   
+   public function index()
+   {
+    //return view('alumnos.calendario.index')->with('data', $data);
+
+   }
     	public function evento()
     	{
     	$data = array();//declaramos un array que va a contener datos
@@ -31,10 +35,10 @@ class CalendarioController extends Controller
     	}
     	json_encode($data);//se convierte el array priciapl a un objeto json
     	//return $data;//luego se retorna para usarlo
-    	return view('alumnos.calendario.index',['data' => $data]);
+    	//return view('alumnos.calendario.index',['data' => $data]);
     	//return view('alumnos.calendario.index')->with('data', $data);
     	
-    	//return view('alumnos.calendario.index', ['data', $data]);
+    	return view('alumnos.calendario.index', ['data', $data]);
     		//return view('alumnos.calendario.index');
     	}
    

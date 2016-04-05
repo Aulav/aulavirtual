@@ -55,7 +55,7 @@
 		        	<tr>
 		          		<td>{{ $alumno->matricula }}</td>
 		          		<td>{{ $alumno->name }}</td>
-		          		<td>{{ $alumno->user }}</td>
+		          		<td>Activo</td>
 		          		<td>5</td>
 		          		<td>5</td>
 		          		<td>6</td>
@@ -74,6 +74,7 @@
 		          		<td><a href="#configuracion" class="modal-trigger"><i class="tiny material-icons ">settings</i></a></td>
 		        	</tr>
     			@endforeach
+
         		</tbody>
       		</table>   			
     	</div>
