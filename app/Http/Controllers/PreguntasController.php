@@ -21,6 +21,7 @@ class PreguntasController extends Controller
      */
     public function index()
     {
+
        if( Session::has('id') ){           
             $examenes = Examen::orderBy('id', 'DESC')->paginate(6);
             $preguntas = Pregunta::orderBy('id')->paginate(5);
@@ -29,6 +30,11 @@ class PreguntasController extends Controller
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
             return redirect('/admin/login');
+
+       
+        return view('admins.preguntas.create');
+        
+
         }
     }
 
@@ -39,12 +45,7 @@ class PreguntasController extends Controller
      */
     public function create()
     {
-        if(Session::has('id')){            
-            return view('admins.preguntas.create');
-        }else{
-            Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');
-            return redirect('/admin/login');
-        }
+        return view('admins.preguntas.create');
     }
 
     /**

@@ -116,4 +116,19 @@ class ModuloAlumnoController extends Controller
         return view('alumnos.profile');
     }
 
+     public function examen()
+    {
+        return view('/alumnos.examen');
+    }
+
+       public function instruccion()
+    {
+        return view('/alumnos.instruccion');
+    }
+
+     public function presen_examen()
+    {
+        return view('/alumnos.presen_examen');
+    }
+
 }

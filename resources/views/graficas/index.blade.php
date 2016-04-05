@@ -6,7 +6,7 @@
 @endsection
 
 @section('contenido')
-
+		<meta charset="UTF-8">	
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<style type="text/css">
 		${demo.css}
@@ -38,7 +38,7 @@
 			                        <?php
 			                       while($row=$result->fetch_assoc()) { ?>
 			                              <tr>                                      
-			                              <td><?php echo $row['name'];?></td>  
+			                              <td><?php echo utf8_encode($row['name']);?></td>  
 			                              <td><?php echo $row['COUNT(*)'];?></td> 
 			                              </tr>
 			                    <?php } ?> 

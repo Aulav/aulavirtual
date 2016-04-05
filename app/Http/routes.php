@@ -457,8 +457,27 @@ Route::get('alumnos/{plantilla}', function ($plantilla) {
 		'uses'	=> 'ModuloAlumnoController@alive',
 		'as'	=> 'alumno.alive',
 	]);
+
 	Route::get('alumno/profile', [
 		'uses'	=> 'ModuloAlumnoController@profile',
 		'as'	=> 'alumno.profile',
 		]);
+
+
+	Route::get('alumno/examen', [
+		'uses'	=> 'ModuloAlumnoController@examen',
+		'as'	=> 'alumno.examen',
+	]);
+
+	Route::get('alumno/instruccion', [
+		'uses'	=> 'ModuloAlumnoController@instruccion',
+		'as'	=> 'alumno.instruccion',
+	]);
+
+	Route::get('alumno/presen_examen', [
+		'uses'	=> 'ModuloAlumnoController@presen_examen',
+		'as'	=> 'alumno.presen_examen',
+	]);
+	
+
 });

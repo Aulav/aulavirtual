@@ -16,6 +16,7 @@
   	<link rel="stylesheet" type="text/css" href="{{ asset('fullcalendar/fullcalendar.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('fullcalendar/fullcalendar.print.css')}}" media="print">
     <link rel="stylesheet" type="text/css" href="{{ asset('fullcalendar/lib/cupertino/jquery-ui.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/flipclock.css') }}">
 </head>
 <body>
 	<!--preoloader para la pagina principal-->
@@ -55,6 +56,7 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="{{ asset('js/funciones.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/flipclock.js')}}"></script>
 
 	<script type="text/javascript" src="{{asset('fullcalendar/lib/jquery-ui.custom.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('fullcalendar/lib/moment.min.js')}}"></script>
@@ -88,6 +90,8 @@
   });
 
 </script>
+
+
 
 </body>
 </html>
