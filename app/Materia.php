@@ -9,6 +9,7 @@ class Materia extends Model
     protected $table = 'materias';
 
     protected $fillable = ['id', 'name', 'temario','clave_materia', 'numero_unidades'];
+   
 
     public function tareas()
     {

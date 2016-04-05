@@ -17,7 +17,7 @@
         <a href="{{ asset('/grafica/panel')}}" class="collection-item"><i class="material-icons">insert_chart</i>Graficas</a>
         <a href="#" class="collection-item"><i class="material-icons">check_circle</i>Asistencia</a>
         <a href="reportes.html" class="collection-item"><i class="material-icons">print</i>Imprimir</a>
-        <a href="{{ route('alumnos.calendario')}}" class="collection-item"><i class="material-icons">date_range</i>Calendario</a>
+        <a href="{{ asset('/alumnos/calendario')}}" class="collection-item"><i class="material-icons">date_range</i>Calendario</a>
     <ul class="collapsible collapsible-accordion">
         <li>
             <a class="collapsible-header"> Configuracion<i class="mdi-navigation-arrow-drop-down"></i></a>

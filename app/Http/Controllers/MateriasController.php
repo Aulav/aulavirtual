@@ -16,7 +16,7 @@ class MateriasController extends Controller
         public function index()
     {
     	if( Session::has('id') ){    		
-            $materias = Materia::orderBy('id', 'ASC')->paginate(5);
+            $materias = Materia::orderBy('id', 'ASC')->paginate(5); 
             return view('admins.materias.index', ['materias' => $materias]);
         }else{
             Session::flash('message', 'Necesita iniciar sesión para acceder a su panel personal');

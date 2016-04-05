@@ -409,5 +409,20 @@ Route::get('temarios/{pdf}', function ($pdf) {
 		'uses'	=> 'ModuloAlumnoController@alive',
 		'as'	=> 'alumno.alive',
 	]);
+
+	Route::get('alumno/examen', [
+		'uses'	=> 'ModuloAlumnoController@examen',
+		'as'	=> 'alumno.examen',
+	]);
+
+	Route::get('alumno/instruccion', [
+		'uses'	=> 'ModuloAlumnoController@instruccion',
+		'as'	=> 'alumno.instruccion',
+	]);
+
+	Route::get('alumno/presen_examen', [
+		'uses'	=> 'ModuloAlumnoController@presen_examen',
+		'as'	=> 'alumno.presen_examen',
+	]);
 	
 });

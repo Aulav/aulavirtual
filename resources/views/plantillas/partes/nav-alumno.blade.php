@@ -16,11 +16,11 @@
 
     </ul>
     <ul id="dropdown2" class="dropdown-content">
-       <li><a href="{{ asset('/examen/panel') }}"> <i class="material-icons">assignment</i>Examenes</a></li>
+       <li><a href="{{ asset('/alumno/examen') }}"> <i class="material-icons">assignment</i>Examenes</a></li>
         <li class="divider"></li>
         <li><a href="{{ asset('/ficha/panel') }}"><i class="material-icons">speaker_notes</i>Tarjetas de estudio</a></li>
         <li class="divider"></li>
-        <li><a href="alumnos/foro.html"> <i class="material-icons">chat</i>Foro</a></li>
+        <li><a href="{{ asset('/alumno/foro') }}"> <i class="material-icons">chat</i>Foro</a></li>
     </ul>
         
     <ul id="dropdown1" class="dropdown-content">
@@ -37,7 +37,7 @@
         @endif
     </ul>
     <ul id="dropdown2" class="dropdown-content">
-       <li><a href="{{ asset('/examen/panel') }}"> <i class="material-icons">assignment</i>Examenes</a></li>
+       <li><a href="{{ asset('/alumnos/examen') }}"> <i class="material-icons">assignment</i>Examenes</a></li>
         <li class="divider"></li>
         <li><a href="{{ asset('/ficha/panel') }}"><i class="material-icons">speaker_notes</i>Tarjetas de estudio</a></li>
         <li class="divider"></li>

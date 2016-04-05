@@ -1,3 +1,4 @@
+
 <div class="row">
     <div class="col s12">
     	<h4>Mis Materias</h4>
@@ -13,9 +14,10 @@
 		        </tr>
 			</thead>
 		    <tbody>
-		    <tr><td><strong>1 semestre</strong></strong></td></tr>
-		        @foreach ($materias as $materia)
-		        	<tr>
+				
+		        @foreach ($materias as $materia) 	
+		        	
+		               	<tr>
 		          		<td>{{ $materia->name }}</td>
 		          		<td>{{ $materia->clave_materia }}</td>
 		          		<td>{{ $materia->numero_unidades }}</td>
@@ -35,11 +37,11 @@
 		          			</a>
 		          		
 		          		</td>
-
-		        	</tr>
+		        	</tr>	
+		        			
     			@endforeach
-    			<tr><td><strong>2 semestre</strong></strong></td></tr>
         	</tbody>
-      	</table>   			
+      	</table> 
+
     </div>
 </div>
